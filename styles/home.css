@@ -1,0 +1,178 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+/* a11y */
+.screen-reader-text {
+	position: absolute !important;
+	clip: rect(1px,1px,1px,1px);
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+/* Reset Normalize */
+html {
+	font-size: 100%; /* 16px */
+	height: 100%;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+ul {
+	padding: 0;
+}
+
+/* Mobile Styles */
+	/* Header */
+	.site-title-wrap {
+	}
+	.site-title {
+		font-size: 2.5em;
+		margin: 1.75rem 0 1rem;
+		line-height: 25px;
+	}
+	.site-title a {
+		text-decoration: none;
+		color: #c7c7c7;
+	}
+	.site-title span {
+		font-size: 20px;
+		text-transform: uppercase;
+		color: gray;
+	}
+
+/* Main Nav */
+.nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+.main-nav {
+	margin-bottom: 1rem;
+}
+.main-nav li {
+	list-style: none;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	margin: .5rem;
+	border: solid 1px red;
+	/*padding: 1rem;*/
+}
+.main-nav li:first-child {
+	margin-left: 0;
+}
+.main-nav li:last-child {
+	margin-right: 0;
+}
+.main-nav li a {
+	text-decoration: none;
+	padding-bottom: 1rem;
+}
+li a {
+	padding: .5rem;
+}
+	/* Dropdown nav */
+	li {
+		display: block;
+		/*transition-duration: 0.5s;*/
+	}
+	ul li ul {
+		visibility: hidden;
+		position: absolute;
+		opacity: 0;
+		transition: all .5s ease;
+		/*margin-top: 1rem;*/
+		display: none;
+		border: solid 2px black;
+	}
+	ul li:hover > ul,
+	ul li:hover {
+		visibility: visible;
+		opacity: 1;
+		display: block;
+		background-color: white;
+		z-index: 100;
+		/*padding-bottom: 1rem;*/
+	}
+	ul li ul li {
+		padding: 1em 0;
+		clear: both;
+		width: 100%;
+	}
+	.nav-list__dropdown-list li {
+		margin-left: 0;
+	}
+
+
+/* Desktop */
+.page-wrap {
+	position: relative;
+	max-width: 1024px;
+	width: 90%;
+	margin: 0 auto;
+	flex: 1 0 auto;
+}
+
+.main-content {
+	position: relative;
+	margin-top: 8em;
+}
+.welcome-about::before {
+	content: 'Welcome!';
+	font-size: 5em;
+	color: red;
+	font-family: 'Kaushan Script', cursive;
+	position: absolute;
+	transform: rotate(-11.5deg); /* translate(0, 10%);*/
+	opacity: 50%;
+	margin: -110px 0 0 -30px;
+}
+
+h1.main-title {
+	margin-top: 4em;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+
+/* Anchor Links */
+a {
+	color: #42A5F5; /* blue */
+}
+a:hover {
+	color: #a41b5f; /* red */
+}
+
+
+.main-portrait img {
+	width: 300px;
+	max-width: 100%;
+}
+
+/* Footer */
+.colophon {
+	background-color: #42A5F5; /* blue */
+	padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

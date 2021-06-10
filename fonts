@@ -1,0 +1,18 @@
+
+<style>
+@import
+ url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Euphoria+Script&family=Kaushan+Script&family=Lovers+Quarrel&family=Mr+Dafoe&family=Mrs+Saint+Delafield&family=Norican&family=Parisienne&family=Stalemate&display=swap');
+</style> 
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Euphoria+Script&family=Kaushan+Script&family=Lovers+Quarrel&family=Mr+Dafoe&family=Mrs+Saint+Delafield&family=Norican&family=Parisienne&family=Stalemate&display=swap" rel="stylesheet"> 
+
+
+font-family: 'Dancing Script', cursive;
+font-family: 'Euphoria Script', cursive;
+font-family: 'Kaushan Script', cursive;
+font-family: 'Lovers Quarrel', cursive;
+font-family: 'Mr Dafoe', cursive;
+font-family: 'Mrs Saint Delafield', cursive;
+font-family: 'Norican', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Stalemate', cursive;
