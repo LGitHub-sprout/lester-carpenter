@@ -46,20 +46,30 @@
 			<header id="site-header" class="site-header">
 				<a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to content</a>
 				<div class="logo-wrap"><a href="/lester-carpenter"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a></div>
+
 				<nav class="main-nav">
-					<ul class="nav-list">
-						<li class="nav-list__item"><a href="mdn-assmnt-creating-html-links.html">mdn</a></li>
+					<label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+					<input type="checkbox" id="menu-toggle">
+
+					<ul class="nav-list-toggle">
+						<li class="nav-list__item"><a href="mdn-assmnt-creating-html-links.html">mdn</a>
+							<ul class="nav-list__dropdown-list">
+								<li class="nav-list__dropdown-item"><a href="whales.html#">Whales</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 2</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 3</a></li>
+							</ul></li>
 						<li class="nav-list__item"><a href="#">cihs</a></li>
 						<li class="nav-list__item"><a href="#">codecademy</a></li>
 						<li class="nav-list__item"><a href="/lester-carpenter">about</a></li>
 						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
 					</ul>
 				</nav>
+
 			</header>
 
 			<main id="main-content">
 				<article id="post-419" class="name-of-article">
-					<h1>MDN Skills Test: Links</h1>
+					<h1 class="main-title">MDN Skills Test: Links</h1>
 					<p>The aim of this skill test is to assess whether Lester has understood the <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a> article.</p>
 
 					<div class="whale-info-wrap">

@@ -11,6 +11,8 @@
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
 		
 		<link rel="stylesheet" href="styles/normalize.css">
 		<link rel="stylesheet" href="styles/home.css">
@@ -50,7 +52,27 @@
 				<div class="site-title-wrap">
 					<p class="site-title"><a href="/lester-carpenter">Lester<br><span>Carpenter</span></a></p>
 				</div><!-- .site-title-wrap -->
+
 				<nav class="main-nav">
+					<label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+					<input type="checkbox" id="menu-toggle">
+
+					<ul class="nav-list-toggle">
+						<li class="nav-list__item"><a href="moz/mdn-assmnt-creating-html-links.html">mdn</a>
+							<ul class="nav-list__dropdown-list">
+								<li class="nav-list__dropdown-item"><a href="moz/whales.html#">Whales</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 2</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 3</a></li>
+							</ul></li>
+						<li class="nav-list__item"><a href="#">cihs</a></li>
+						<li class="nav-list__item"><a href="#">codecademy</a></li>
+						<li class="nav-list__item"><a href="/lester-carpenter">about</a></li>
+						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
+					</ul>
+				</nav>
+
+
+				<!-- <nav class="main-nav">
 					<ul class="nav-list">
 						<li class="nav-list__item"><a href="moz/mdn-assmnt-creating-html-links.html">mdn</a>
 							<ul class="nav-list__dropdown-list">
@@ -64,22 +86,22 @@
 						<li class="nav-list__item"><a href="/lester-carpenter">about</a></li>
 						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
 					</ul>
-				</nav>
+				</nav> -->
 			</header>
 
 			<main id="main-content" class="main-content">
 				<article id="post-419" class="welcome-about">
-					<h1 class="main-title">I'm Lester &#8212;<br> a <!-- &hellip; resourceful,--> tenacious, aspiring front&nbsp;end&nbsp;developer.<br>I post my MDN Web Docs assessments here for evaluation.</h1>
+					<h1 class="main-title">I&apos;m Lester &#8212;<br> a <!-- &hellip; resourceful,--> tenacious, aspiring front&nbsp;end&nbsp;developer.</h1>
+					<p class="tagline">My development assessments are posted here for evaluation.</p>
 					<div class="image-wrap">
 					<figure class="main-portrait"><img src="images/lester-960px.jpg" alt="photo of Lester and his doggy, Rosie"></figure>
 					</div><!-- image-wrap -->
 
-					<!-- <p>I also post thoughts and document my progress along life's journey of learning and growing.</p> -->
+					<h2>More About Me</h2>
 					<p>I'm known for my service to a community garden and as a dependable resource for folks, especially seniors.</p>
 					<p>I'm the guy in the building with keys to neighbor's apartments because I'm highly regarded as reliable and trustworthy.</p>
-
-					
 				</article>
+
 			</main>
 
 		</div><!-- .page-wrap -->
