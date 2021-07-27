@@ -14,7 +14,7 @@
 .test-text {
 	color: gray;
 }
-.whale-info-wrap {
+.test-info-wrap {
 	border: 1px solid #4D4E53;
 	max-width: 800px;
 	margin: 60px auto;
@@ -27,9 +27,11 @@
 	line-height: 2em;
 	color: gray;
 }
-
-/* Whales.html */
-#post-420 h2 {
+.test-info-wrap h2,
+.test-info-wrap h3 {
 	color: purple;
-} 
+}
+.test-info-wrap p {
+	color: grey;
+}
 

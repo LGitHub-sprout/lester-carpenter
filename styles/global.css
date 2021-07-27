@@ -39,9 +39,11 @@ figure {
 	margin-left: 0;
 	margin-right: 0;
 }
-ul {
+.nav-list-toggle,
+.nav-list__dropdown-list {
 	padding: 0;
 }
+
 /* Fonts based on minor third, bumped up one level for desktop. */
 h1 {
 	font-family: 'Roboto Condensed', sans-serif;
@@ -98,6 +100,7 @@ p {
 		margin: .5rem;
 		/*border: solid 1px red;*/
 		padding: 1rem;
+		display: block;
 	}
 	.main-nav li:first-child {
 		margin-left: 0;
@@ -114,10 +117,10 @@ p {
 	}
 	/* Dropdown nav */
 	li {
-		display: block;
+		/*display: block;*/
 		/*transition-duration: 0.5s;*/
 	}
-	ul li ul {
+	.nav-list-toggle li ul {
 		visibility: hidden;
 		position: absolute;
 		opacity: 0;
@@ -126,8 +129,8 @@ p {
 		display: none;
 		/*border: solid 2px black;*/
 	}
-	ul li:hover > ul,
-	ul li:hover {
+	.nav-list-toggle li:hover > ul,
+	.nav-list-toggle li:hover {
 		visibility: visible;
 		opacity: 1;
 		display: block;

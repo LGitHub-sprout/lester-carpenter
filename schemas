@@ -1,0 +1,170 @@
+
+LearningResource can be used to indicate CreativeWorks... skill acquisition, other educational purposes.
+expected to be used an an addition to a primary type such as Book, VideoObject, Product, etc.
+
+/* VALIDATES */
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Course",
+    "name": "Name of Course",
+    "provider": "Lester's System Works",
+    "description": "Lester is gay",
+
+    "LearningResource": {
+    	"assesses": "Lester's abilities"
+    },
+
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": ["MOOC","online"],
+      "endDate": "2019-03-21",
+      "startDate": "2019-02-15"
+    }
+  }
+</script>
+
+/* VALIDATES */
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "breadcrumb": "Books > Literature & Fiction > Classics",
+    "mainEntity":{
+            "@type": "Book",
+            "author": "/author/jd_salinger.html",
+            "bookFormat": "https://schema.org/Paperback",
+            "datePublished": "1991-05-01",
+            "image": "catcher-in-the-rye-book-cover.jpg",
+            "inLanguage": "English",
+            "isbn": "0316769487",
+            "name": "The Catcher in the Rye",
+            "numberOfPages": "224",
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "price": "6.99",
+              "priceCurrency": "USD"
+            },
+            "publisher": "Little, Brown, and Company",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4",
+              "reviewCount": "3077"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": "John Doe",
+                "datePublished": "2006-05-04",
+                "name": "A masterpiece of literature",
+                "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+                "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+             }
+              },
+              {
+                "@type": "Review",
+                "author": "Bob Smith",
+                "datePublished": "2006-06-15",
+                "name": "A good read.",
+                "reviewBody": "Catcher in the Rye is a fun book. It's a good book to read.",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "4"
+                }
+              }
+            ]
+          }
+  }
+</script>
+
+/* DOES NOT VALIDATE */
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Course",
+    "name": "Name of Course",
+    "provider": "Lester's System Works",
+    "description": "Lester is gay",
+
+    "LearningResource": {
+    	"assesses": "Lester's abilities"
+    },
+
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": ["MOOC","online"],
+      "endDate": "2019-03-21",
+      "startDate": "2019-02-15"
+    }
+  }
+</script>
+
+
+
+
+<script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "Article",
+     "mainEntityOfPage": {
+       "@type": "WebPage",
+       "@id": "https://yoast.com/"
+      },
+      "headline": "WordPress SEO: The definitive guide",
+      "image": 
+"https://yoast.com/wordpress_seo_definitive_guide.png",
+      "datePublished": "2020-02-05T08:00:00+08:00",
+      "dateModified": "2020-02-05T09:20:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "Joost de Valk"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "Yoast",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yoast.com/yoast_logo.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "AboutPage",
+      "@id": "https://lester-carpenter.lsystemworks.com/about-lester.html",
+      "name": "About Lester Carpenter",
+      "about": "I'm Lester – a tenacious, aspring front-end developer.",
+      "audience": "MDN Learning Assessors, Coders in Hoods instructors, and anyone hiring front-end developers or needing web development services.",
+      "educationalLevel": "intermediate",
+      "primaryImageOfPage": {
+      	"@type": "ImageObject",
+      	"url": "https://lester-carpenter.lsystemworks.com/images/lester-960px.jpg"
+      }
+    },
+    "headline": "I'm Lester – a tenacious, aspiring front-end developer",
+    "datePublished": "2021-07-26",
+    "dateModified": "2021-07-26",
+    "author": {
+      "@type": "Person",
+      "creator": "Lester Carpenter"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lester's System Works",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
+      }
+    }
+  }
+</script>
+
+
+

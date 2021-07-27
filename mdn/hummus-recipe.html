@@ -14,8 +14,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
 		
-		<!-- <link rel="stylesheet" href="styles/normalize.css"> -->
-		<link rel="stylesheet" href="styles/global.css">
+		<link rel="stylesheet" href="../styles/normalize.css">
+		<link rel="stylesheet" href="../styles/global.css">
 		<link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
 
 		<link rel="manifest" href="../manifest.webmanifest">
@@ -34,7 +34,7 @@
 		<meta name="twitter:site" content="@self_teach_dev">
 		<meta name="pinterest" content="nopin">
 
-		<title>Lester Carpenter | HTML, CSS and JS skills assessment tests for MDN, LinkedIn, and CIHs learning modules.</title>
+		<title>Lester Carpenter's MDN Web Development Skills Assessments – Lists</title>
 		<script type="application/ld+json">
 			{
 				"@context"	: "https://schema.org",
@@ -43,8 +43,10 @@
 				"logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
 			}
 		</script>
+		<script src="js/global.js"></script>
 	</head>
 	<body class="home">
+
 		<div class="page-wrap">
 			<header id="site-header" class="site-header container">
 				<a id="skip-nav" class="skip-to-content screen-reader-text" href="#site-content">Skip to content</a>
@@ -57,52 +59,59 @@
 					<input type="checkbox" id="menu-toggle">
 
 					<ul class="nav-list-toggle">
-						<li class="nav-list__item"><a href="mdn/mdn-assmnt-creating-html-links.html">mdn</a>
+						<li class="nav-list__item"><a href="mdn-assmnt-creating-html-links.html">mdn</a>
 							<ul class="nav-list__dropdown-list">
-								<li class="nav-list__dropdown-item"><a href="mdn/whales.html#">Whales</a></li>
-								<li class="nav-list__dropdown-item"><a href="mdn/html-text-basics1.html">Basics Test1</a></li>
-								<li class="nav-list__dropdown-item"><a href="mdn/html-text-basics2.html">Basics Test2</a></li>
-								<li class="nav-list__dropdown-item"><a href="mdn/html-text-basics3.html">Basics Test3</a></li>
+								<li class="nav-list__dropdown-item"><a href="whales.html#">Whales</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 2</a></li>
+								<li class="nav-list__dropdown-item"><a href="#">dropdown 3</a></li>
 							</ul></li>
 						<li class="nav-list__item"><a href="#">cihs</a></li>
 						<li class="nav-list__item"><a href="#">codecademy</a></li>
-						<li class="nav-list__item"><a href="/about-lester.html">about</a></li>
+						<li class="nav-list__item"><a href="../about-lester.html">about</a></li>
 						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
 					</ul>
 				</nav>
-
-				<!-- <nav class="main-nav">
-					<ul class="nav-list">
-						<li class="nav-list__item"><a href="moz/mdn-assmnt-creating-html-links.html">mdn</a>
-							<ul class="nav-list__dropdown-list">
-								<li class="nav-list__dropdown-item"><a href="moz/mdn-assmnt-creating-html-links.html#">Whales</a></li>
-								<li class="nav-list__dropdown-item"><a href="#">dropdown 2</a></li>
-								<li class="nav-list__dropdown-item"><a href="#">dropdown 3</a></li>
-							</ul>
-						</li>
-						<li class="nav-list__item"><a href="#">cihs</a></li>
-						<li class="nav-list__item"><a href="#">codecademy</a></li>
-						<li class="nav-list__item"><a href="/lester-carpenter">about</a></li>
-						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
-					</ul>
-				</nav> -->
 			</header>
 
-			<main id="main-content" class="main-content">
-				<article id="post-419" class="welcome-about">
-					<h1 class="main-title">I&apos;m Lester &#8212;<br> a <!-- &hellip; resourceful,--> tenacious, aspiring front&nbsp;end&nbsp;developer.</h1>
-					<p class="tagline">My development assessments are posted here for evaluation.</p>
-					
-					<div class="image-wrap">
-					<figure class="main-portrait"><img src="images/lester-960px.jpg" alt="photo of Lester and his doggy, Rosie"></figure>
-					</div><!-- image-wrap -->
+				<main id="main-content">
+					<article id="post-" class="mdn-hummus-recipe">
+						<h1 class="main-title">MDN Skills Test: Lists</h1>
+						<p>The aim of this skill test is to assess whether Lester has understood  <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals#lists">HTML Text Fundementals: Lists</a> article.</p>
 
-					<h2>More About Me</h2>
-					<p>I'm known for my service to a community garden and as a dependable resource for folks, especially seniors.</p>
-					<p>I'm the guy in the building with keys to neighbor's apartments because I'm highly regarded as reliable and trustworthy.</p>
-				</article>
+						<h2 class="main-title">Quick Hummus Recipe</h1>
+						<p>This recipe makes quick, tasty hummus, with no messing. It has been adapted from a number of different recipes that I have read over the years.</p>
+						<p>Hummus is a delicious thick paste used heavily in Greek and Middle Eastern dishes. It is very tasty with salad, grilled meats and pitta breads.</p>
+						<h2>Ingredients</h2>
+						<ul class="ingredients-list">
+							<li class="ingredients__items">1 can (400g) of chick peas (garbanzo beans)</li>
+							<li class="ingredients__items">175g of tahini</li>
+							<li class="ingredients__items">6 sundried tomatoes</li>
+							<li class="ingredients__items">Half a red pepper</li>
+							<li class="ingredients__items">A pinch of cayenne pepper</li>
+							<li class="ingredients__items">1 clove garlic</li>
+							<li class="ingredients__items">A dash of olive oil</li>
+						</ul>
+						<h2>Instructions</h2>
+						<ol class="instructions-list">
+							<li class="instructions__items">Remove the skin from the garlic, and chop coarsely</li>
+							<li class="instructions__items">Remove all seeds and stalk from pepper, chop coarsely</li>
+							<li class="instructions__items">Add all ingredients into a food processor</li>
+							<li class="instructions__items">Process all ingredients into a paste
+								<ul>
+									<li class="instructions__items">If you want a smooth hummus, process it for a longer time</li>
+									<li class="instructions__items">If you want a coarse "chunky" hummus, process it for a short time</li>
+								</ul>
+							</li>
+						</ol>
+						<p>For a different flavor, you could try blending in a small measure of lemon and coriander, chili pepper, lime and chipotle, harissa and mint, or spinach and feta cheese. Experiment and see what works for you.</p>
+						<h2>Storage</h2>
+						<p>  Refrigerate the finished hummus in a sealed container. You should be able to use it for about a week after you've made it. If it starts to become fizzy, you should definitely discard it.</p>
+						<p>Hummus is suitable for freezing; you should thaw it and use it within a couple of months.</p>
+					</article>
+				</main>
 
-			</main>
+				
+
 
 		</div><!-- .page-wrap -->
 
@@ -117,3 +126,27 @@
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+/* MDN Page Styles
+ * 
+ * ...-html-links.html
+ * whales.html
+ * hummus-recipe.html
+ * html-the-head.html
+ */
+
+.logo-wrap {
+	max-width: 1024px;
+	border: 2px dotted pink;
+}
+.logo-wrap img {
+	width: 100%;
+}
+
+.test-title {
+	font-size: 2.5em;
+	margin-top: .25em;
+}
+.test-text {
+	color: gray;
+}
+.test-info-wrap,
+.whale-info-wrap {
+	border: 1px solid #4D4E53;
+	max-width: 800px;
+	margin: 60px auto;
+	padding: 1em;
+}
+.whale-info-wrap ul {
+	margin-left: 2em;
+}
+.whale-info-wrap li {
+	line-height: 2em;
+	color: gray;
+}
+.test-info-wrap h2,
+.test-info-wrap h3,
+.mdn-text-basics3 strong {
+	color: purple;
+}
+.test-info-wrap p {
+	color: grey;
+}
+
+/* Hummus Recipe */
+.ingredients-list li {
+	list-style: none;
+	/*line-height: 2rem;*/
+}
+.ingredients-list li,
+.instructions-list li {
+	margin-bottom: .5rem;
+	line-height: 1.5rem;
+}
+
+/* HTML Text Basics 2 - Lists */
+.basics2-veg-list {
+	border: 2px solid orange;
+}
+.basics2-directions-list {
+	border: 2px solid purple;
+}
+.basics2-directions-list,
+.basics2-veg-list {
+	padding: 5px 20px;
+	border-radius: 4px;
+}
+.mdn-text-basics2 p,
+.mdn-text-basics3 p {
+	color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
