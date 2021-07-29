@@ -4,16 +4,17 @@
  * whales.html
  * hummus-recipe.html
  * html-the-head.html
+ *
+ * html-text-adv1.html
  */
+
 
 .logo-wrap {
 	max-width: 1024px;
-	border: 2px dotted pink;
 }
 .logo-wrap img {
 	width: 100%;
 }
-
 .test-title {
 	font-size: 2.5em;
 	margin-top: .25em;
@@ -21,6 +22,25 @@
 .test-text {
 	color: gray;
 }
+
+/* html-text-adv */
+.adv-html h2 {
+	font-size: 2rem;
+	margin: 0;
+}
+.adv-html dl {
+	color: grey;
+	margin: .5em 0;
+}
+.adv-html dt {
+	font-weight: bold;
+	color: purple;
+}
+.adv-html abbr,
+.adv-html time {
+	color: green;
+}
+
 .test-info-wrap,
 .whale-info-wrap {
 	border: 1px solid #4D4E53;

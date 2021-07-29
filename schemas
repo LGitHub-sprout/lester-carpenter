@@ -12,7 +12,7 @@ expected to be used an an addition to a primary type such as Book, VideoObject, 
     "description": "Lester is gay",
 
     "LearningResource": {
-    	"assesses": "Lester's abilities"
+    	"assesses": "Lester's HTML, CSS, and Javascript abilities"
     },
 
     "hasCourseInstance": {
@@ -132,6 +132,8 @@ expected to be used an an addition to a primary type such as Book, VideoObject, 
   }
 }
 </script>
+
+/* Validates */
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -150,7 +152,6 @@ expected to be used an an addition to a primary type such as Book, VideoObject, 
     },
     "headline": "I'm Lester – a tenacious, aspiring front-end developer",
     "datePublished": "2021-07-26",
-    "dateModified": "2021-07-26",
     "author": {
       "@type": "Person",
       "creator": "Lester Carpenter"
