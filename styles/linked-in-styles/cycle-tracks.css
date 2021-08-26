@@ -1,0 +1,95 @@
+/* Cycle Tracks Mobile First */
+	.cycle-tracks-page-wrap {
+		overflow-x: hidden;
+		min-height: 100vh;
+	}
+	#cycle-tracks-site-header {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 1.5em;
+	}
+	.cycle-tracks-logo {
+		margin-top: 0;
+	}
+	.logo-wrap img {
+		display: block;
+		max-width: 100%;
+	}
+	.cycle-tracks-container {
+		width: 90%;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+	.cycle-tracks-container h2,
+	.cycle-tracks-container h2 + p {
+		text-align: center;
+	}
+
+	/* Rider Reviews */
+		.rider-reviews {
+			margin: 10rem 0;
+			background-color: #ffffcc;
+			padding: 2.5rem 0;
+		}
+		.rider-reviews h2 {
+			margin: 0;
+		}
+		.review-wrap {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			flex-wrap: nowrap;
+			/*background-color: lime;*/
+		}
+		.review-wrap__img-wrap img {
+			height: 90%; /* delete, go to desktop @768px */
+			margin: 0 auto;
+			object-fit: cover;
+			width: 100%;
+			/*border: 2px solid red;*/
+		}
+		.image-credit {
+			font-size: 10px;
+			margin-top: .5em;
+		}
+
+/* Desktop 600px */
+@media screen and (min-width: 600px) {
+	.rider-reviews {
+		padding: 3.5rem 0;
+	}
+	.rider-reviews h2 {
+		margin-top: 0;
+		font-size: 2.3rem;
+	}
+	.rider-reviews p {
+		font-size: 18px;
+		line-height: 2rem;
+	}
+	.review-wrap {
+		flex-direction: row;
+		background-color: #ffffcc;
+		margin-top: 3rem;
+		flex-wrap: wrap;
+	}
+	.review-wrap__img-wrap {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.image-credit {
+		font-size: 11px;
+	}
+	.review-wrap__text {
+		width: 50%;
+		/*flex-direction: column;*/
+		align-self: center;
+		padding-left: 40px;
+	}
+	.review-wrap__img-wrap img {
+		width: 375px;
+		max-width: 100%;
+	}
+}

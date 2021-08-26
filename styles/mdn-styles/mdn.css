@@ -9,7 +9,7 @@
  */
 
 /* University Ltr */
-body {
+.univ-ltr {
   max-width: 800px;
   margin: 20px auto;
 }
@@ -67,6 +67,15 @@ p, li, dd, dt, address {
 	color: green;
 }
 
+/* Whales page */
+.mdn-page-wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 auto;
+}
+.mdn-main-content {
+	flex: 1 0 auto;
+}
 .test-info-wrap,
 .whale-info-wrap {
 	border: 1px solid #4D4E53;

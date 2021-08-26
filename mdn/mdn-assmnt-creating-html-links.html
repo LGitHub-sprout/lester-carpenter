@@ -42,11 +42,11 @@
 			}
 		</script>
 	</head>
-	<body class="home">
-		<div class="page-wrap">
-			<header id="site-header" class="site-header">
-				<a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to content</a>
-				<div class="logo-wrap"><a href="/"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a></div>
+	<body class="mdn">
+		<div class="mdn-page-wrap">
+			<header id="site-header" class="site-header container">
+				<a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
+				<div class="logo-wrap"><a href="../"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a></div>
 
 				<nav class="main-nav">
 					<label for="menu-toggle"><span class="menu-toggle">menu</span></label>
@@ -63,13 +63,13 @@
 							</ul></li>
 						<li class="nav-list__item"><a href="#">cihs</a></li>
 						<li class="nav-list__item"><a href="#">codecademy</a></li>
-						<li class="nav-list__item"><a href="/about-lester.html">about</a></li>
+						<li class="nav-list__item"><a href="../about-lester.html">about</a></li>
 						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
 					</ul>
 				</nav>
 			</header>
 
-			<main id="main-content">
+			<main id="mdn-main-content" class="mdn-main-content container">
 				<article id="post-419" class="name-of-article">
 					<h1 class="main-title">MDN Skills Test: Links</h1>
 					<p>The aim of this skill test is to assess whether Lester has understood the <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks">Creating hyperlinks</a> article.</p>
@@ -79,19 +79,24 @@
 						<p class="test-text">For more information on our conservation activities and which Whales we study, see our <a href="whales.html" title="Info on Blue and Sperm Whales">Whales</a> page.</p>
 						<p class="test-text">If you want to ask our team more questions, feel free to <a href="mailto:whales@example.com?subject=Question%20About%20Whales">email us</a>.</p>
 					</div><!-- .whale-info-wrap -->
-					
-
 				</article>
 			</main>
+			<footer id="site-footer" class="colophon content-info">
+				<div class="inside-footer container">
+					<!-- <div class="contact-wrap"> -->
+						<address>
+							<ul class="home-contact-list">
+								<li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png" alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
+								<li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank" rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a></li>
+								<li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank" rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
+							</ul>							
+						</address>
+					<!-- </div> --><!-- .contact-wrap -->
+					<p class="content-info__blog"><a href="https://lsystemworks.com" target="_blank"> Lester&apos;s System Works</a></p>
+					<p class="copyright"><small><span>copyright</span> &copy; 2021</small></p>					 
+				</div><!-- #site-footer .colophon .content-info -->
+			</footer>	
 
 		</div><!-- .page-wrap -->
-
-
-		<footer id="site-footer" class="colophon">
-			<div class="inside-footer">
-				<p id="bottom">This is the bottom of the current page</p>
-			</div>
-		</footer>
-
 	</body>
 </html>
