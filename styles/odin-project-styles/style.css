@@ -1,0 +1,444 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,300&display=swap'); */
+/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Oleo+Script&display=swap');
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  ul,
+  figure,
+  blockquote,
+  h3,
+  h2,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+/*
+  div.container Layout
+   - top level element sets bg color
+   - .container sets content width and margin
+*/
+   .container {
+     /* Same as using max-width: 1140px and width: 90% */
+      width: min( 1140px, 90%);
+      margin: 0 auto;
+      position: relative;
+  }
+
+/* 
+  Mobile First | Site-wide
+    - Color and Typography
+    - Layout
+ */
+  :root {
+   --bg-color: #1f2937; 
+   --base-font-size: 16px;
+  }
+  html {
+    font-size: calc(var(--base-font-size) * .875); /* 14px */
+    line-height: 1.7em;
+  }
+  body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+  }
+  .screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+  /* Header */
+    .site-header {
+      margin: 20px 0 80px;
+    }
+    .nav-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 0; 
+    }
+    /* Hide sqaure LSW logo until viewport is 841px */
+    @media screen and (min-width: 841px) {
+      .logo-wrap::before {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(50%);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        word-wrap: normal !important;
+      }
+    .logo-wrap {
+      margin-left: -10px;
+    }  
+    .nav-wrap::before { 
+      content: '';
+      display: block;
+      background: url('../../images/odin-project-images/LSW-lifesaver-logo.png') left / contain no-repeat;
+      position: relative;
+      top: 0;
+      height: 50px;
+      width: 50px;
+      z-index: -100;
+      opacity: 0.6;
+      }
+    }
+
+    .logo-wrap a {
+      text-align: right;
+    }
+    .logo-wrap {
+      display: flex;
+      margin-right: 20px;
+    }
+    .middle-nav {
+      margin-left: auto;
+    }
+
+    .site-nav {
+      margin-inline-start: -10px;
+    }
+    .site-nav__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .site-nav__list li a {
+      white-space: nowrap;
+      padding: 10px;
+      text-transform: uppercase;
+      margin-left: 15px;
+    }
+    .site-nav__list li:first-child {
+      margin-left: 0;
+    }
+    .site-nav__list li:last-child a {
+      padding-right: 0;
+    }
+
+    /* Hero section */
+    h1,
+    li a {
+      color: #f9faf8;
+    }
+    .site-title span {
+      white-space: nowrap;
+    }
+    .hero-text-wrap h1,
+    .hero-text-wrap p,
+    .subscribe-btn {
+      color: #e5e7eb;
+    }
+    .hero-wrap.container {
+      margin-bottom: 70px;
+      margin-bottom: 5%;
+    }
+    .hero-wrap {
+      background-color: #1F2937;
+      display: flex;
+      align-items: center;
+    }
+    .hero-text-wrap {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 250px;
+    }
+    .hero-text-wrap p {
+      font-weight: 100;
+      font-size: 1.5rem;
+      line-height: 1.75em;
+    }
+    .high-hopes {
+      color: #7e2915;
+    }
+    strong {
+      text-shadow: #fff 0 0 20px; /* #a7a245 */
+    }
+    /* Header Layout */
+    .hero-img-wrap {
+      flex: 0 1 370px;
+    }
+    .hero-img-wrap figure {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Tablets and smaller */
+    @media screen and (max-width: 840px) { 
+      .middle-nav {
+        width: 100%;
+        margin-top: 20px;
+      }
+      .site-nav__list li {
+        margin-bottom: 1.25em;
+      }
+      .site-nav__list li a {
+        margin-left: 0;
+      }
+      /* Hide text logo. Borrowed from CSS-Tricks */
+      img[alt="site-logo"] {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(50%);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        word-wrap: normal !important;
+      }
+      .nav-wrap::before {
+        content: '';
+        display: block;
+        background: #fff url('../../images/odin-project-images/LSW-logo-100px.png') left / contain no-repeat;
+        position: relative;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        z-index: -100;
+      }
+      .hero-text-wrap {
+        padding-right: 0;
+      }
+    }
+    
+    /* Desktop and smaller */
+    @media screen and (max-width: 900px) {
+      .hero-wrap {
+        flex-direction: column;
+        align-items: unset;
+        align-items: initial;
+        gap: 3rem;
+      }
+      .hero-text-wrap {
+        flex: 1;
+      }
+      .site-header {
+        margin: 2.5vw 0;
+      }
+      .cta-title {
+        line-height: 1.25em;
+      }
+      .hero-text-wrap {
+        padding-right: 0;
+      }
+    }
+
+    /* Responsive typography and spacing */
+    h1 {
+      font-size: clamp(3.4rem, 1rem + 5vw, 5.61rem);
+      line-height: clamp(3.9rem, 2rem + 5vw, 7.3rem);
+      margin: 0 0 2rem;
+      margin: 0 0 2%;
+    }
+    h2 {
+      font-size: clamp(3rem, 1rem + 5vw, 4.209rem);
+      line-height: clamp(3.9rem, 2rem + 5vw, 7.3rem);
+    }
+
+  /* Main content */
+    main,
+    section {
+      background-color: #fff;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 50;
+    }
+    .site-info {
+      padding: 15rem 0;
+      padding: clamp(3rem, 2rem + 10vw, 15rem) 0;
+    }
+    .main-content {
+      overflow: hidden;
+    }
+    .main-content {
+      z-index: 10;
+      background: url('../../images/odin-project-images/gold-confetti.jpg') no-repeat top / cover;
+    }
+    .main-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color:  rgba(0,0,0, 0.3);
+    }
+    .site-info h2 {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    .info-card-wrap {
+      display: flex;
+    }
+    .info-card-wrap__list {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .info-card-wrap__list--item {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 250px;
+      gap: 20px;
+      background-color: #fff;
+      z-index: 10;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .info-card-wrap__list--item img {
+      border-radius: 10px;
+    }
+    .info-card-wrap__list--item p {
+      text-align: center;
+      padding: 0 10px;
+    }
+    @media screen and (min-width: 900px) {
+      .info-card-wrap__list {
+        flex-direction: row;
+      }
+      .hero-text-wrap {
+        padding-right: 20px;
+      }
+    }
+    /*
+      Testamonial Section.
+      Perhaps some bg action here.
+    */
+      .featured-quote {
+        z-index: 1;
+        position: relative;
+        background-color: #e5e7eb;
+        padding: 80px 0;
+        overflow: hidden;
+      }
+      .featured-quote h2 {
+        text-align: center;
+       }
+      .img-credit {
+        padding: 10px 0 50px;
+        text-align: center;
+        z-index: 10;
+      }
+      .featured-quote .container {
+        padding: 0 0 50px 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .quote-img-wrap {
+        flex: 0 1 100px;
+      }
+      .quote-img-wrap img {
+        border-radius: 50%;
+      }
+      .featured-quote blockquote {
+        display: flex;
+        justify-content: center;
+      }
+      /* Responsive typography and spacing */ 
+      blockquote p,
+      p.quote-credits {
+        font-style: italic;
+        max-width: calc(50rem + 8 * ((100vw - 320px) / 820));
+        line-height: clamp(3rem, 2rem + 5vw, 4rem);
+        font-size: clamp(1.33rem, 1rem + 1vw, 2rem);
+      }
+      p.quote-credits {
+        font-style: inherit;
+        text-align: right;
+        font-weight:900;
+        max-width: 85%;
+        margin-top: 20px;
+        font-size: clamp(.5rem, 1rem + 1vw, 1.33rem);
+      }
+
+    /* CTA section */
+      .cta {
+        padding: 140px 0;
+      }
+      .cta .container {
+        display: flex;
+        justify-content: center;
+      }
+      .cta-wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        flex: 0 1 650px;
+        background-color: #3882f6;
+        border-radius: 5px;
+        padding: 20px;
+        align-items: center;
+      }
+      .cta-title {
+        font-weight: 400;
+        margin-bottom: 10px;
+        font-size: clamp(1.75rem, 1rem + 1vw, 2.25em);
+      }
+      .cta-title,
+      .cta-title+p {
+        color: #fff;
+      }
+      .cta-title+p {
+        font-weight: 300;
+        font-size: clamp(.5rem, 1rem + 1vw, 1.33rem);
+      }
+      .cta-text+button {
+        background-color: #3882f6;
+        color: #fff;
+        border: solid .5px #fff;
+        border-radius: 5px;
+        padding: 5px 15px;
+      }
+
+  /* Footer */
+    footer .container {
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+    }
+    .copyright {
+      color: #fff;
+      font-weight: 300;
+    }
