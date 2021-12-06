@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+/*
+	Custom Properties 
+	https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+
 /* Test page? */
 	.em-test {
 		height: 200px;
@@ -12,9 +19,8 @@
 	.percentage-test-title {
 		font-size: 50%;
 	}
-@import url('https://fonts.googleapis.com/css?family=Roboto:400');
 
-/* a11y */
+/* Accessibility */
 	.screen-reader-text {
 		position: absolute !important;
 		clip: rect(1px,1px,1px,1px);
@@ -119,76 +125,74 @@
 		}
 		.main-nav li a {
 			text-decoration: none;
-			padding-bottom: 1rem;
+			padding: .5rem .5rem 1rem .5rem;
 		}
-		li a {
-			padding: .5rem;
-		}
+
 	/* Dropdown nav */
-			li {
-				/*display: block;*/
-				/*transition-duration: 0.5s;*/
-			}
-			.nav-list-toggle li ul {
-				visibility: hidden;
-				position: absolute;
-				opacity: 0;
-				transition: all .5s ease;
-				/*margin-top: 1rem;*/
-				display: none;
-				/*border: solid 2px black;*/
-			}
-			.nav-list-toggle li:hover > ul,
-			.nav-list-toggle li:hover {
-				visibility: visible;
-				opacity: 1;
-				display: block;
-				background-color: white;
-				z-index: 100;
-				/*padding-bottom: 1rem;*/
-			}
-			ul li ul li {
-				padding: 1em 0;
-				clear: both;
-				width: 100%;
-			}
-			.nav-list__dropdown-list li {
-				margin-left: 0;
-			}
-			.nav-list-toggle {
-				clear: both;
-				width: 100%;
-				height: 0px;
-				overflow: hidden;
-				transition: height .2s ease-out;
-				/*border: solid 1px black;*/
-			}
-			.nav-list-toggle li {
-				margin: 0;
-			}
-			span.menu-toggle {
-				width: 33%;
-				text-align: center;
-				display: block;
-				font-size: 1em;
-				text-transform: uppercase;
-				cursor: pointer;
-				position: absolute;
-				right: 0;
-				/*border: solid 1px red;*/
-			}
-			#menu-toggle {
-				position: absolute;
-				height: 0;
-				opacity: 0;
-			}
-			#menu-toggle:checked + .nav-list-toggle {
-				height: 100%;
-			}
-	/* Main article */
-		.home article.welcome-about {
-			/*margin: 1em 0 0 1;*/
+		/* li {
+			display: block;
+			transition-duration: 0.5s;
+		} */
+		.nav-list-toggle li ul {
+			visibility: hidden;
+			position: absolute;
+			opacity: 0;
+			transition: all .5s ease;
+			/*margin-top: 1rem;*/
+			display: none;
+			/*border: solid 2px black;*/
 		}
+		.nav-list-toggle li:hover > ul,
+		.nav-list-toggle li:hover {
+			visibility: visible;
+			opacity: 1;
+			display: block;
+			background-color: white;
+			z-index: 100;
+			/*padding-bottom: 1rem;*/
+		}
+		ul li ul li {
+			padding: 1em 0;
+			clear: both;
+			width: 100%;
+		}
+		.nav-list__dropdown-list li {
+			margin-left: 0;
+		}
+		.nav-list-toggle {
+			clear: both;
+			width: 100%;
+			height: 0px;
+			overflow: hidden;
+			transition: height .2s ease-out;
+			/*border: solid 1px black;*/
+		}
+		.nav-list-toggle li {
+			margin: 0;
+		}
+		span.menu-toggle {
+			width: 33%;
+			text-align: center;
+			display: block;
+			font-size: 1em;
+			text-transform: uppercase;
+			cursor: pointer;
+			position: absolute;
+			right: 0;
+			/*border: solid 1px red;*/
+		}
+		#menu-toggle {
+			position: absolute;
+			height: 0;
+			opacity: 0;
+		}
+		#menu-toggle:checked + .nav-list-toggle {
+			height: 100%;
+		}
+	/* Main article */
+		/* .home article.welcome-about {
+			margin: 1em 0 0 1;
+		} */
 		.post-wrapper {
 			margin: 2em 0;
 		}
@@ -288,7 +292,7 @@
 	/* Site Footer */
 	.colophon {
 		margin-top: 2rem;
-		background-color: rgba(255, 0, 0, .5); /* #42A5F5 blue */
+		background-color: rgba(255, 0, 0, .5); /* #42A5F5 blue or 255, 0, 0, .5)*/
 		padding: 20px 0;
 	}
 	.home-contact-list {
@@ -314,6 +318,9 @@
 		white-space: nowrap;
 		text-align: center;
 		margin-bottom: 0;
+	}
+	.content-info__blog a {
+		color: #e8e8e8;
 	}
 
 /* University Ltr footer? */

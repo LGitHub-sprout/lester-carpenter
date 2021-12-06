@@ -1,40 +1,16 @@
-/* MDN Page Styles
- * 
- * ...-html-links.html
- * whales.html
- * hummus-recipe.html
- * html-the-head.html
- *
- * html-text-adv1.html
- */
+/* MDN Page Styles Index
+* 
+* lester-carpenter MDN site globals
+*
+* mdn-js-conditionals.html
+* University Ltr
+* html-text-adv1.html
+* whales.html
+* hummus-recipe.html
+* html-the-head.html
+*/
 
-/* University Ltr */
-.univ-ltr {
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.sender-column {
-  text-align: right;
-}
-
-h1 {
-  font-size: 1.5em;
-}
-
-h2 {
-  font-size: 1.3em;
-}
-
-p,ul,ol,dl,address {
-  font-size: 1.1em;
-}
-
-p, li, dd, dt, address {
-  line-height: 1.5;
-}
-
-/* lester-carpenter site globals */
+/* lester-carpenter MDN site globals */
 .logo-wrap {
 	max-width: 1024px;
 }
@@ -48,6 +24,44 @@ p, li, dd, dt, address {
 .test-text {
 	color: gray;
 }
+
+/* mdn-js-conditionals.html a.k.a. Weather App */
+.weather-app-wrapper {
+	background-color: #dcdcdc;
+	padding: 15px;
+	border-radius: 5px;
+	max-width: 582px;
+	margin: 0 auto;
+}
+.weather-app-title {
+	font-size: 1.728rem;
+}
+.weather-app code {
+	background-color:#eee;
+	color: #800;
+}
+
+/* University Ltr */
+.univ-ltr {
+	max-width: 800px;
+  margin: 20px auto;
+}
+.sender-column {
+  text-align: right;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
+p,ul,ol,dl,address {
+  font-size: 1.1em;
+}
+p, li, dd, dt, address {
+  line-height: 1.5;
+}
+
 
 /* html-text-adv */
 .adv-html h2 {
@@ -102,7 +116,6 @@ p, li, dd, dt, address {
 /* Hummus Recipe */
 .ingredients-list li {
 	list-style: none;
-	/*line-height: 2rem;*/
 }
 .ingredients-list li,
 .instructions-list li {
