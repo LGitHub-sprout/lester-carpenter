@@ -1,20 +1,10 @@
-const info = document.createElement('p');
-const html = document.querySelector('html');
+/*
+  Add full date to footer copyright.
 
-info.textContent = 'Below is a dynamic list. Click anywhere on the page to add a new list item. Click an existing list item to change its text to something else.';
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
+*/
+const dateContainer = document.querySelector('.date');
+const date = new Date();
+const currentYear = date.getFullYear();
+dateContainer.textContent = `${currentYear}`;
 
-document.body.appendChild(info);
-document.body.appendChild(list);
-
-html.onclick = function() {
-  const listItem = document.createElement('li');
-  const listContent = prompt('What content do you want the list item to have?');
-  listItem.textContent = listContent;
-  list.appendChild(listItem);
-
-  listItem.onclick = function(e) {
-    e.stopPropagation();
-    const listContent = prompt('Enter new content for your list item');
-    this.textContent = listContent;
-  }
-}
