@@ -7,23 +7,9 @@
 * html-text-adv1.html
 * whales.html
 * hummus-recipe.html
-* html-the-head.html
+* html-text-basics2
+* html-text-basics1
 */
-
-/* lester-carpenter MDN site globals */
-.logo-wrap {
-	max-width: 1024px;
-}
-.logo-wrap img {
-	width: 100%;
-}
-.test-title {
-	font-size: 2.5em;
-	margin-top: .25em;
-}
-.test-text {
-	color: gray;
-}
 
 /* mdn-js-conditionals.html a.k.a. Weather App */
 .weather-app-wrapper {
@@ -55,15 +41,14 @@ h1 {
 h2 {
   font-size: 1.3em;
 }
-p,ul,ol,dl,address {
+/* p,ul,ol,dl,address {
   font-size: 1.1em;
-}
+} */
 p, li, dd, dt, address {
   line-height: 1.5;
 }
 
-
-/* html-text-adv */
+/* html-text-adv1 */
 .adv-html h2 {
 	font-size: 2rem;
 	margin: 0;
@@ -81,7 +66,7 @@ p, li, dd, dt, address {
 	color: green;
 }
 
-/* Whales page */
+/* Whales page / */
 .mdn-page-wrap {
 	display: flex;
 	flex-direction: column;
@@ -140,7 +125,10 @@ p, li, dd, dt, address {
 	color: inherit;
 }
 
-
+/* HTML Text Basics 1 */
+.index-list {
+	border: solid 1px red;
+}
 
 
 

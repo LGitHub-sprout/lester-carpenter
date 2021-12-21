@@ -126,6 +126,9 @@
 		.main-nav li:last-child {
 			margin-right: 0;
 		}
+		.nav-list__item--nested-list {
+			background-color: linen;
+		}
 		.nav-list__item--nested-list li:last-child {
 			padding-top: 0;
 		}
@@ -147,7 +150,7 @@
 			visibility: visible;
 			opacity: 1;
 			display: block;
-			background-color: white;
+			/* background-color: white; */
 			z-index: 100;
 		}
 		ul li ul li {
