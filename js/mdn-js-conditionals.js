@@ -6,9 +6,8 @@ const selectWeather = document.querySelector('#selectWeather');
 // output paragraph
 const weatherOutput = document.querySelector('#weatherOutput');
 
-// bind select element to event: onchange
-// can also use: 
-// selectWeather.onchange = setWeather;
+// bind select element to event method: change
+// can also use property: selectWeather.onchange = setWeather;
 selectWeather.addEventListener('change', setWeather);
 
 function setWeather() {
@@ -63,7 +62,6 @@ function updateApp(bgColor, cssText, borderBottom) {
   // weatherOutput.style.fontSize = fontSize;
   weatherOutput.style.cssText = cssText;
   appWrapper.style.borderBottom = borderBottom;
-
 }
 /*
   Remember that the change happens when an event fires, i.e., bind the event to a function.
@@ -74,16 +72,13 @@ selectWeather.onchange = function() {
   switch (choice2) {
     case 'sunny': updateApp('yellow', 'color:blue; font-size: 48px', 'solid 5px black');
       break;
-  }
-  switch (choice2) {
+
     case 'rainy': updateApp('grey', 'color:darkgrey', 'solid 5px black');
       break;
-  }
-  switch (choice2) {
+
     case 'snowy': updateApp('lightgrey', 'color:grey', 'solid 5px black');
       break;
-  }
-  switch (choice2) {
+
     case 'overcast': updateApp('darkgrey', 'color:blue', 'solid 5px black');
       break;
   }
@@ -99,7 +94,7 @@ selectWeather.onchange = function() {
 */
 function resetOption(selectWeather, optionToUse) {
   let selectElement = document.querySelector('#selectWeather');
-  let selectOptions = selectElement.options;
+  let selectOptions = selectElement.options; // options is an object?
 
   // Using bracket notation, set 'opt' to the select element's option index (thus giving access to the object's properties) (.selectedIndex below) as it loops thru each option.
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors
@@ -215,11 +210,10 @@ if ((machineActive) && (score < 0 || score > 100)) {
   let response;
 
 // Ensure 'score' is a number and 'machineActive' is boolean.
-// Check if needed.
 const score = Number(666);
 const machineActive = Boolean(true);
 
-// reading as if pseudo-code: if CASE is TRUE, return response; else break.
+// pseudo-code: if CASE is TRUE, return response; else break.
 // What am checking? A: whether a condition is TRUE or FALSE.
 switch (true) {
   case score === 666 && machineActive === false:
