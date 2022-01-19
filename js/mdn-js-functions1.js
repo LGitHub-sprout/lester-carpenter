@@ -14,10 +14,10 @@
   'Lester'
   ];
   function chooseName() {
-    docBody = document.querySelector('body');
+    h2 = document.querySelector('h2');
     const para = document.createElement('p');
     para.setAttribute('class', 'func1Assmt');
-    docBody.appendChild(para);
+    h2.insertAdjacentElement('afterend', para);
     // save length of array in var dynamically in case it changes
     const namesLength = names.length;
     console.log(`Number of items in the names array is ${namesLength}`);
@@ -36,8 +36,32 @@
     // return para.textContent = Math.random() * (namesLength - 0);
     // return para.textContent = parseInt(randomNum);
     return para.textContent = names[randomNum];
-  }
+}
 chooseName();
+
+// https://javascript.info/function-expressions 
+// function ask(question, yes, no) {
+//   if (confirm(question)) yes(); // must be passed as a function, I guess. got an error.
+//     else no(); // must be passed as a function, I guess. got an error.
+//   }
+// ask(
+//   'Do you agree?',
+//   function() { alert('You agreed') },
+//   function() { alert('You canceled exectution') }
+// );
+// let age = prompt("What is your age?", 18);
+// let welcome;
+// if (age < 18) {
+//   welcome = function () {
+//     alert("Hello!");
+//   };
+// } else {
+//   welcome = function () {
+//     alert("Greetings!");
+//   };
+// }
+// welcome(); // ok now
+
   
 // // Function return MDN exercise
 // const squaredNum = num => console.log(`${num} squared is ${num * num}`);

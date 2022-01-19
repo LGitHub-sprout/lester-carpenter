@@ -2,6 +2,7 @@
 * 
 * lester-carpenter MDN site globals
 *
+* mdn-js-functions1.html
 * mdn-js-conditionals.html
 * University Ltr
 * html-text-adv1.html
@@ -10,6 +11,16 @@
 * html-text-basics2
 * html-text-basics1
 */
+
+/* mdn-js-functions1.html */
+#js-functions-1 h2 + p {
+	padding: 20px;
+	border: 1px solid black;
+	text-align: center;
+	color: purple;
+	font-weight:600;
+	background-color:lightgrey;
+}
 
 /* mdn-js-conditionals.html a.k.a. Weather App */
 .weather-app-wrapper {
