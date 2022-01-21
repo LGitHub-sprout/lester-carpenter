@@ -20,11 +20,9 @@
     h2.insertAdjacentElement('afterend', para);
     // save length of array in var dynamically in case it changes
     const namesLength = names.length;
-    console.log(`Number of items in the names array is ${namesLength}`);
 
     // I don't want user to have to pass values; therefore, I'll want function to choose btwn a range of two values automatically, the max being the number of items in the actual array.
     // print an item the array
-    console.log(names[3]); // logs 'Krista' if working
     // return para.textContent = names[3]; // prints 'Krista'
     // console.log(Math.random() * (namesLength - 0) + 0);
 
@@ -41,31 +39,64 @@ chooseName();
 
 // https://javascript.info/function-expressions 
 // function ask(question, yes, no) {
-//   if (confirm(question)) yes(); // must be passed as a function, I guess. got an error.
-//     else no(); // must be passed as a function, I guess. got an error.
+//   if ( confirm(question) ) yes() //, console.log('yes, poop')
+//   else no() //, console.log('no, poop') 
+// }
+// function ask(question, yes, no) {
+//   if (confirm(question)) {
+//     yes();
+//   } else {
+//     no();
+//     alert('Huh?'); // always runs unless separated w curly braces
 //   }
+// }
+// shorter (better practice? no missing semi-colons, curly braces, etc.)
+// function ask(question, yes, no) {
+//   confirm(question) ? yes() : no();
+// }
 // ask(
 //   'Do you agree?',
 //   function() { alert('You agreed') },
 //   function() { alert('You canceled exectution') }
 // );
+
 // let age = prompt("What is your age?", 18);
-// let welcome;
+// let welcome; // init the variable outside conditional stmt to change scope
+// // Conditionally declare a function
 // if (age < 18) {
 //   welcome = function () {
-//     alert("Hello!");
-//   };
+//     alert("Hi, sweetie you\'re not over 18.");
+//   }
 // } else {
 //   welcome = function () {
-//     alert("Greetings!");
-//   };
+//     alert("Greetings, old timer :)!");
+//   }
 // }
-// welcome(); // ok now
+// welcome(); // Don't forget to invoke the function!
 
+// Conditionally declare function using ternary operator ? (on two lines)
+// let welcome = (age < 18) ?
+//   function () { console.log('You\'re not over 18, sorry.') } :
+//   function () { console.log('Hello, old timer :)') };
+//   // Don't forget to run the function
+//   welcome();
+
+// Use curly braces, otherwise expect unexpected results.
+// https://medium.com/@jonathanabrams/single-line-if-statements-2565c62ff492
+// let poop;
+// let whatever = prompt('Enter a number', 18);
+// if (whatever >= 18) {
+//   console.log('this is the ORIGINAL UNSPOKEN truth');
+//   console.log('this is true');
+//   console.log('this is true #2');
+//   console.log('this is true #3');
+//   console.log('this is true #4');
+//   console.log('this is the next to last truth');
+//   console.log('this is the LAST truth');
+// }
   
 // // Function return MDN exercise
 // const squaredNum = num => console.log(`${num} squared is ${num * num}`);
-
 // // console.log(`The square root of 36 is ${Math.sqrt(36)}`);
 
 // // From Function Returns - Active Learning
