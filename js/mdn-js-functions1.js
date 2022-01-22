@@ -5,11 +5,11 @@
   const names = [
   'Sexy Mike',
   'Li\'l Kang',
-  'Rosie',
+  'Rosie Doggers',
   'Krista',
   'Liz',
-  'Barney',
-  'Gesh',
+  'Barney Doggers',
+  'Gesh Doggers',
   'Shivaun',
   'Lester'
   ];
@@ -28,7 +28,7 @@
 
     // Functions 3 uses random() function in chooseName() 
     const randomNum = parseInt(Math.random() * (namesLength - 0));
-    console.log(randomNum);
+    // console.log(randomNum);
     // console.log('randomNum is whole number now ', parseInt(randomNum));
     // console.log('randomNum is type: ', typeof randomNum);
     // return para.textContent = Math.random() * (namesLength - 0);
@@ -225,20 +225,23 @@ chooseName();
 //   }
 // }
 
-// function showPrimes(n) { 
-//   for (let i = 2; i < n; i++) {
+// const primePara = document.createElement('p');
+// primePara.setAttribute('class', 'primes');
+// const div = document.getElementsByClassName('article-body-wrap');
+// function showPrimes(poop) { 
+//   for (let i = 2; i < poop; i++) {
 //     if (!isPrime(i)) continue;
-
-//     console.log(i); 
+//     console.log(i);
 //   }
 // }
-
+// showPrimes(10);
 // function isPrime(n) {  
 //   for (let i = 2; i < n; i++) { 
 //     if (n % i == 0) return false; // 10 / 2 = 5
 //   }
 //   return true;
 // }
+
 // function checkAge(age) { return (age > 18) ? true : confirm('Did parents allow it?') };
 // function checkAge(age) { return (age > 18) || confirm('Did parents allow it?'); }
 // function min(a, b) { return (a < b) ? a : b; }
