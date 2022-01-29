@@ -1,8 +1,11 @@
-/* MDN Page Styles Index
+/* 
+* MDN Page Styles Index
 * 
 * lester-carpenter MDN site globals
 *
 * mdn-html.html (Assessments index page)
+*
+* mdn-errors.html
 * mdn-js-functions1.html
 * mdn-js-conditionals.html
 * University Ltr
@@ -15,6 +18,20 @@
 
 /* mdn-html.html (Assessments index page) */
 
+/* mdn-errors.html */
+/* html {
+	font-family: sans-serif;
+}
+body {
+	width: 50%;
+	max-width: 800px;
+	min-width: 480px;
+	margin: 0 auto;
+} */
+.lastResult {
+	color: white;
+	padding: 3px;
+}
 
 /* mdn-js-functions1.html */
 #js-functions-1 h2 + p {

@@ -1,24 +1,116 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="ISO-8859-1">
     <!-- <meta charset="UTF-8"> -->
-    <title>Meta examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+    <meta name="author" content="Lester Carpenter">
+    <meta name="description"
+    content="Lester Carpenter's HTML and CSS skills assessments from The Odin Project and MDN Web Docs.">
+    <meta name="rating" content="General">
     
-    <meta name="author" content="Chris Mills">
-    <meta name="description" content="This is an example page to demonstrate usage of metadata on web pages.">
-
-    <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
-    <meta property="og:description" content="This is an example page to demonstrate usage of metadata on web pages.">
-    <meta property="og:title" content="Metadata; The HTML &lt;head&gt;, on MDN">
-
-    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/mdn-styles/mdn.css">
+    <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
+    
+    <link rel="manifest" href="../manifest.webmanifest">
+    <link rel="Shortcut Icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+  
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://lester-carpenter.lsystemworks.com/images/lester-960px.jpg">
+    <meta property="og:title" content="Lester's HTML and CSS skills assessments site.">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+      content="A GREAT place to assess Lester Carpenter's MDN Web Docs, LinkedIn Learning, and Odin Project skills.">
+    <meta property="og:url" content="https://lester-carpenter.lsystemworks.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@self_teach_dev">
+    <meta name="pinterest" content="nopin">
+  
+    <title>Lester Carpenter's MDN Web Development Skills Assessments – Meta examples</title>
+    <script type="application/ld+json">
+        {
+          "@context"	: "https://schema.org",
+          "@type" 		: "Organization",
+          "url"				: "https://lester-carpenter.lsystemworks.com",
+          "logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
+        }
+      </script>
     <script src="../js/global.js" defer></script>
   </head>
-  <body>
-    <h1>Meta examples</h1>
+<body class="home">
+  <div class="page-wrap">
+    <header id="site-header" class="site-header container">
+      <a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
+      <div class="logo-wrap"><a href="../"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img
+            src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a>
+      </div><!-- .logo-wrap -->
 
-    <!-- <p>Japanese example: ご飯が熱い。</p> -->
-    <p>Japanese example: <span lang="ja">ご飯が熱い。</span></p>
+      <nav class="main-nav">
+        <label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-list-toggle">
+          <li class="nav-list__item"><a href="#">mdn</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="mdn-html.html">html</a></li>
+              <li class="nav-list__item"><a href="mdn-js.html">JavaScript</a></li>
+            </ul>
+          <li class="nav-list__item"><a href="#">Odin Project</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="../odin-project/flexbox-landing-page.html">Flexbox Landing Page</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list__item"><a href="../about-lester.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" class="container">
+      <article id="mdn-errors" class="number-guessing-game">
+      <h1>Meta examples</h1>
+
+      <!-- <p>Japanese example: ご飯が熱い。</p> -->
+      <p>Japanese example: <span lang="ja">ご飯が熱い。</span></p>
+      </article>
+    </main>
+
+    <footer id="site-footer" class="colophon content-info">
+      <div class="inside-footer container">
+        <!-- <div class="contact-wrap"> -->
+        <address>
+          <ul class="home-contact-list">
+            <li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png"
+                  alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
+            <li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank"
+                rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a>
+            </li>
+            <li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank"
+                rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
+          </ul>
+        </address>
+        <!-- </div> -->
+        <!-- .contact-wrap -->
+        <p class="content-info__blog"><a href="https://lsystemworks.com" target="_blank"> Lester&apos;s System Works</a>
+        </p>
+        <p class="copyright"><small><span>copyright</span> &copy; <span class="date"></span></small></p>
+      </div><!-- #site-footer .colophon .content-info -->
+    </footer>
+    </div><!-- .page-wrap -->
   </body>
 </html>

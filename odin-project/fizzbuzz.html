@@ -1,195 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FizzBuzz</title>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+  <meta name="author" content="Lester Carpenter">
+  <meta name="description"
+    content="Lester Carpenter's HTML and CSS skills assessments from The Odin Project and MDN Web Docs.">
+  <meta name="rating" content="General">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/mdn-styles/mdn.css">
+  <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
+
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="icon" href="../android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://lester-carpenter.lsystemworks.com/images/lester-960px.jpg">
+  <meta property="og:title" content="Lester's HTML and CSS skills assessments site.">
+  <meta property="og:type" content="website">
+  <meta property="og:description"
+    content="A GREAT place to assess Lester Carpenter's MDN Web Docs, LinkedIn Learning, and Odin Project skills.">
+  <meta property="og:url" content="https://lester-carpenter.lsystemworks.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@self_teach_dev">
+  <meta name="pinterest" content="nopin">
+
+  <title>Lester Carpenter's Odin Project Skills Assessments – FizzBuzz App</title>
+  <script type="application/ld+json">
+			{
+				"@context"	: "https://schema.org",
+				"@type" 		: "Organization",
+				"url"				: "https://lester-carpenter.lsystemworks.com",
+				"logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
+			}
+		</script>
+  <script src="../js/global.js" defer></script>
+  <script src="../js/odin-fizzbuzz.js" defer></script>
 </head>
-<body>
-  <h1>FizzBuzz</h1>
-  <p>Write a program that takes a user’s input and prints the numbers from one to the number the user entered. However, for
-  multiples of three print <strong>Fizz</strong> instead of the number and for multiples of five print <strong>Buzz</strong>. For numbers which are multiples of both three and five print <strong>FizzBuzz</strong>.</p>
 
+<body id="fizzbuzzPage" class="home fizzbuzz">
+  <div class="page-wrap">
+    <header id="site-header" class="site-header container">
+      <a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
+      <div class="logo-wrap"><a href="../"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img
+            src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a>
+      </div><!-- .logo-wrap -->
 
-  <p id="fizzbuzz">some shit here.</p>
-  <form name="selectForm">
-    <p>
-      <label for="musicTypes">Choose some music types, then click the button below:</label>
-      <select id="musicTypes" name="musicTypes" multiple="multiple">
-        <option selected="selected">R&B</option>
-        <option>Jazz</option>
-        <option>Blues</option>
-        <option>New Age</option>
-        <option>Classical</option>
-        <option>Opera</option>
-      </select>
-    </p>
-    <p><input id="btn" type="button" value="How many are selected?" /></p>
-  </form>
-    <p>This example calls a function which interrupts the loop using return statement</p>
-    <p id="demo"></p>
+      <nav class="main-nav">
+        <label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+        <input type="checkbox" id="menu-toggle">
 
+        <ul class="nav-list-toggle">
+          <li class="nav-list__item"><a href="#">mdn</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="mdn-html.html">html</a></li>
+              <li class="nav-list__item"><a href="mdn-js.html">JavaScript</a></li>
+            </ul>
+          <li class="nav-list__item"><a href="#">Odin Project</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="../odin-project/flexbox-landing-page.html">Flexbox Landing Page</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list__item"><a href="../about-lester.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <script>
-    function howMany(selectObject) {
-      let numberSelected = 0;
-      for (let i = 0; i < selectObject.options.length; i++) {
-        if (selectObject.options[i].selected) {
-          numberSelected++;
-        }
-      }
-      return numberSelected;
-    }
+    <main id="main-content" class="container">
+      <article id="fizzbuzzApp" class="welcome-about">
+        <h1 class="main-title">The Odin Project Skills Assessment</h1>
 
-    let btn = document.getElementById('btn');
-    btn.addEventListener('click', function () {
-      alert('Number of options selected: ' + howMany(document.selectForm.musicTypes));
-    });
-  </script>
+        <div class="post-wrapper">
+          <div class="article-body-wrap">
+            <h2 id="fizzBuzz">FizzBuzz App</h2>
+            <p>Write a program that takes a user&apos;s input and prints the numbers from one to the number the user entered. However, for multiples of three print <strong>Fizz</strong> instead of the number and for multiples of five print <strong>Buzz</strong>. For numbers which are multiples of both three and five print <strong>FizzBuzz</strong>.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam, ducimus perferendis accusamus, corrupti aut exercitationem suscipit, error autem quidem numquam! Nemo tempore velit
+              voluptates, accusamus reiciendis ex eveniet hic.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus laborum, odio necessitatibus maiores corporis nostrum quam ea molestiae, culpa voluptates ipsam? Nostrum architecto laudantium nobis voluptas impedit deserunt ipsa enim?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam, ducimus perferendis accusamus, corrupti aut exercitationem suscipit, error autem quidem numquam! Nemo tempore velit voluptates, accusamus reiciendis ex eveniet hic.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus laborum, odio necessitatibus maiores corporis nostrum quam ea molestiae, culpa voluptates ipsam? Nostrum architecto laudantium nobis voluptas impedit deserunt ipsa enim?</p>
+          </div><!-- .article-body-wrap -->
+        </div><!-- .post-wrapper -->
+      </article>
+    </main>
 
-
+    <footer id="site-footer" class="colophon content-info">
+      <div class="inside-footer container">
+        <!-- <div class="contact-wrap"> -->
+        <address>
+          <ul class="home-contact-list">
+            <li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png"
+                  alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
+            <li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank"
+                rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a>
+            </li>
+            <li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank"
+                rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
+          </ul>
+        </address>
+        <!-- </div> -->
+        <!-- .contact-wrap -->
+        <p class="content-info__blog"><a href="https://lsystemworks.com" target="_blank"> Lester&apos;s System Works</a>
+        </p>
+        <p class="copyright"><small><span>copyright</span> &copy; <span class="date"></span></small></p>
+      </div><!-- #site-footer .colophon .content-info -->
+    </footer>
+  </div><!-- .page-wrap -->
   <script defer>
-    // create integer var ‘userNum’ and set to User prompt: enter number 
+    const randoNum = Math.random();
+    function computerPlay() {
+      if (randoNum < .3) { 
+        console.log('Log POOP when rando number is less than .3', randoNum );
+       } else if (randoNum > .300000000000001 && randoNum <= .6) {
+        console.log('Log PEE when rando number is > .3 and < .6', randoNum );
+       } else { // make the else 'Rock'?
+      console.log(randoNum);
+      }
+    }
+    computerPlay();
 
-    // const shit = "Just some stoopid text.";
-    // fbOutput.textContent = shit;
-    // console.log(shit.replace('stoopid', 'regular'));
-    
-    // how do i print 
-    // create for loop
-    // initialize counter var i, condition i <= userNum; increment i
-    
-    // bug: modulo isn't calculating all the scenarios
-    // if i is divisible by 3 with no remainder 
-    // print Fizz instead of all multiples of 3
-  // bug: Fizz and Buzz aren't replacing numbers 
-  // https://www.guru99.com/how-to-use-loops-in-javascript.html
-  // let userNum = prompt('Kindly enter a number btwn 1-100');
-  // function test(userNum) {
-  //   let fbOutput = document.getElementById('fizzbuzz');
-  //   for (let i = 1; i <= userNum; i++) {
-  //     if (i === 3) {
-  //       fbOutput.textContent = `I don't give ${i} poops`;
-  //     }
-  //     console.log(i);
-  //   }
-  // }
-  // test(10);
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    console.log('Random Artibrary rounded up: ', Math.ceil(getRandomArbitrary(0, 100))); // 10mil
 
-  
+    // const array = new Uint32Array(10);
+    //   self.crypto.getRandomValues(array);
 
-  // if userNum divisible by 5 with no remainder 
-// print Buzz instead of userNum
-// if userNum is a multiple of both 3 and 5 
-// print FizzBuzz
-
-</script>
-
-<input id="boxInput" type="text" value="Click Here" name="input-name">
-<script defer>
-  // https://www.freecodecamp.org/news/javascript-keycode-list-keypress-event-key-codes/
-  // Q: Does the function take a param? Yes, the 'event' on the keydown event.
-  // The 'event' gets passed to the console.log string as a variable (interpolated).
-  // To utilize the input element, save input element as var by getting element's ID.
-  boxInput = document.getElementById('boxInput');
-
-  // Define a function that logs the keyboard key a user presses after clicking on a specified input element.
-  // function logKey(event) {
-  //   console.log(`You pressed: ${event.key}`);
-  // }
-  // Bind 'keydown' event and 'logKey' function to input element via var (set above)
-  // boxInput.addEventListener('keydown', logKey);
-  
-  // Instead of defining a separate function (like above) pass an anonymous function that logs the keyboard key a user presses after clicking in input element into the event listener method.
-  // boxInput.addEventListener('keydown', function(event) {
-  //   console.log(`${event.key}`); // .key returns the letter, .code returns a corresponding code representing the key pressed
-  // });
-
-// Arrow Functions
-  // Instead of defining a separate logKey() function, pass an anonymous function into addEventListener using the => arrow function operator (not sure that's what it's called)
-  // If the function only has one line in the curly brackets, you can omit the curly brackets.
-  // If the function only takes one param, you can omit the parens around the param.
-  // boxInput.addEventListener('keydown', event => console.log(`${event.key}`));
-  // const keyOutput = document.getElementById('fizzbuzz');
-  // boxInput.addEventListener('keydown', event => keyOutput.textContent = `You Pressed the  ${event.key} key.`);
-  
-// Function Scope
-  // const z = 'Bitches be like... !';
-  //   function a() {
-  //     const x = 'Poop!';
-  //     output(z);
-  //     fizzbuzz.textContent = z;
-  //   }
-  //   a();
-  //   function b() {
-  //     const y = 'Pee!';
-  //     output(z);
-  //     fizzbuzz.textContent = z;
-  //   }
-  //   // b();
-  //   function output() {
-  //     fizzbuzz.textContent = z;
-  //   }
-  // output();
-
-// Wes: Anonymous Functions, IIFE, Hoisting, Arrow Functions, Function Expression
-  // function doctorize(firstName = 'caRPeNTer') {
-  //   firstLetter = firstName[0].slice(0).toUpperCase();
-  //   return `Hello, I'm Dr. ${firstLetter}${firstName.slice(1).toLowerCase()}`;
-  // }
-  // doctorize();
-
-  // IIFE: Immediately Invoked Function Expression
-  // Anon functions are not HOISTED (moving defined functions to top of file). Can't run anonymous function BEFORE initialization.
-  // doctorize('fraNKenSTEin');
-  // Set unnamed function as variable, then run variable as 
-
-  // Function Expression - Functions as First Class Citizens
-  const doctorize = function(firstName = "laMPe") {
-    firstLetter = firstName[0].slice(0).toUpperCase();
-    return `Hello, I'm Dr. ${firstLetter}${firstName.slice(1).toLowerCase()}`;
-  }
-
-// Wes: Arrow Functions - convert to arrow function
-  // function inchesToCM(inches) {
-  //   const cm = inches * 2.54;
-  //   return cm;
-  // }
-  // Reduce function size by eliminating variable assignment
-  // function inchesToCM(inches) {
-  //   return inches * 2.54;
-  // }
-  // Convert to arrow function with one param and implicit return
-  // const inchesToCM = inches => inches * 2.54;
-
-  // Repeat but with two params 
-  // function addAB(a, b = 666) {
-  //   const sum = a + b;
-  //   return sum;
-  // }
-  // Convert to anon function first
-  // const addAB = function(a, b = 666) {
-  //   const sum = a + b;
-  //   return sum;
-  // }
-  // Then convert to arrow function (consolidate return stmt keyword)
-  // const addAB = (a, b = 666) => {
-  //   return sum = a + b;
-  // }
-  // Reduce further by removing function block and return keyword 
-  // const addAB = (a, b = 666) => a + b;
-
-  // Returning an object (Make A Baby Lol)
-
-  // IIFE Immediately Invoked Function Expression (parens always run first)
-
-  // Methods (like console.log())
-
-  // Callback functions:  'onclick' callback (like addEventListener)
-    // callback function: a function that gets passed into another function and then is called by the browser at another time like setTimeout()?.
-  
-
-</script>
+    //   console.log("Your lucky numbers:");
+    //   for (var i = 0; i < array.length; i++) {
+    //     console.log(array[i]);
+    //   }
+  </script>
 </body>
 </html>
