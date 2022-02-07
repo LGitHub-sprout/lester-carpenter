@@ -238,15 +238,15 @@ function showPrimes(prime) {
     // article.append('Some text');
     console.log(i);
     }
+}
+showPrimes(12);
+function isPrime(n) { // pass param 'n'  
+  for (let i = 2; i < n; i++) { 
+    if (n % i == 0) return false; // 10 / 2 = 5
   }
-  showPrimes(12);
-  function isPrime(n) { // pass param 'n'  
-    for (let i = 2; i < n; i++) { 
-      if (n % i == 0) return false; // 10 / 2 = 5
-    }
-    return true;
-    // return div.append('Some text', primePara);;
-  }
+  return true;
+  // return div.append('Some text', primePara);;
+}
 
 // function checkAge(age) { return (age > 18) ? true : confirm('Did parents allow it?') };
 // function checkAge(age) { return (age > 18) || confirm('Did parents allow it?'); }
@@ -413,5 +413,40 @@ function showPrimes(prime) {
 // btn.addEventListener('click', function () {
 //   alert('Number of options selected: ' + howMany(document.selectForm.musicTypes));
 // });
+// function getRandomArbitrary(min, max) {
+//   console.log('max: ', max);
+//   console.log('min: ', min);
+//   return Math.random() * (max - min) + min;
+// }
+// // console.log('Random Artibrary rounded up: ', Math.ceil(getRandomArbitrary(0, 100))); // 10mil
+// const min = Math.random();
+// // console.log(min);
+
+// const array = new Uint32Array(10);
+//   self.crypto.getRandomValues(array);
+
+//   console.log("Your lucky numbers:");
+//   for (var i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+//   }
+    // < div >
+    // <input id="boxInput" type="text" value="Click Here" name="input-name">
+    //   <form name="selectForm">
+    //     <p>
+    //       <label for="musicTypes">Choose some music types, then click the button below:</label>
+    //       <select id="musicTypes" name="musicTypes" multiple="multiple">
+    //         <option selected="selected">R&B</option>
+    //         <option>Jazz</option>
+    //         <option>Blues</option>
+    //         <option>New Age</option>
+    //         <option>Classical</option>
+    //         <option>Opera</option>
+    //       </select>
+    //     </p>
+    //     <p><input id="btn" type="button" value="How many are selected?" /></p>
+    //     <p>This example calls a function which interrupts the loop using return statement</p>
+    //   </form>
+    // </div>
+
 
 

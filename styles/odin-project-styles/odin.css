@@ -1,0 +1,31 @@
+/* 
+* Odin Project Page Styles Index
+* 
+* rps.html (Rock Paper Scissors)
+*/
+
+/* rps.html (Rock Paper Scissors) */
+
+/* Reset */
+ul {
+  list-style: none;
+}
+  .rps span {
+    color: #a41b5f;
+  }
+
+  /* Mobile */
+  h2 {
+    text-align: center;
+  }
+  .article-body-wrap {
+    display: block;
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 600px) {
+    h2 {
+      text-align: left;
+      /* color: yellow; */
+    }
+  }
