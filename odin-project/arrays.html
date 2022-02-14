@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+  <meta name="author" content="Lester Carpenter">
+  <meta name="description"
+    content="Lester Carpenter's HTML and CSS skills assessments from The Odin Project and MDN Web Docs.">
+  <meta name="rating" content="General">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/odin-project-styles/odin.css">
+  <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
+
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="icon" href="../android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://lester-carpenter.lsystemworks.com/images/lester-960px.jpg">
+  <meta property="og:title" content="Lester's HTML and CSS skills assessments site.">
+  <meta property="og:type" content="website">
+  <meta property="og:description"
+    content="A GREAT place to assess Lester Carpenter's MDN Web Docs, LinkedIn Learning, and Odin Project skills.">
+  <meta property="og:url" content="https://lester-carpenter.lsystemworks.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@self_teach_dev">
+  <meta name="pinterest" content="nopin">
+
+  <title>Lester Carpenter's Odin Project JS Curriculum | Arrays</title>
+  <script type="application/ld+json">
+			{
+				"@context"	: "https://schema.org",
+				"@type" 		: "Organization",
+				"url"				: "https://lester-carpenter.lsystemworks.com",
+				"logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
+			}
+		</script>
+  <script src="../js/global.js" defer></script>
+  <script src="../js/arrays.js" defer></script>
+</head>
+
+<body class="home">
+  <div class="page-wrap">
+    <header id="site-header" class="site-header container">
+      <a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
+      <div class="logo-wrap"><a href="../"><span class="screen-reader-text">Site logo, Lester's HTML.</span><img
+            src="../images/etudes-logo-60px.png" alt="Lester's MDN assessments page logo, Lester's HTML."></a>
+      </div><!-- .logo-wrap -->
+
+      <nav class="main-nav">
+        <label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-list-toggle">
+          <li class="nav-list__item"><a href="#">mdn</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="../mdn/mdn-html.html">html</a></li>
+              <li class="nav-list__item"><a href="../mdn/mdn-js.html">JavaScript</a></li>
+            </ul>
+          <li class="nav-list__item"><a href="#">Odin Project</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="odin-project/flexbox-landing-page.html">Flexbox Landing Page</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list__item"><a href="../about-lester.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" class="container">
+      <article id="arrays" class="odin-arrays">
+        <h1 class="main-title">Odin Project JS Tutorials</h1>
+        <p>A blurb about what this is goes here.</p>
+
+        <div class="post-wrapper">
+          <div class="article-body-wrap arrays">
+            <h2>Looping through arrays</h2>
+            <h3>Restate the Problem</h3>
+            <p>Using <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/">Problem Solving</a> techniques, write a brief, step-by-step algorithm outlining how to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loop</a> through a simple array,
+            potentially with several different data types and output the contents of the array to the browser with DOM manipulation.</p>
+            <p>Then code the algorithm based on the above outline, amending steps missed and deleting unnecessary steps which are highlighted yellow (or underlined) in order to point out deficiencies in logic.</p>
+            
+            <h3>The Plan</h3>
+            <p>Understand the Problem: Algorithmic Thinking</p>
+            <ol>
+              <li>Save a variable reference to an existing DOM element (h2).</li>
+              <li>Save a variable reference for an unordered list (ul) to append to the DOM immediately following the h2 variable reference.</li>
+              <li>Do I create the element first? IDK.</li>
+              <li style ="color:red;">I didn&apos; articulate the above question well because I know how to create an element. The question I should have asked is, where. Creating a repeating element goes <em>in the loop</em>, but didn't remember since I don&apos;t do it regularly.</li>
+              <li>Save a variable reference to an array with at least 3 different data types
+                <ul>
+                  <li>strings</li>
+                  <li>numbers</li>
+                  <li style ="color:red;">objects (unexpected results).</li>
+                </ul>
+              </li>
+              <li>Save a variable reference to the array length.</li>
+              <li>Write for loop using array length as the condition.
+                <ol>
+                  <li>initialize i to 0;</li>
+                  <li>define the condition upon which the loop iterates (the array length);</li>
+                  <li>increment i.</li>
+                </ol>
+              </li>
+              <li>Inside the loop, as it iterates over the array:
+                <ol>
+                  <li>This is always where I have the most trouble.</li>
+                  <li>Add each array element in a list item to the unordered list as the loop iterates over the array.</li>
+                  <li style ="color:red;">Save array elements to variable for output.</li>
+                  <li>Append each list item to the DOM as the loop iterates over the array.</li>
+                </ol>
+              </li>
+            </ol>
+
+            <h3>Start With What You Know / Divide the Problem</h3>
+            <p>Moving forward to the <em>fun</em> part&mdash;<span>coding</span>! I&apos;m combining two strategies since this example isn&apos;t that difficult (famous last words), and I have some experience coding similar problems. Here are the steps (and stumbles) I took to get solve it.</p>
+
+            <p>Each enumerated item is a coding step I took to solve the problem.</p>
+
+            <ol>
+              <li>I’ll start with defining the array, since that’s easiest for me. Completed with no problems.</li>
+              <li>Now, some trickier bits–the DOM manipulation and variable assignments.
+                <ol>
+                  <li>I selected the <code>&lt;h2&gt;</code> element using <code>querySelector</code> method and a CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">descendant combinator</a> selector.</li>
+                  <li>Then created an <code>&lt;ul&gt;</code> list with the <code>createElement</code> method and appended it to my selected element using the <code>InsertAdjacentElement</code> method and the <code>afterend</code> option.</li>
+                </ol>
+              </li>
+              <li>Time to build the loop… I always choke when it comes to building the loop contents.
+                <ol>
+                  <li style ="color:red;">I forgot that I need to save the HTML elements in a variable.</li>
+                  <li>I&apos;m having trouble getting the list item elements in the loop.</li>
+                  <li>I remembered the example used a <code>text</code> variable and built a string with that but it used <code>.innerHTML</code> which is a <a href="https://dev.to/4myc/javascript-innerhtml-innertext-and-textcontent-ih">security risk</a> and therefore not available for me.</li>
+                  <li>Instead, I used the <code>createElement</code> method for the <code>&lt;li&gt;</code> elements and appended them to the <code>&lt;ul&gt;</code> which worked. However...
+                  <ol>
+                    <li>this makes 3 empty list items, and while at least I got that working it&apos;s still not correct since they&apos;re empty.</li>
+                    <li>I know I&apos;ve done <a href="add-link-here-to-my-other-page">this</a> before, I just don&apos;t recall exactly what I did and I&apos;m trying to <em>remember</em> rather than look it up.</li>
+                    <li>The loop is working because I can see it output the contents of the array in console.log.</li>
+                    <li>Try using <code>.textContent</code> (which I’ve done before) and that should work.</li>
+                    <li>Yes! That was it&mdash;problem solved.</li>
+                    <li>After I appended the list items to the unordered list (in the loop) I used the <code>.textContent</code> method (which prevents <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innerhtml">XSS Attacks</a>) to set the element&apos;s content.</li>
+                  </ol>
+                </li>
+              </li>
+            </ol>
+
+           
+            
+          </div><!-- .article-body-wrap -->
+        </div><!-- .post-wrapper -->
+      </article>
+    </main>
+
+    <footer id="site-footer" class="colophon content-info">
+      <div class="inside-footer container">
+        <!-- <div class="contact-wrap"> -->
+        <address>
+          <ul class="home-contact-list">
+            <li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png"
+                  alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
+            <li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank"
+                rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a>
+            </li>
+            <li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank"
+                rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
+          </ul>
+        </address>
+        <!-- </div> -->
+        <!-- .contact-wrap -->
+        <p class="content-info__blog"><a href="https://lsystemworks.com" target="_blank"> Lester&apos;s System Works</a>
+        </p>
+        <p class="copyright"><small><span>copyright</span> &copy; <span class="date"></span></small></p>
+      </div><!-- #site-footer .colophon .content-info -->
+    </footer>
+  </div><!-- .page-wrap -->
+</body>
+
+</html>
