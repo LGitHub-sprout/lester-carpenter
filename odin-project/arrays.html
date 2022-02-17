@@ -101,18 +101,18 @@
               <li>Save a variable reference to an existing DOM element (h2).</li>
               <li>Save a variable reference for an unordered list (ul) to append to the DOM immediately following the h2 variable reference.</li>
               <li>Do I create the element first? IDK.</li>
-              <li style ="color:red;">I didn&apos; articulate the above question well because I know how to create an element. The question I should have asked is, where. Creating a repeating element goes <em>in the loop</em>, but didn't remember since I don&apos;t do it regularly.</li>
+              <li style ="color:red;">I didn&apos;t articulate the above question well because I know how to create an element. The question I should have asked is, <em>where</em> . Creating a repeating element goes <em>in the loop</em>, but didn't remember since I don&apos;t do it regularly.</li>
               <li>Save a variable reference to an array with at least 3 different data types
                 <ul>
                   <li>strings</li>
                   <li>numbers</li>
-                  <li style ="color:red;">objects (unexpected results).</li>
+                  <li style ="color:red;">objects (removed: returns <code>Object</code>).</li>
                 </ul>
               </li>
               <li>Save a variable reference to the array length.</li>
-              <li>Write for loop using array length as the condition.
+              <li>Write <code>for</code> loop using array length as the condition.
                 <ol>
-                  <li>initialize i to 0;</li>
+                  <li>initialize (counter) i to 0;</li>
                   <li>define the condition upon which the loop iterates (the array length);</li>
                   <li>increment i.</li>
                 </ol>
@@ -128,13 +128,13 @@
             </ol>
 
             <h3>Start With What You Know / Divide the Problem</h3>
-            <p>Moving forward to the <em>fun</em> part&mdash;<span>coding</span>! I&apos;m combining two strategies since this example isn&apos;t that difficult (famous last words), and I have some experience coding similar problems. Here are the steps (and stumbles) I took to get solve it.</p>
+            <p>Moving forward to the <em>fun</em> part&mdash;<span>coding</span>! I&apos;m combining two strategies since this example isn&apos;t that difficult (famous last words), and I have some experience coding similar problems.</p>
 
-            <p>Each enumerated item is a coding step I took to solve the problem.</p>
+            <p>Each enumerated item is a coding step (or stumble) I took to solve the problem.</p>
 
             <ol>
               <li>I’ll start with defining the array, since that’s easiest for me. Completed with no problems.</li>
-              <li>Now, some trickier bits–the DOM manipulation and variable assignments.
+              <li>Now, some trickier bits &ndash; the DOM manipulation and variable assignments.
                 <ol>
                   <li>I selected the <code>&lt;h2&gt;</code> element using <code>querySelector</code> method and a CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">descendant combinator</a> selector.</li>
                   <li>Then created an <code>&lt;ul&gt;</code> list with the <code>createElement</code> method and appended it to my selected element using the <code>InsertAdjacentElement</code> method and the <code>afterend</code> option.</li>
@@ -144,7 +144,7 @@
                 <ol>
                   <li style ="color:red;">I forgot that I need to save the HTML elements in a variable.</li>
                   <li>I&apos;m having trouble getting the list item elements in the loop.</li>
-                  <li>I remembered the example used a <code>text</code> variable and built a string with that but it used <code>.innerHTML</code> which is a <a href="https://dev.to/4myc/javascript-innerhtml-innertext-and-textcontent-ih">security risk</a> and therefore not available for me.</li>
+                  <li>I remembered the example uses a <code>text</code> variable and builds a string with that using <code>.innerHTML</code> which is a <a href="https://dev.to/4myc/javascript-innerhtml-innertext-and-textcontent-ih">security risk</a> and therefore not available for me.</li>
                   <li>Instead, I used the <code>createElement</code> method for the <code>&lt;li&gt;</code> elements and appended them to the <code>&lt;ul&gt;</code> which worked. However...
                   <ol>
                     <li>this makes 3 empty list items, and while at least I got that working it&apos;s still not correct since they&apos;re empty.</li>
