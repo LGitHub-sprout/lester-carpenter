@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,8 +90,7 @@
           <div class="article-body-wrap arrays">
             <h2>Looping through arrays</h2>
             <h3>Restate the Problem</h3>
-            <p>Using <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/">Problem Solving</a> techniques, write a brief, step-by-step algorithm outlining how to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loop</a> through a simple array,
-            potentially with several different data types and output the contents of the array to the browser with DOM manipulation.</p>
+            <p>Using <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/">Problem Solving</a> techniques, write a brief, step-by-step algorithm outlining how to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loop</a> through a simple array and output the contents of the array to the browser with DOM manipulation.</p>
             <p>Then code the algorithm based on the above outline, amending steps missed and deleting unnecessary steps which are highlighted yellow (or underlined) in order to point out deficiencies in logic.</p>
             
             <h3>The Plan</h3>
@@ -101,7 +99,11 @@
               <li>Save a variable reference to an existing DOM element (h2).</li>
               <li>Save a variable reference for an unordered list (ul) to append to the DOM immediately following the h2 variable reference.</li>
               <li>Do I create the element first? IDK.</li>
+<<<<<<< HEAD
               <li style ="color:red;">I didn&apos;t articulate the above question well because I know how to create an element. The question I should have asked is, <em>where</em> . Creating a repeating element goes <em>in the loop</em>, but didn't remember since I don&apos;t do it regularly.</li>
+=======
+              <li style ="color:red;">I didn&apos;t articulate the above question well because I know how to create an element. The question I should have asked is, where. Creating a repeating element goes <em>in the loop</em>, but didn't remember since I don&apos;t do it regularly.</li>
+>>>>>>> 2ca8a5b (Light edit)
               <li>Save a variable reference to an array with at least 3 different data types
                 <ul>
                   <li>strings</li>
@@ -120,24 +122,30 @@
               <li>Inside the loop, as it iterates over the array:
                 <ol>
                   <li>This is always where I have the most trouble.</li>
-                  <li>Add each array element in a list item to the unordered list as the loop iterates over the array.</li>
+                  <li>Add each array element in a list item to the unordered list.</li>
                   <li style ="color:red;">Save array elements to variable for output.</li>
-                  <li>Append each list item to the DOM as the loop iterates over the array.</li>
+                  <li>Append each list item to the DOM.</li>
                 </ol>
               </li>
             </ol>
 
             <h3>Start With What You Know / Divide the Problem</h3>
+<<<<<<< HEAD
             <p>Moving forward to the <em>fun</em> part&mdash;<span>coding</span>! I&apos;m combining two strategies since this example isn&apos;t that difficult (famous last words), and I have some experience coding similar problems.</p>
 
             <p>Each enumerated item is a coding step (or stumble) I took to solve the problem.</p>
+=======
+            <p>Moving forward to the <em>fun</em> part&mdash;<span>coding</span>! I&apos;m combining two strategies since this example isn&apos;t that difficult (famous last words), and I have some experience coding similar problems. Here are the steps (and stumbles) I took to solve it.</p>
+
+            <p>Each enumerated item is a coding step I took for the final solution.</p>
+>>>>>>> 2ca8a5b (Light edit)
 
             <ol>
               <li>I’ll start with defining the array, since that’s easiest for me. Completed with no problems.</li>
               <li>Now, some trickier bits &ndash; the DOM manipulation and variable assignments.
                 <ol>
                   <li>I selected the <code>&lt;h2&gt;</code> element using <code>querySelector</code> method and a CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">descendant combinator</a> selector.</li>
-                  <li>Then created an <code>&lt;ul&gt;</code> list with the <code>createElement</code> method and appended it to my selected element using the <code>InsertAdjacentElement</code> method and the <code>afterend</code> option.</li>
+                  <li>Then created an <code>&lt;ul&gt;</code> with the <code>createElement</code> method and appended it to my selected element using the <code>InsertAdjacentElement</code> method and the <code>afterend</code> option.</li>
                 </ol>
               </li>
               <li>Time to build the loop… I always choke when it comes to building the loop contents.
