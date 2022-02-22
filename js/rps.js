@@ -24,8 +24,6 @@ function computerPlay(randoNum) {
     return randoNum = 'paper';
   }
 }
-
- 
 // computerPlay();
 
 // playGame();
@@ -95,11 +93,47 @@ function playGame() {
 } // playGame
 
 // get random integer
-function getRandoInt(max, min) {
-  // return randoInt = .4053117146711769 * (10 - 1) + 1;
-  let someInt = Math.random(); // 3353563462989505 Math.random()
-  const randInt = someInt * (10 - 1) + 1;
-  // return randoInt = Math.random() * (max - min) + 1;
-}
-getRandoInt();
+// function getRandoInt(max, min) {
+//   // return randoInt = .4053117146711769 * (10 - 1) + 1;
+//   let someInt = Math.random(); // 3353563462989505 Math.random()
+//   const randInt = someInt * (10 - 1) + 1;
+//   return randoInt = Math.random() * (max - min) + 1;
+// }
+// getRandoInt();
 // .4053117146711769 * (10 - 1) + 1 
+
+// Arrays
+// https://www.w3schools.com/js/js_arrays.asp
+const fag = {
+  firstName: 'Lester',
+  lastName: 'Carpenter',
+  age: 56
+};
+console.log(fag.firstName + ' ' + fag.lastName + ' is ' + fag.age + ' years old.');
+
+const manyFags = [
+  fag.firstName,
+  function myFunction() { console.log('This is my function') },
+  fag // refers to the OBJECT defined above.
+];
+let fag2 = manyFags[manyFags.length - 1]; // .length -1 returns LAST ELEMENT in array
+console.log('This is an object: ', fag2); // consoles 'fag' OBJECT
+console.log('the fag2 variable is a "typeof": ', typeof(fag2)) // consoles 'object'
+
+const fruits = ['banana', 'orange', 'apple', 'mango'];
+let fruit = fruits[fruits.length - 1];
+
+// for loop with array
+// save <ul> in var
+// DUH! I need the LENGTH of the array to know how many to loop through
+// I also need to reference the array[i] which would be each indiv item 
+// initialize counter i to zero;
+// if i is less than the array length... increment i counter
+// concat list elem to array's contents reference (bracket notation and i counter)
+const fagLength = manyFags.length;
+let fagList = '<ul>';
+for (i = 0; i < fagLength; i++) { // can never remember if I start loop w one or zero
+  fagList += '<li>' + manyFags[i] + '</li>';
+}
+fagList += '</ul>';
+console.log(fagList);
