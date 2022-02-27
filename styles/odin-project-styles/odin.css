@@ -2,7 +2,16 @@
 * Odin Project Page Styles Index
 * 
 * rps.html (Rock Paper Scissors)
+* array-functions.html
 */
+
+/* array-functions.html */
+dt {
+  padding: .5rem 0;
+}
+dd {
+  padding-bottom: 1rem;
+}
 
 /* rps.html (Rock Paper Scissors) */
 
