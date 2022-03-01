@@ -12,6 +12,11 @@ dt {
 dd {
   padding-bottom: 1rem;
 }
+dt + span {
+  color: red;
+  display: block;
+  padding-bottom: 16px;
+}
 
 /* rps.html (Rock Paper Scissors) */
 
