@@ -84,7 +84,7 @@
     <main id="main-content" class="container">
       <article id="array-functions" class="odin-arrays">
         <h1 class="main-title">JavaScript Built&dash;in Functions</h1>
-        <p>An array of performing artists and a few JavaScript functions for manipulating it.</p>
+        <p>An array of performing artists and a few <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">built&dash;in JavaScript methods</a> for manipulating it.</p>
 
         <div class="post-wrapper">
           <div class="article-body-wrap array-functions">
@@ -93,14 +93,14 @@
               <dt class="toString"><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString">toString()</a></code></dt>
               <dd>Returns a string representing the specified array and its elements.</dd>
               <dt class="pop"><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop()</a></code></dt>
-              <dd>Removes the <em>last</em> element from an array and returns that element, which changes the length of the array (mutates).</dd>
+              <dd>Removes the <em>last</em> element from an array and <strong>returns the popped element(s)</strong> which changes the length of the array (mutates).</dd>
               <dt class="push"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code>push()</code></a></dt>
               <dd>Adds one or more elements to the end of an array and <strong>returns</strong> the <em>new length</em> of the array.</dd>
               <dt class="slice"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"><code>slice(start, end)</code></a></dt>
               <dd>Returns a portion of an array into a new array object selected from <code>start</code> to <code>end</code> (not inclusive) where <code>start</code> and <code>end</code> represent the index of items in that array. (Immutable).</dd>
-              <dt class="splice"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code>splice()</code></a></dt>
-              <dd>Changes the contents of an array by removing or replacing existing elements and/or adding new elements <strong>in place</strong> (mutable). To access part of an array without modifying it, see <code>slice()</code>.</dd>
-              <dd>The return value is an array containing the deleted elements. If no elements are removed, an empty array is returned.</dd>
+              <dt class="splice"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code>splice(start, deleteCount, item1, item2, itemN)</code></a></dt>
+              <dd>Changes the contents of an array by removing or replacing existing elements and/or adding new elements <strong>in place</strong> (mutable). To access part of an array <em>without modifying it</em>, see <code>slice()</code>.</dd>
+              <dd>The return value is an array containing the <em>deleted</em> elements. If no elements are removed, an empty array is returned.</dd>
             </dl>
 
           </div><!-- .article-body-wrap array-functions -->

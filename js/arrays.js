@@ -15,14 +15,31 @@ arraysList.setAttribute('class', 'arraysList');
 arraysh2.insertAdjacentElement('afterend', arraysList);
 
 const catClients = [
+  { name: 'Toby', human: 'Jen', age: 9 },
   'Twyla kitty',
   2,
   'Hannah',
   'Toby cat',
   9,
   'Jen'
-] // array
-
+]; // array
+/* 
+ * Making some progress trying to figure out how to loop through a mixed array. 
+ * Looping through catClients array to include object awa other strings and numbers.
+ * 
+ * It makes sense to create an array of objects for this example, obviously.
+ * However, I'd like to figure out how to process both. 
+ * 
+ * Just off top of my head, I'd think I could test for specific type (object) and then loop accordingly.
+ * Then loop for the rest of the array items.
+ * I'll give that a try.
+*/ 
+catClients.forEach(catClient => {
+  console.log(`Cat clients: ${catClient.name}\'s human is ${catClient.human} and he is ${catClient.age} years old.`);
+}
+);
+console.log(catClients[1]);
+  // console.log(catClient));
 // Add array element at the END with .push method
 catClients.push('Sammie');
 // ALSO returns the new array LENGTH
@@ -36,6 +53,7 @@ console.log('catClientLength is: ', catClientLength);
 for (i = 0; i < catClients.length; i++) {
   // add ea array element as a list item to the <ul>
   const arrayContent = catClients[i];
+  // const arrayContent = catClients.name[i];
   const listItems = document.createElement('li');
   arraysList.append(listItems);
   listItems.textContent = `${arrayContent}`;
