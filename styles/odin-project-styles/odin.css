@@ -3,7 +3,37 @@
 * 
 * rps.html (Rock Paper Scissors)
 * array-functions.html
+* loops.html
 */
+
+/* loops.html */
+.post-title a {
+  font-size: 24px;
+}
+.countdown-output,
+.guest-list {
+  border: 1px solid black;
+  padding: 1em;
+}
+.search-form {
+  margin: 2em 0 0 40px;
+}
+/* #search {
+  color: red;
+  border: 3px solid red;
+} */
+#search:focus {
+  background-color: purple;
+  color: linen; 
+}
+input#menu-toggle:focus {
+  border: 3px solid yellow;
+}
+.math {
+  display: block;
+  padding: 1em;
+  font-size: 1.3em;
+}
 
 /* array-functions.html */
 dt {
