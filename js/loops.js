@@ -102,8 +102,8 @@ pseudo-code:
   of a query run on each element of the array
   that returns all queried items that contain a specified string 
 
-  @param  arr
-  @param  query
+  @param  arr     array
+  @param  query   method/function
 
   @return filtered array
 */
@@ -199,7 +199,6 @@ function filterArr(arr, query) {
         start @12:10
         @12:30 - for loop working. Problem #3 persists.
         @1pm - fixed #3.
-
 */
 const contacts = [
   'Wemps:6028675309',
@@ -224,7 +223,7 @@ function displayContact() {
     textInput.value = '';
     // textInput.focus();
     
-    splitContacts = contacts[i].split(':');
+    const splitContacts = contacts[i].split(':');
     
     // toLowerCase() in loop only doesn't affect output.
     if (splitContacts[0].toLowerCase() === searchTerm.toLowerCase()) {
@@ -304,7 +303,7 @@ displayContact();
   I have the paragraphs, but am having trouble getting i to print to browser.
   Task took 1.5hours - don't usually use while stmts which is why I wanted to practice.
  */
-i = 10;
+let i = 10;
 while (i >= 1) {
   let countdownPara = document.createElement('p');
   const countdownDiv = document.querySelector('.countdown-output');
@@ -336,9 +335,9 @@ while (i >= 1) {
       if so, save them to the 'riffraffPara' object and set that object to that node's text content (hint hint ;-).
       if not, save to the 'vipPara' object and set that object to that node's text content.
 
- */
-vipPara = document.querySelector('.vip');
-riffraffPara = document.querySelector('.riffraff');
+*/
+const vipPara = document.querySelector('.vip');
+const riffraffPara = document.querySelector('.riffraff');
 vipPara.textContent = 'VIPs: ';
 riffraffPara.textContent = 'Riffraff: ';
 const guests = [
@@ -353,7 +352,6 @@ guests.forEach((guest, index, array) => {
   } else if (guest === 'Emily') {
     riffraffPara.textContent += `${guest}.`;
   }
-
   // Couldn't figure out how to get last comma off this object. 
   // if (guest === 'Ross' || guest === 'Emily') riffraffPara.textContent += `${guest}, `; 
 
@@ -364,31 +362,6 @@ guests.forEach((guest, index, array) => {
 
   vipPara.textContent += (index === array.length - 1) ? ` and ${guest}.` : `${guest}, `;
 });
-
-/*
-  Tasks https://javascript.info/while-for#tasks
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

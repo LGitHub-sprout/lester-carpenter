@@ -232,19 +232,19 @@ primePara.setAttribute('class', 'primes');
 let article = document.querySelector('article');
 // const div = document.getElementsByClassName('article-body-wrap');
 // div.append('Some text', primePara);
-function showPrimes(prime) { 
-  for (let i = 2; i < prime; i++) {
+function showPrimes(num) { 
+  for (let i = 2; i < num; i++) {
     if (!isPrime(i)) continue;
     // article.append('Some text');
-    console.log(i);
-    }
+    // console.log(i);
+  }
 }
-showPrimes(12);
+showPrimes(100);
 function isPrime(n) { // pass param 'n'  
   for (let i = 2; i < n; i++) { 
-    if (n % i == 0) return false; // 10 / 2 = 5
+    if (n % i == 0) return false; //  
   }
-  return true;
+  return true; // 
   // return div.append('Some text', primePara);;
 }
 
