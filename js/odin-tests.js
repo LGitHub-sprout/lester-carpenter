@@ -26,7 +26,7 @@
     could i save one var for the other if secondNum > firstNum?
     Could i set i to always be biggest num regardless of whether that's firstNum or second Num?
 
-    @param  firstNum     integer
+  @param  firstNum     integer
   @param  secondNum    integer
   @param  sumTotal     integer
   https://stackoverflow.com/questions/12691142/javascript-for-loop-until-multiple-conditions
