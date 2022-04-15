@@ -4,6 +4,114 @@
   @link https://github.com/TheOdinProject/javascript-exercises
 */
 
+
+/************************* # Exercise 06 - leapYears()  *********************
+
+  Create a function that determines whether or not a given year is a leap year. 
+
+  ```javascript
+  leapYears(2000) // is a leap year: returns TRUE
+  leapYears(1985) // is not a leap year: returns FALSE
+  ```
+  Leap years are determined by the following rules:
+  > Leap years are years divisible by four (like 1984 and 2004). 
+  However, years divisible by 100 are not leap years (such as 1800 and 1900) unless they are divisible by 400 (like 1600 and 2000, which were in fact leap years). (Yes, it's all pretty confusing)
+
+  (leapYear % 4 === 0 OR leapYear % 400 === 0) AND leapYear % 100 !== 0 
+  (leapYear % 4 === 0 AND leapYear % 100 !== 0)
+
+  My rewording to simplify:
+  Can all conditional logic work in one expression?
+  Leap years are years divisible by four (like 1984 and 2004) with 0 remainder. 
+    * however * is indication that another conditional check is needed?
+  However, years divisible by 100 are not leap years (such as 1800 and 1900)
+    even tho they are divisible by 4 with 0 remainder,
+    unless they are divisible by 400 (like 1600 and 2000, which were in fact leap years). 
+
+  Criteria:
+    leap years are divisible by 4: 1984 and 2004, but
+    years divisible by 100 are NOT leap years: 1800 and 1900, unless // exception 1
+    they are divisible by 400: 1600 and 2000 which are leap years. // exception to exception 1
+
+  Plain English pseudocode - 
+    Leap years must:
+    divide by 4 evenly (remainder zero %) AND 
+    divide by 400 evenly (remainder zero %)
+      but some leap years won't fit BOTH cases: 1996, 34992
+    Okay, genius... the description appears to be giving you the logic.
+    FOLLOW IT FIRST!
+      
+
+
+  Pseudocode:
+    if year % 4 === 0 AND year % 400 === 0 then return true
+    otherwise, return false
+  2:30pm
+    leap years 1996, 34992 break this logic (remainder after % 400).
+     
+    
+    @param    year  integer
+  
+    @return   true or false
+
+  test('works with non century years', () => {
+  expect(leapYears(1996)).toBe(true);
+
+  test.skip('works with non century years', () => {
+  expect(leapYears(1997)).toBe(false);
+
+  test.skip('works with ridiculously futuristic non century years', () => {
+  expect(leapYears(34992)).toBe(true);
+
+  test.skip('works with century years', () => {
+  expect(leapYears(1900)).toBe(false);
+
+  test.skip('works with century years', () => {
+  expect(leapYears(1600)).toBe(true);
+
+  test.skip('works with century years', () => {
+  expect(leapYears(700)).toBe(false);
+  */
+  const leapYears = function (year) {
+
+    // BOTH conditions need to be true
+    // (leapYear % 4 === 0 AND leapYear % 100 !== 0)
+    if (year % 4 === 0 && year % 100 !== 0) {
+      return 'True -- Leap year.';
+      } 
+      return 'False'
+    };
+  // 1600 year breaks -- needs divisible by 400 rule applied
+  // console.log(leapYears(700));
+  
+  // breaks at 34992 % 400 w remainder
+  // breaks at 1996 % 400 w remainder
+  
+  const years = [1996, 1997, 34992, 1900, 1600, 700];
+  // leap years: 1996, 34992, 1600
+  // not leap years: 1997, 1900, 700
+  const yearsLoop = function (arr) {
+    
+    for (let i = 0; i < arr.length; i++) {
+      let leapYears = 0;
+      let notLeapYears = 0;
+      // let element;
+      // console.log(i) // just the index
+      console.log(arr[i])
+      if (arr[i] % 4 === 0 && arr[i] % 100 !== 0) {
+        leapYears += arr[i];
+        // console.log(leapYears)
+        console.log('leap year ', arr[i]);
+      }
+      notLeapYears += arr[i];
+      // console.log('not leap years', notLeapYears)
+      // console.log('not leap year', arr[i])
+    }
+  }
+  console.log(yearsLoop(years))  
+
+
+
 /************************* # Exercise 05 - sumAll()  *********************
 
   Implement a function that takes 2 integers and returns the sum of every number between(and including) them:
@@ -70,10 +178,10 @@ const sumAll = function (firstNum, secondNum) {
   }
   // if (firstNum !== 'number' || secondNum !== 'number') return 'ERROR';
 
-  if (typeof minNum !== 'number' || typeof maxNum !== 'number') return 'general ERROR';
+  if (typeof minNum !== 'number' || typeof maxNum !== 'number') return 'ERROR';
   
   for (let i = minNum; i <= maxNum; i++) { // i always needs to be lowest num
-    if (firstNum < 0 || secondNum < 0) return 'negative number ERROR';
+    if (firstNum < 0 || secondNum < 0) return 'ERROR';
     
     sumTotal += i; // adds indexes to sumTotal as it loops 
   }
@@ -94,7 +202,7 @@ console.log(sumAll(-10, 4));
   @param  arr
   @param  theArgs     Multiple args provided to remove.
   
-  @var    index       ...theArgs item's index
+  @var    arrIndex    array item's indexes (to test against theArgs)
   @var    splicearr   spliced array
   
   Pseudocode:
