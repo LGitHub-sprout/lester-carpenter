@@ -4,6 +4,43 @@
   @link https://github.com/TheOdinProject/javascript-exercises
 */
 
+/************************* # Exercise 07 - tempConversion  *********************
+
+  Write two functions that convert temperatures from Fahrenheit to Celsius, and vice versa:
+  ```
+  ftoc(32) // fahrenheit to celsius, should return 0
+
+  ctof(0) // celsius to fahrenheit, should return 32
+  ```
+  This exercise asks you to create more than one function so the `module.exports` section of the spec file looks a little different this time.  Nothing to worry about, we're just packaging both functions into a single object to be exported.
+
+  ## Hints
+  - You can find the relevant formulae on [Wikipedia](https://en.wikipedia.org/wiki/Conversion_of_units_of_temperature).
+
+  - Try to find by yourself on the Internet how to round a number to 1 decimal place in JavaScript. If you struggle, have a look [here](https://stackoverflow.com/q/7342957/5433628).
+
+  Because we are human, we want the result temperature to be rounded to one decimal place: i.e., `ftoc(100)` should return `37.8` and not `37.77777777777778`.
+
+  // [°C] Celsius     = ([°F] − 32) × 5⁄9
+  // [°F] Fehrenheit  = [°C] × 9⁄5 + 32 
+
+  Pseudocode:
+    Fahrenheit = Celsius * 9/5 + 32
+    0 degrees Celsius = 32 degrees Fahrenheit
+    32 = 0 * 9/5 (nine-fifths) + 32 (multiply and add)
+
+    Celsius = ([°F] − 32) × 5⁄9 (divide and subtract)
+
+
+
+
+*/
+const ftoc = function (F) {
+
+
+
+}
+
 
 /************************* # Exercise 06 - leapYears()  *********************
 
@@ -40,75 +77,40 @@
       but some leap years won't fit BOTH cases: 1996, 34992
     Okay, genius... the description appears to be giving you the logic.
     FOLLOW IT FIRST!
-      
-
 
   Pseudocode:
     if year % 4 === 0 AND year % 400 === 0 then return true
     otherwise, return false
   2:30pm
     leap years 1996, 34992 break this logic (remainder after % 400).
-     
-    
+  All tests PASSED:
+    Isolated the 2 conditions above, then added `OR year % 400 === 0`
+
     @param    year  integer
-  
-    @return   true or false
 
-  test('works with non century years', () => {
-  expect(leapYears(1996)).toBe(true);
+    @return   true or false   boolean
+*/
+const leapYears = function (year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ) return true;
+    return false; 
+};
+leapYears(1996);
+// console.log(leapYears(1996));
 
-  test.skip('works with non century years', () => {
-  expect(leapYears(1997)).toBe(false);
+const years = [1996, 1997, 34992, 1900, 1600, 700]; // leap years: 1996, 34992, 1600
 
-  test.skip('works with ridiculously futuristic non century years', () => {
-  expect(leapYears(34992)).toBe(true);
-
-  test.skip('works with century years', () => {
-  expect(leapYears(1900)).toBe(false);
-
-  test.skip('works with century years', () => {
-  expect(leapYears(1600)).toBe(true);
-
-  test.skip('works with century years', () => {
-  expect(leapYears(700)).toBe(false);
-  */
-  const leapYears = function (year) {
-
-    // BOTH conditions need to be true
-    // (leapYear % 4 === 0 AND leapYear % 100 !== 0)
-    if (year % 4 === 0 && year % 100 !== 0) {
-      return 'True -- Leap year.';
-      } 
-      return 'False'
-    };
-  // 1600 year breaks -- needs divisible by 400 rule applied
-  // console.log(leapYears(700));
-  
-  // breaks at 34992 % 400 w remainder
-  // breaks at 1996 % 400 w remainder
-  
-  const years = [1996, 1997, 34992, 1900, 1600, 700];
-  // leap years: 1996, 34992, 1600
-  // not leap years: 1997, 1900, 700
-  const yearsLoop = function (arr) {
-    
-    for (let i = 0; i < arr.length; i++) {
-      let leapYears = 0;
-      let notLeapYears = 0;
-      // let element;
-      // console.log(i) // just the index
-      console.log(arr[i])
-      if (arr[i] % 4 === 0 && arr[i] % 100 !== 0) {
-        leapYears += arr[i];
-        // console.log(leapYears)
-        console.log('leap year ', arr[i]);
-      }
-      notLeapYears += arr[i];
-      // console.log('not leap years', notLeapYears)
-      // console.log('not leap year', arr[i])
+const yearsLoop = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let leapYears = 0;
+    console.log(arr[i]);
+    if ((arr[i] % 4 === 0 && arr[i] % 100 !== 0) || arr[i] % 400 === 0) {
+      leapYears += arr[i];
+      console.log('leap year ', arr[i]);
     }
   }
-  console.log(yearsLoop(years))  
+};
+yearsLoop(years);
+// console.log(yearsLoop(years));
 
 
 
