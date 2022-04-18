@@ -30,16 +30,15 @@
     32 = 0 * 9/5 (nine-fifths) + 32 (multiply and add)
 
     Celsius = ([°F] − 32) × 5⁄9 (divide and subtract)
-
-
-
+    https://www.geeksforgeeks.org/fahrenheit-celsius-conversion/
 
 */
 const ftoc = function (F) {
+  const C = Math.round((F - 32) * 5.0 / 9.0 * 10) / 10;
+  return C;
+};
+console.log(ftoc(-100)); // .toEqual(-73.3); 73.33333333333333 14 3s
 
-
-
-}
 
 
 /************************* # Exercise 06 - leapYears()  *********************
