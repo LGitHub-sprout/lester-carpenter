@@ -7,20 +7,20 @@
 
 function fizzBuzz(userNum) {
 // use button w event listener 
-  // const host = 'http://127.0.0.1:5503/odin-project/fizzbuzz.html';
-  // if (window.location.href === host) {
-  //   // userNum = parseInt(prompt('Enter your FizzBuzz number'));
-  // }
-  userNum = parseInt(prompt('Enter your FizzBuzz number'));
+// also try using arrow function
+  // userNum = parseInt(prompt('Enter a number btwn 15-100') > 101 ? alert('Re-enter a smaller number btwn 15-100') : userNum);
+  userNum = parseInt(prompt('Enter a number btwn 15-100'));
+  // console.log('fuck', userNum)
   const h2 = document.getElementById('fizzBuzz');
   const h1 = document.querySelector('h1');
   const fbUnorderedList = document.createElement('ul');
   fbUnorderedList.setAttribute('class', 'fizzBuzzList');
   h2.insertAdjacentElement('afterend', fbUnorderedList);
   for (let i = 1; i <= userNum; i++) {
+    if (userNum > 100) { return; }
+    // if (userNum > 100) { confirm('Your number was too big—Try again.'); }
     const fbListItem = document.createElement('li');
     fbUnorderedList.insertAdjacentElement('beforeend', fbListItem);
-    
 // use switch
     if (i / 5 === 3 && i / 3 === 5) {
       fbListItem.textContent = 'FizzBuzz';
@@ -33,4 +33,4 @@ function fizzBuzz(userNum) {
     }
   }
 }
-// fizzBuzz();
+fizzBuzz();
