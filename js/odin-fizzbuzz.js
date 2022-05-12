@@ -6,7 +6,7 @@
  */
 
 function fizzBuzz(userNum) {
-  // // use button w event listener 
+// use button w event listener 
   // const host = 'http://127.0.0.1:5503/odin-project/fizzbuzz.html';
   // if (window.location.href === host) {
   //   // userNum = parseInt(prompt('Enter your FizzBuzz number'));
@@ -21,7 +21,7 @@ function fizzBuzz(userNum) {
     const fbListItem = document.createElement('li');
     fbUnorderedList.insertAdjacentElement('beforeend', fbListItem);
     
-    // use switch
+// use switch
     if (i / 5 === 3 && i / 3 === 5) {
       fbListItem.textContent = 'FizzBuzz';
     } else if (i % 3 === 0) {
@@ -33,4 +33,4 @@ function fizzBuzz(userNum) {
     }
   }
 }
-fizzBuzz();
+// fizzBuzz();

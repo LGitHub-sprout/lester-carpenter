@@ -41,6 +41,7 @@
 				"logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
 			}
 		</script>
+		<script src="../js/global.js" defer></script>
 	</head>
 	<body class="mdn">
 		<div class="mdn-page-wrap">
@@ -52,19 +53,20 @@
 				<nav class="main-nav">
 					<label for="menu-toggle"><span class="menu-toggle">menu</span></label>
 					<input type="checkbox" id="menu-toggle">
-
+				
 					<ul class="nav-list-toggle">
-						<li class="nav-list__item"><a href="mdn-assmnt-creating-html-links.html">mdn</a>
-							<ul class="nav-list__dropdown-list">
-								<li class="nav-list__dropdown-item"><a href="whales.html#">Whales</a></li>
-								<li class="nav-list__dropdown-item"><a href="html-text-basics1.html">Basics Test1</a></li>
-								<li class="nav-list__dropdown-item"><a href="html-text-basics2.html">Basics Test2</a></li>
-								<li class="nav-list__dropdown-item"><a href="html-text-basics3.html">Basics Test3</a></li>
-							</ul></li>
-						<li class="nav-list__item"><a href="#">cihs</a></li>
-						<li class="nav-list__item"><a href="#">codecademy</a></li>
+						<li class="nav-list__item"><a href="#">mdn</a>
+							<ul class="nav-list__item--nested-list">
+								<li class="nav-list__item"><a href="mdn-html.html">html</a></li>
+								<li class="nav-list__item"><a href="mdn-js.html">JavaScript</a></li>
+							</ul>
+						<li class="nav-list__item"><a href="#">Odin Project</a>
+							<ul class="nav-list__item--nested-list">
+								<li class="nav-list__item"><a href="../odin-project/flexbox-landing-page.html">Flexbox Landing Page</a>
+								</li>
+							</ul>
+						</li>
 						<li class="nav-list__item"><a href="../about-lester.html">about</a></li>
-						<li class="nav-list__item"><a href="#">linkedin learning</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -86,22 +88,21 @@
 				</article>
 			</main>
 
-		<footer id="site-footer" class="colophon content-info">
+			<footer id="site-footer" class="colophon content-info">
 				<div class="inside-footer container">
 					<!-- <div class="contact-wrap"> -->
-						<address>
-							<ul class="home-contact-list">
-								<li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png" alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
-								<li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank" rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a></li>
-								<li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank" rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
-							</ul>							
-						</address>
+					<address>
+						<ul class="home-contact-list">
+							<li class="home-contact-list__item"><a href="mailto:lsysworks@gmail.com"><img src="../images/gmail.png" alt="gmail icon to lsysworks@gmail.com" rel="noopener noreferrer"></a></li>
+							<li class="home-contact-list__item"><a href="https://twitter.com/self_teach_dev" target="_blank" rel="noopener noreferrer"><img src="../images/twitter-white.png" alt="twitter icon @self_teach_dev"></a></li>
+							<li class="home-contact-list__item"><a href="https://www.facebook.com/lg.carpenter.94" target="_blank" rel="noopener noreferrer"><img src="../images/f_logo_RGB-White_58.png" alt="facebook icon"></a></li>
+						</ul>							
+					</address>
 					<!-- </div> --><!-- .contact-wrap -->
 					<p class="content-info__blog"><a href="https://lsystemworks.com" target="_blank"> Lester&apos;s System Works</a></p>
 					<p class="copyright"><small><span>copyright</span> &copy; <span class="date"></span></small></p>					 
 				</div><!-- #site-footer .colophon .content-info -->
 			</footer>	
-
 		</div><!-- .page-wrap -->
 	</body>
 </html>
