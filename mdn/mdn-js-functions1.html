@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
 
   <link rel="stylesheet" href="../styles/normalize.css">
   <link rel="stylesheet" href="../styles/global.css">
-  <!-- <link rel="stylesheet" href="../styles/odin-project-styles/odin.css"> -->
   <link rel="stylesheet" href="../styles/mdn-styles/mdn.css">
   <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
 
@@ -96,7 +94,7 @@
 
             <!-- Insert boxDiv from createDiv JS function -->
 
-            <p>The colored rectangle above is dynamically added to this page with a JavaScript function. I'm purposely not describing the background and border colors because of the way the function that produces is is constructed.</p>
+            <p>The colored rectangle above is dynamically added to this page with a JavaScript function. I'm purposely not describing the background and border colors because of the way the function that produces it is constructed.</p>
             <p>The function creates a new <code>&lt;div&gt;</code> element in the document with a specific height, width, border style, and background color using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">default parameters</a> which can be overriden at runtime by passing <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">arguments</a> into the function, if desired.</p>
             <p>When passing arguments, it's important to remember to use the <strong>primitive</strong> value, <a href="https://developer.mozilla.org/en-US/docs/Glossary/undefined"><code>undefined</code></a>, that's automatically assigned to variables which have been declared in place of any parameters not being changed if there is more than one passed into the function. They have to be called in order; otherwise, there will be an error.</p>
             <p> If a programmer wants to use the default parameters, they can simply call the function as is, meaning without passing any arguments. Conversely, they can pass some or all new arguments to override the defaults for an effect they desire. </p>

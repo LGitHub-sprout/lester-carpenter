@@ -163,7 +163,7 @@ function add(x = requiredArgs, y = requiredArgs) {
 
 /************************* Prettified Name App ************************* 
   Fix the capitalization in a string and output correctly to browser/console:
-    'lESteR', 'chRisTOPhER', 'tOM'
+    'lESteR', 'chRisTOPhER', 'tOM', 'fraNKenSTEin'
   Make it dynamic so the string is always capitalized regardless of its length.
 
   .value is a property of the HTMLElement Web API DOM interface
@@ -190,15 +190,16 @@ function add(x = requiredArgs, y = requiredArgs) {
     I followed the line of how I was getting the value from the input element and realized I could reassign the textContent to the template literal that fixes the capitalizations.
     Trying to refactor failed.
 */
-// Selectors
-const capNameBtn = document.querySelector('#capNameBtn');
-const capNameh2 = document.querySelector('.capNameTitle');
-const capNameOutput = document.createElement('p');
-capNameOutput.setAttribute('class', 'capNameOutput')
-capNameh2.insertAdjacentElement('afterend', capNameOutput);
-
 capNameBtn.addEventListener('click', capName); 
+// Now make it an arrow function
 function capName() {
+  // Selectors
+  const capNameBtn = document.querySelector('#capNameBtn');
+  const capNameh2 = document.querySelector('.capNameTitle');
+  const capNameOutput = document.createElement('p');
+  capNameOutput.setAttribute('class', 'capNameOutput')
+  capNameh2.insertAdjacentElement('afterend', capNameOutput);
+
   const capNameInput = document.getElementById('capName').value; // input element (user) value
   capNameOutput.textContent = capNameInput;
   namesLen = capNameOutput.textContent.length;
