@@ -101,8 +101,8 @@ function resetOption(selectWeather, optionToUse) {
   // access to object's properties with [] using 'j' as counter awa a key to the value? 
   for (let opt, j = 0; opt = selectOptions[j]; j++) {
     if (opt.value === optionToUse) {
-      // if above condition is true
-      // then assign the option value from 'j' to whatever the first parameter is.
+  if above condition is true
+  then assign the option value from 'j' to whatever the first parameter is.
       selectElement.selectedIndex = j;
       break;
     }

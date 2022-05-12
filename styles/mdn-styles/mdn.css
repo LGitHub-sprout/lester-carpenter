@@ -34,13 +34,17 @@ body {
 }
 
 /* mdn-js-functions1.html */
-#js-functions-1 h2 + p {
+#js-functions-1 h2:nth-child(1) + p {
 	padding: 20px;
 	border: 1px solid black;
 	text-align: center;
 	color: purple;
 	font-weight:600;
 	background-color:lightgrey;
+}
+.capNameTitle + label,
+.capNameTitle + input {
+	margin: .75em 0;
 }
 
 /* mdn-js-conditionals.html a.k.a. Weather App */
@@ -50,9 +54,6 @@ body {
 	border-radius: 5px;
 	max-width: 582px;
 	margin: 0 auto;
-}
-.weather-app-title {
-	font-size: 1.728rem;
 }
 .weather-app code {
 	background-color:#eee;
@@ -70,12 +71,6 @@ body {
 h1 {
   font-size: 1.5em;
 }
-h2 {
-  font-size: 1.3em;
-}
-/* p,ul,ol,dl,address {
-  font-size: 1.1em;
-} */
 p, li, dd, dt, address {
   line-height: 1.5;
 }

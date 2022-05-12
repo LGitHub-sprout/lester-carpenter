@@ -53,6 +53,10 @@
 		height: auto;
 		display: block;
 	}
+	label, input, button {
+		margin: .5em 0;
+	}
+
 
 /* Fonts based on minor third, bumped up one level for desktop. */
 	h1 {
@@ -213,16 +217,17 @@
 	@media screen and (min-width: 600px) {
 		.article-body-wrap h2 {
 			text-align: left;
-			margin: 0 0 .25em 0;
+			margin: 1em 0 .75em 0;
 			color: inherit;
 		}
 		.post-wrapper {
 			display: flex;
-			margin: 3em 0;
+			margin: 2em 0;
 		}
 		.article-body-wrap {
 			display: flex;
 			flex-direction: column;
+			/* this center is a bug */
 			align-items: center;
 			padding: 0 2em 0;
 		}

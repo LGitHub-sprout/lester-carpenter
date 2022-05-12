@@ -1,12 +1,35 @@
 /* 
 * Odin Project Page Styles Index
 * 
-* rps.html (Rock Paper Scissors)
-* array-functions.html
 * loops.html
+* array-functions.html
+* rps.html (Rock Paper Scissors)
+* Reset
 */
 
 /* loops.html */
+#btn2,
+.buttonNodeList {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+.foo {
+  font-size: 20px;
+}
+#bar { 
+  text-align: right;
+}
+.test {
+  color: rgb(13, 96, 219);
+  background-color: linen;
+  padding: 10px;
+  border: dotted 10px black;
+}
+.post-title {
+  background-color: green;
+  border: dotted black 3px;
+}
 .post-title a {
   font-size: 24px;
 }
@@ -18,10 +41,6 @@
 .search-form {
   margin: 2em 0 0 40px;
 }
-/* #search {
-  color: red;
-  border: 3px solid red;
-} */
 #search:focus {
   background-color: purple;
   color: linen; 
@@ -70,6 +89,5 @@ ul {
   @media screen and (min-width: 600px) {
     h2 {
       text-align: left;
-      /* color: yellow; */
     }
   }
