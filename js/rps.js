@@ -14,13 +14,13 @@ function computerPlay(randoNum) {
   }
   // console.log(typeof randoNum, randoNum);
   if (randoNum >= 1 && randoNum < 33) {
-    // console.log('Rock: ', randoNum);
+console.log('Rock: ', randoNum);
     return randoNum = 'rock';
   } else if (randoNum >= 34 && randoNum <= 66) {
-    // console.log('Scissor: ', randoNum);
+console.log('Scissor: ', randoNum);
     return randoNum = 'scissors';
   } else if (randoNum >= 67 && randoNum <= 100) {
-    // console.log('Paper: ', randoNum);
+console.log('Paper: ', randoNum);
     return randoNum = 'paper';
   }
 }
@@ -36,13 +36,13 @@ function playGame() {
   for (let i = 1; humanScore < 5 && computerScore < 5; i++) { 
     const computerSelection = computerPlay();
 
-    // console.log('this is computerSelection: ', computerSelection);
+console.log('this is computerSelection: ', computerSelection);
     let humanSelection = prompt('Make a selection: Rock, Paper, or Scissors');
-    // playRound(humanSelection, computerSelection); 
+playRound(humanSelection, computerSelection); 
     
     function playRound(humanSelection, computerSelection) {
       humanSelection = humanSelection.toLowerCase();
-      // convert to an array (or is object better?) and loop through results
+  // convert to an array (or is object better?) and loop through results
       switch (true) {
         case humanSelection === 'rock' && computerSelection === 'rock':
           console.log('It\'s a tie.');
@@ -84,7 +84,7 @@ function playGame() {
       console.log(`humanScore: ${humanScore}`);
       console.log(`computerScore: ${computerScore}`);
 
-      // return `${humanSelection} and ${computerSelection}`;
+  return `${humanSelection} and ${computerSelection}`;
     } // playRound
     playRound(humanSelection, computerSelection);
     console.log(`This is humanSelection ${humanSelection}`);
@@ -104,21 +104,21 @@ function playGame() {
 
 // Arrays
 // https://www.w3schools.com/js/js_arrays.asp
-const fag = {
+const person = {
   firstName: 'Lester',
   lastName: 'Carpenter',
   age: 56
 };
-console.log(fag.firstName + ' ' + fag.lastName + ' is ' + fag.age + ' years old.');
+// console.log(person.firstName + ' ' + person.lastName + ' is ' + person.age + ' years old.');
 
-const manyFags = [
-  fag.firstName,
+const manypersons = [
+  person.firstName,
   function myFunction() { console.log('This is my function') },
-  fag // refers to the OBJECT defined above.
+  person // refers to the OBJECT defined above.
 ];
-let fag2 = manyFags[manyFags.length - 1]; // .length -1 returns LAST ELEMENT in array
-console.log('This is an object: ', fag2); // consoles 'fag' OBJECT
-console.log('the fag2 variable is a "typeof": ', typeof(fag2)) // consoles 'object'
+let person2 = manypersons[manypersons.length - 1]; // .length -1 returns LAST ELEMENT in array
+// console.log('This is an object: ', person2); // consoles 'person' OBJECT
+// console.log('the person2 variable is a "typeof": ', typeof(person2)) // consoles 'object'
 
 const fruits = ['banana', 'orange', 'apple', 'mango'];
 let fruit = fruits[fruits.length - 1];
@@ -130,10 +130,10 @@ let fruit = fruits[fruits.length - 1];
 // initialize counter i to zero;
 // if i is less than the array length... increment i counter
 // concat list elem to array's contents reference (bracket notation and i counter)
-const fagLength = manyFags.length;
-let fagList = '<ul>';
-for (i = 0; i < fagLength; i++) { // can never remember if I start loop w one or zero
-  fagList += '<li>' + manyFags[i] + '</li>';
+const personLength = manypersons.length;
+let personList = '<ul>';
+for (i = 0; i < personLength; i++) { // can never remember if I start loop w one or zero
+  personList += '<li>' + manypersons[i] + '</li>';
 }
-fagList += '</ul>';
-console.log(fagList);
+personList += '</ul>';
+// console.log(personList);

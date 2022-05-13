@@ -34,8 +34,8 @@
 
 */
 const ftoc = function (F) {
-  const C = Math.round((F - 32) * 5.0 / 9.0 * 10) / 10;
-  return C;
+  const C = (F - 32) * 5.0 / 9.0 * 10;
+  return Math.round(C * 10) / 10;
 };
 console.log(ftoc(-100)); // .toEqual(-73.3); 73.33333333333333 14 3s
 
