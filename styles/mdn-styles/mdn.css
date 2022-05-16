@@ -5,6 +5,7 @@
 *
 * mdn-html.html (Assessments index page)
 *
+* mdn-js-loops.html
 * mdn-js-events.html
 * mdn-errors.html
 * mdn-js-functions1.html
@@ -19,6 +20,15 @@
 
 /* mdn-html.html (Assessments index page) */
 
+/* mdn-js-loops.html */
+.contactsOutput::before  {
+	content: 'Contacts List: ';
+	display: block;
+	color: red;
+}
+.contactsOutput {
+	font-weight: bold;
+}
 /* mdn-js-events.html */
 .orangeOn {
 	color: orange;

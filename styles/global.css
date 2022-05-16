@@ -56,6 +56,10 @@
 	label, input, button {
 		margin: .5em 0;
 	}
+	abbr {
+		text-decoration: underline dotted 15px;
+		text-underline-offset: .25em;
+	}
 
 
 /* Fonts based on minor third, bumped up one level for desktop. */
