@@ -1,11 +1,22 @@
 /* 
 * Odin Project Page Styles Index
 * 
+* drum-kit.html
 * loops.html
 * array-functions.html
 * rps.html (Rock Paper Scissors)
 * Reset
 */
+
+/* drum-kit.html */
+.odin-drum-kit + #main-content {
+  background-image: url('../../images/odin-project-images/pexels-mantas-hesthaven-354304.jpg');
+  /* cover */
+  background-size: cover;
+}
+#site-header {
+  flex: 0;
+}
 
 /* loops.html */
 #btn2,
@@ -38,9 +49,9 @@
   border: 1px solid black;
   padding: 1em;
 }
-.search-form {
+/* .search-form {
   margin: 2em 0 0 40px;
-}
+} */
 #search:focus {
   background-color: purple;
   color: linen; 

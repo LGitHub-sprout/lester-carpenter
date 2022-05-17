@@ -87,35 +87,29 @@
     'Jen:9170023223',
     'Krista:7974950592'
   ];
-// Selectors
 const h2 = document.querySelector('div.loops h2');
 const contactsPara = document.createElement('p');
 contactsPara.classList = 'contactsOutput';
-
+contactsPara.textContent = contacts.join('; ');
 h2.insertAdjacentElement('afterend', contactsPara);
 
-function displayContact(searchTerm) {
+const searchBtn = document.querySelector('button[name="Submit"]');
+const searchForm = document.querySelector('.search-form');
+const searchResult = document.createElement('p');
+searchResult.textContent = 'Search Results:';
+searchResult.style.cssText = 'padding:10px;border:solid 1px black;background-color:linen;margin:1em 0;'; 
+searchForm.insertAdjacentElement('afterend', searchResult);
 
-  // const blah = contacts.join().toLowerCase();
-  // console.log(typeof blah, blah)
+searchBtn.addEventListener('click', displayContact);
+function displayContact() {
+  for (let i = 0; i < contacts.length; i++) {
+    
+    const splitContacts = contacts[i].toString().split(':');
+    const input = document.querySelector('#search').value;
 
-  for (i = 0; i < contacts.length; i++) {
-
-    // const contactsToLower = contacts.join().toLowerCase();
-    const splitContacts = contacts[i].split(':'); // split returns array
-
-    // const contactsToLower = splitContacts[i].toString().toLowerCase();
-    // console.log('logging contact names: ', splitContacts[0]);
-
-    // need to set toLowerCase() on the searchTerm for string matching 
-    // contactsToLower = splitContacts.toString().toLowerCase();
-    // console.log('trying to lowercase', splitContacts[0].toLowerCase())
-    if (splitContacts[0].toLowerCase() === searchTerm.toLowerCase()) {
-      console.log('Anything?', splitContacts[0]) // nothing
-      console.log(typeof splitContacts[0], 'Log searchTerm: ', splitContacts[0]);
+    if (splitContacts[0].toString().toLowerCase() === input.toLowerCase()) {
+      searchResult.textContent = `Search Results: ${splitContacts[0]} at ${splitContacts[1]}`;
+      break;
     }
   }
-  console.log('contacts', contacts)
 }
-displayContact('oLIViA');
-
