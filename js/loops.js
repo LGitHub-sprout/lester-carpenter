@@ -27,7 +27,7 @@
     loop through splitContacts
     if searchTerm matches the first element of the splitContacts array,
       then log the contact name and number,
-      otherwise break; // pretty sure not continue since there's no other code/loop
+      otherwise break;
     if no matches are found
       then log/output 'Contact not found'.
 
@@ -93,23 +93,28 @@ contactsPara.classList = 'contactsOutput';
 contactsPara.textContent = contacts.join('; ');
 h2.insertAdjacentElement('afterend', contactsPara);
 
-const searchBtn = document.querySelector('button[name="Submit"]');
 const searchForm = document.querySelector('.search-form');
 const searchResult = document.createElement('p');
-searchResult.textContent = 'Search Results:';
-searchResult.style.cssText = 'padding:10px;border:solid 1px black;background-color:linen;margin:1em 0;'; 
 searchForm.insertAdjacentElement('afterend', searchResult);
+searchResult.style.cssText = 'padding:10px;border:solid 1px black;background-color:linen;margin:1em 0;'; 
+searchResult.textContent = 'Search Results:';
+const searchBtn = document.querySelector('button[name="Submit"]');
 
-searchBtn.addEventListener('click', displayContact);
-function displayContact() {
-  for (let i = 0; i < contacts.length; i++) {
-    
+function displayContact() {  
+  const input = document.querySelector('#search');
+  const searchTerm = input.value;
+  // Save input as 'searchTerm' to reset value and refocus element.
+  input.value = '';
+  input.focus();
+  for (let i = 0; i < contacts.length; i++) {    
     const splitContacts = contacts[i].toString().split(':');
-    const input = document.querySelector('#search').value;
-
-    if (splitContacts[0].toString().toLowerCase() === input.toLowerCase()) {
+    if (splitContacts[0].toString().toLowerCase() != searchTerm.toLowerCase()) {
+      searchResult.textContent = `Contact not found for ${searchTerm}.`;
+    } else if (splitContacts[0].toString().toLowerCase() === searchTerm.toLowerCase()) {
       searchResult.textContent = `Search Results: ${splitContacts[0]} at ${splitContacts[1]}`;
       break;
     }
   }
 }
+searchBtn.addEventListener('click', displayContact);
+

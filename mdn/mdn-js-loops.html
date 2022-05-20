@@ -51,6 +51,7 @@
 		</script>
   <script src="../js/global.js" defer></script>
   <script src="../js/loops.js" defer></script>
+  <script src="../js/DSs-and-algorithms.js" defer></script>
 </head>
 
 <body class="home">
@@ -74,7 +75,7 @@
             <ul class="nav-list__item--nested-list">
               <li class="nav-list__item"><a href="../odin-project/flexbox-landing-page.html">Flexbox Landing Page</a></li>
               <li class="nav-list__dropdown-item"><a href="../odin-project/fizzbuzz.html">FizzBuzz App</a></li>
-              <li class="nav-list__dropdown-item"><a href="../odin-project/drum-kit.html">Drum Kit</a></li>
+              <li class="nav-list__dropdown-item"><a href="../odin-project/drumkit.html">Drum Kit</a></li>
             </ul>
           </li>
           <li class="nav-list__item"><a href="../about-lester.html">about</a></li>
@@ -92,8 +93,8 @@
         <div class="post-wrapper">
           <div class="article-body-wrap loops">
 
-            <h2>Exiting loops with break statement</h2>
-            <p>Say we wanted to search through an array of contacts and their telephone numbers to return just the number we wanted to find.</p> 
+            <h2>Preparing An Array for Looping and Exiting with <code>break</code> Statement</h2>
+            <p>Say I wanted to search through an array of contacts and their telephone numbers to return just the number I&apos;m looking for.</p> 
             <p data-active="1">First, I need to add some simple HTML to my document:</p>
             <ul>
               <li>A text <code>&lt;input&gt;</code> allowing us to enter a name to search for.</li>
@@ -102,10 +103,16 @@
             </ul>
             <div class="search-form">
               <label for="search">Search by contact name: </label>
-              <input type="text" id="search">
-              <button id="btn" type="button" value="Submit" name="Submit">Search</button>
+              <input id="search" type="text">
+              <button type="button" value="Submit" name="Submit">Search</button>
             </div><!-- .search-form -->
-            <p>Next, I'll select some elements on the page using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>querySelector()</code></a> which are used to appended them to the Document Object Model (<abbr class="abbr" title="Document Object Model">DOM</abbr>) after manipulating the array of contacts.</p>
+            <p>Next, I'll select some elements on the page using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>querySelector()</code></a> which is used to appended them to the (<abbr class="abbr" title="Document Object Model">DOM</abbr>) after manipulating the array of contacts.</p>
+
+            <p>The tricky bit for me is knowing how to extract the two pieces of the contacts data, each of which is one item in an array and separated with a colon. I'm no expert, but I believe most files come in this general format where individual pieces of data are delimited by characters, most commonly commas; hence, the CSV document file extension.</p>
+
+            <p>Since the data is in an array format, it can be manipulated and altered using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loop</a>. However, since the two individual pieces of data are both contained within <em>one</em> item (or field) in the array, it first has to be manipulated into a string and then it can be divided into separate pieces (using the colon as a delimiter) to then be put back into a new array. After which time, the new array contains two items for each contact, instead of one, making it easier to access and manipulate each of the two pieces of data.</p>
+
+
 
             <h2 class="post-title">Standard Built-in Objects: Array</h2>
             <p>The above array of names has been manipulated, based on <strong>Briggs Elsperger</strong>'s post, <a href="https://briggs.dev/blog/understanding-callbacks">Understanding Callbacks</a>, which sets each array item to all uppercase using a <strong>custom function</strong> that loops through any provided array applying the JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">.toUpperCase()</a> string method to each item of the array.</p>
