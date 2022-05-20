@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+  <meta name="author" content="Lester Carpenter">
+  <meta name="description"
+    content="Lester Carpenter's HTML and CSS skills assessments from The Odin Project and MDN Web Docs.">
+  <meta name="rating" content="General">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/odin-project-styles/odin.css">
+  <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
+
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="icon" href="../android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://lester-carpenter.lsystemworks.com/images/lester-960px.jpg">
+  <meta property="og:title" content="Lester's HTML and CSS skills assessments site.">
+  <meta property="og:type" content="website">
+  <meta property="og:description"
+    content="A GREAT place to assess Lester Carpenter's MDN Web Docs, LinkedIn Learning, and Odin Project skills.">
+  <meta property="og:url" content="https://lester-carpenter.lsystemworks.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@self_teach_dev">
+  <meta name="pinterest" content="nopin">
+
+  <title>Lester Carpenter's Odin Project JS Curriculum | Drum Kit</title>
+  <script type="application/ld+json">
+			{
+				"@context"	: "https://schema.org",
+				"@type" 		: "Organization",
+				"url"				: "https://lester-carpenter.lsystemworks.com",
+				"logo"			: "https://lester-carpenter.lsystemworks.com/images/LSW-logo-800px.png"
+			}
+		</script>
+  <script src="../js/drumkit.js" defer></script>
+</head>
+
+<body class="home drumkit">
+  <div class="page-wrap">
+    <header id="site-header" class="odin-drumkit container">
+      <a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
+      <nav class="main-nav">
+        <label for="menu-toggle"><span class="menu-toggle">menu</span></label>
+        <input type="checkbox" id="menu-toggle">
+
+        <ul class="nav-list-toggle">
+          <li class="nav-list__item"><a href="#">mdn</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="../mdn/mdn-html.html">html</a></li>
+              <li class="nav-list__item"><a href="../mdn/mdn-js.html">JavaScript</a></li>
+            </ul>
+          <li class="nav-list__item"><a href="#">Odin Project</a>
+            <ul class="nav-list__item--nested-list">
+              <li class="nav-list__item"><a href="../odin-project/flexbox-landing-page.html">Flexbox Landing Page</a></li>
+              <li class="nav-list__dropdown-item"><a href="../odin-project/fizzbuzz.html">FizzBuzz App</a></li>
+              <li class="nav-list__dropdown-item"><a href="../odin-project/drumkit.html">Drum Kit</a></li>
+            </ul>
+          </li>
+          <li class="nav-list__item"><a href="../about-lester.html">about</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" class="container">
+      <article id="drumkit">
+
+        <h1 class="main-title">Drum Kit</h1>
+        <small>Photo by Mantas Hesthaven from Pexels</small>
+        
+        <p>Wes Bos's JavaScript Course</p>
+        
+        <div class="post-wrapper">
+          <div class="article-body-wrap drumkit">
+
+            <div class="keys">
+              <div class="key" data-key="65">
+                <kbd>A</kbd>
+                <span class="sound">Boom</span>
+              </div>
+              <div class="key" data-key="83">
+                <kbd>S</kbd>
+                <span class="sound">Clap</span>
+              </div>
+              <div class="key" data-key="68">
+                <kbd>D</kbd>
+                <span class="sound">Hihat</span>
+              </div>
+              <div class="key" data-key="70">
+                <kbd>F</kbd>
+                <span class="sound">Kick</span>
+              </div>
+              <div class="key" data-key="71">
+                <kbd>G</kbd>
+                <span class="sound">Openhat</span>
+              </div>
+              <div class="key" data-key="72">
+                <kbd>H</kbd>
+                <span class="sound">Ride</span>
+              </div>
+              <div class="key" data-key="74">
+                <kbd>J</kbd>
+                <span class="sound">Snare</span>
+              </div>
+              <div class="key" data-key="75">
+                <kbd>K</kbd>
+                <span class="sound">Tink</span>
+              </div>
+              <div class="key" data-key="76">
+                <kbd>L</kbd>
+                <span class="sound">Tom</span>
+              </div>
+            </div><!-- .keys -->
+
+          </div><!-- .article-body-wrap drumkit -->
+        </div><!-- .post-wrapper -->
+      </article>
+    </main>
+
+    <!-- Not exactly sure where audio files go... -->
+    <audio data-key="65" src="drumkit-sounds/boom.wav"></audio>
+    <audio data-key="83" src="drumkit-sounds/clap.wav"></audio>
+    <audio data-key="68" src="drumkit-sounds/hihat.wav"></audio>
+    <audio data-key="70" src="drumkit-sounds/kick.wav"></audio>
+    <audio data-key="71" src="drumkit-sounds/openhat.wav"></audio>
+    <audio data-key="72" src="drumkit-sounds/ride.wav"></audio>
+    <audio data-key="74" src="drumkit-sounds/snare.wav"></audio>
+    <audio data-key="75" src="drumkit-sounds/tink.wav"></audio>
+    <audio data-key="76" src="drumkit-sounds/tom.wav"></audio>
+
+
+  </div><!-- .page-wrap -->
+</body>
+</html>
