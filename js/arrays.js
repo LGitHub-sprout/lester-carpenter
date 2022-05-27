@@ -126,7 +126,7 @@ console.log('Length of deletedFruits array: ', deletedFruits);
 // for (let key in student) { 
 //     let value;
 
-//     // get the value
+// get the value
 //   value = student[key];
   
 //   console.log(key + " - " +  value); 

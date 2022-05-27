@@ -39,7 +39,13 @@ const ftoc = function (F) {
 };
 console.log(ftoc(-100)); // .toEqual(-73.3); 73.33333333333333 14 3s
 
-
+// ctof
+const ctof = function (C) {
+  const F = C * (9 / 5) + 32; // 9 / 5 = 1.8
+  return Math.round(F * 10) / 10;
+}
+// console.log('ctof', ctof(100))
+// console.log('ctof using decimal ', (73.2 * 1.8) + 32); // still needs Math.round()
 
 /************************* # Exercise 06 - leapYears()  *********************
 
