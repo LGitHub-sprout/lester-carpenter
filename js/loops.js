@@ -125,24 +125,26 @@ console.log('names array: ', names);
     do .. while
     for .. of
     while
+    maybe write a callback function for a forEach() loop
 */
 const guests = [
   'Chris', 'Anne', 'Ross', 'Colin', 'Terri', 'Emily', 'Sam', 'Kay', 'Bruce'
 ];
-const guestsTitle = document.querySelector('.loops h2:nth-of-type(1)')
+const guestsTitle = document.querySelector('.loops h2:nth-of-type(1)');
 const guestsPara = document.createElement('p');
 
 guestsPara.textContent = `${guests.join(' * ')}`;
+guestsPara.classList = 'guestsOutput';
 guestsTitle.insertAdjacentElement('afterend', guestsPara);
-const vipPara = document.querySelector('.vip')
+const vipPara = document.querySelector('.vip');
 const riffraffPara = document.querySelector('.riffraff');
 riffraffPara.textContent = 'Riffraff: ';
-vipPara.textContent = 'VIP: '
+vipPara.textContent = 'VIP: ';
 
 // No looping necessary -- just array methods.
 const guestsCopy = [...guests];
 riffraffPara.textContent += `${guestsCopy.splice(guestsCopy.indexOf('Ross'), 1)}, ${guestsCopy.splice(guestsCopy.indexOf('Emily'), 1)}.`;
-vipPara.textContent += `${guestsCopy.join(', ')}.`
+vipPara.textContent += `${guestsCopy.join(', ')}.`;
 // riffraffPara.insertAdjacentElement('afterend', riffraffPara);
 
 // for (let i = 0; i < guests.length; i++) {

@@ -21,14 +21,38 @@
 /* mdn-html.html (Assessments index page) */
 
 /* mdn-js-loops.html */
-.contactsOutput::before  {
-	content: 'Contacts List: ';
+#loops .vip,
+#loops .riffraff {
+	padding: 10px;
+	background-color: linen;
+	margin: 1em 0;
+	border: solid 1px black;
+}
+abbr[title="Very Important Persons"],
+span.guests {
+	font-style: italic;
+}
+
+.contactsOutput::before,
+.guestsOutput::before  {
 	display: block;
-	color: red;
+	color: #a41b5f; /* site red */ 
+	font-weight: bold;
+}
+.contactsOutput::before {
+	content: 'Contacts List';
+}
+.guestsOutput::before {
+	content: 'Guest List';
 }
 .contactsOutput {
 	font-weight: bold;
 }
+#search:focus {
+  background-color: #a41b5f;
+  color: linen; 
+}
+
 /* mdn-js-events.html */
 .orangeOn {
 	color: orange;
