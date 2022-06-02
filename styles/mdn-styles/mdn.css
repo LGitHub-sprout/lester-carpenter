@@ -21,18 +21,28 @@
 /* mdn-html.html (Assessments index page) */
 
 /* mdn-js-loops.html */
+.guestsOutput,
+.guestsOutput + a {
+	text-align: center;
+}
+#loops .vip,
+#loops .riffraff,
+.launch-countdown + div {
+	width: 200px;
+	margin: 1em auto;
+	padding: 10px;
+	border: solid 1px black;
+	text-align: center;
+	background-color: lightgrey;
+}
 #loops .vip,
 #loops .riffraff {
-	padding: 10px;
-	background-color: linen;
-	margin: 1em 0;
-	border: solid 1px black;
+	width: 100%;
 }
 abbr[title="Very Important Persons"],
 span.guests {
 	font-style: italic;
 }
-
 .contactsOutput::before,
 .guestsOutput::before  {
 	display: block;

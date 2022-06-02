@@ -236,8 +236,6 @@
 		.article-body-wrap {
 			display: flex;
 			flex-direction: column;
-			/* this center is a bug */
-			align-items: left;
 			padding: 0 2em 0;
 		}
 		.main-portrait img {

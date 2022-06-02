@@ -97,7 +97,7 @@ riffraffPara.textContent = riffraffPara.textContent.slice(0, riffraffPara.textCo
 
 
 
-/***************** do.. while Loop through friends/clients array *****************
+/**************************** do.. while Loop through friends/clients array **************************
   const clients = [
     'Twyla',
     'Toby',
@@ -113,13 +113,6 @@ riffraffPara.textContent = riffraffPara.textContent.slice(0, riffraffPara.textCo
     'Dana',
     'MasaBoi'
   ];
-
-
-
-
-
-
-
 
 /**************************** Exiting loops with break **************************
   https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#exiting_loops_with_break
@@ -145,7 +138,7 @@ h2.insertAdjacentElement('afterend', contactsPara);
 const searchForm = document.querySelector('.search-form');
 const searchResult = document.createElement('p');
 searchForm.insertAdjacentElement('afterend', searchResult);
-searchResult.style.cssText = 'padding:10px;border:solid 1px black;background-color:linen;margin:1em 0;'; 
+searchResult.style.cssText = 'padding:10px;border:solid 1px black;background-color:lightgrey;margin:1em 0;'; 
 searchResult.textContent = 'Search Results:';
 const searchBtn = document.querySelector('button[name="Submit"]');
 
@@ -166,10 +159,6 @@ function displayContact() {
   }
 }
 searchBtn.addEventListener('click', displayContact);
-
-/**************************** Build  a custom myMap() function **************************
-  based on Briggs' https://briggs.dev/blog/understanding-callbacks
-*/
 
 const names = [
   'Sexy Mike',
@@ -192,21 +181,6 @@ arrayTitle.insertAdjacentElement('afterend', namesPara);
 // namesPara.textContent =`${names.join(' * ')}`;
 // namesPara.textContent = names.join(' * ').toUpperCase();
 
-/**************************** push(), forEach() **************************
-// Output copy of names array to browser in all caps using .forEach
-const newNames = [];
-names.forEach((name, index, array) => {
-  newNames.push(name.toUpperCase())
-  console.log(index)
-  console.log('forEach loop array', array)
-}); // Can I make this a function expression?
-// console.log('newNames array (all uppercase): ', newNames);
-namesPara.textContent = newNames.join(' * ')
-console.log('names array: ', names);
-*/
-
-// forEach() Method Syntax 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 /**************************** myMap() ************************** 
   from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#looping_through_a_collection
@@ -236,10 +210,10 @@ console.log('names array: ', names);
     for (let i = 0; i < arr.length; i++) {
       // save callbackResult as ea element FROM callbackFn that is looped,
       // then push ea element to newArray.
-      // callbackFn is a FUNCTION so needs to be formatted like one:
+      // callbackFn is a FUNCTION so needs to be formatted like one I'd use normally if I wanted to call items in an array (i.e., bracket notation and i):
       // function(param, param).
       const callbackResult = callbackFn(arr[i]); // callback result is array ITEM param as passed into callback
-      newArray.push(callbackResult); // I know this is more or less correct
+      newArray.push(callbackResult); // then push ea looped result to new array
     }
     return newArray;
   }
@@ -334,3 +308,4 @@ function concatNames(arr3, arr1, arr2 ) {
 }
 concatNames(designations, friends, lastNames);
 */
+

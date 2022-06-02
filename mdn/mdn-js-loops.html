@@ -87,7 +87,7 @@
 
         <h1 class="main-title">JavaScript Loops</h1>
         
-        <p>Looping through arrays using various <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">iterations</a> and appending results to the DOM.</p>
+        <p>Looping through arrays using various <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">iterations</a> and appending results to the DOM. In addition to the <abbr title="Mozilla Developer Network">MDN</abbr> links I reference througout my entire site, I also found this post on <a href="https://dev.to/christinecontreras/x-ways-to-iterate-over-arrays-and-when-to-use-each-icm">iterating over arrays and objects</a> very interesting although it's more advanced for my experience so far.</p>
         
         <div class="post-wrapper">
           <div class="article-body-wrap loops">
@@ -101,8 +101,6 @@
             <p>Second, remember that the exercise requires <em>counting backwards</em> from 10 to 1, which requires initializing the counter at 10 instead of the usual 0 and is the reason for <em>decrementing</em> instead of <em>incrementing</em>. Read about <strong>prefix</strong> and <strong>postfix</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment">incrementing</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Decrement#description">decrementing </a> to familiarize yourself with a couple subtle (and tricky) ways these operators work.</p>
             <p>Side note: using the <code>insertAdjacentElement('afterend', ...)</code> method will reverse the backwards count down when output to the browser. I created a <code>div</code> and used the <code>appendChild()</code> method instead.</p>
 
-
-            <!-- MDN Active Learning: Guest List -->
             <h2 class="guest-list">Guest List Exercise</h2>
             <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_filling_in_a_guest_list"><p>MDN Active Learning: Guest List</p></a>
             <p>Write a loop that iterates over the guests array. Append two paragraphs to the <abbr title="Document Object Model">DOM</abbr>, one labeled <span class="guests"><abbr title="Very Important Persons">VIP</abbr></span> and the other labeled <span class="guests">Riffraff</span>.</p>
@@ -112,7 +110,7 @@
             <p>One thing to consider is whether <a href="https://en.wikipedia.org/wiki/Immutable_object">mutating</a> the array could potentially be a problem; therefore, in this case I used the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax (...)</a> to first save the original array into a copy to ensure that the original isn't overwritten.</p>
             
             <h2 class="exit-loop">Prep Array for Looping – Exiting with <code>break</code> Statement</h2>
-            <p>Say I wanted to search through an array of contacts and their telephone numbers to return just the number I&apos;m looking for.</p> 
+            <p>I wanted to try searching through an array of contacts and their telephone numbers to return just the number I&apos;m looking for, based on this <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#exiting_loops_with_break">MDN looping example</a>.</p> 
             <p data-active="1">First, I need to add some simple HTML to my document:</p>
             <ul>
               <li>A text <code>&lt;input&gt;</code> allowing us to enter a name to search for.</li>
@@ -125,14 +123,9 @@
               <button type="button" value="Submit" name="Submit">Search</button>
             </div><!-- .search-form -->
             <p>Next, I'll select some elements on the page using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>querySelector()</code></a> which is used to appended them to the (<abbr class="abbr" title="Document Object Model">DOM</abbr>) after manipulating the array of contacts.</p>
-
             <p>The tricky bit for me is knowing how to extract the two pieces of the contacts data, each of which is one item in an array and separated with a colon. I'm no expert, but I believe most files come in this general format where individual pieces of data are delimited by characters, most commonly commas; hence, the CSV document file extension.</p>
-
             <p>Since the data is in an array format, it can be manipulated and altered using a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loop</a>. However, since the two individual pieces of data are both contained within <em>one</em> item (or field) in the array, it first has to be manipulated into a string and then it can be divided into separate pieces (using the colon as a delimiter) to then be put back into a new array. After which time, the new array contains two items for each contact, instead of one, making it easier to access and manipulate each of the two pieces of data.</p>
-
             <p>I had trouble getting access to the array items and after doing a couple searches found <a href="https://stackoverflow.com/questions/23440740/loop-through-array-using-split-to-separate-items-by-commas">this Stack Overflow</a> post which reminded me about using <strong>bracket notation</strong>. I also noodled around with the loop and discovered that the loop returns <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, something I can take advantage of in this situation.</p> 
-
-
 
             <h2 class="array-object-title">Standard Built-in Objects: Array</h2>
             <p>In this exercise, I'll build a callback function similar to a JavaScript (<abbr title="JavaScript">JS</abbr>) built-in method, based on <strong>Briggs Elsperger</strong>'s post, <a href="https://briggs.dev/blog/understanding-callbacks">Understanding Callbacks</a> called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"><code>map()</code></a> which, according to MDN's reference page, "creates a new array populated with the results of calling a provided function on every element in the calling array".</p>
