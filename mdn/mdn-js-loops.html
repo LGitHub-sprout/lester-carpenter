@@ -92,21 +92,26 @@
         <div class="post-wrapper">
           <div class="article-body-wrap loops">
 
-            <!-- MDN Active Learning: Guest List -->
-            
-            <h2 class="guest-list">Guest List Exercise</h2>
+            <h2 class="launch-countdown">Decrementing Inside Loops: Launch Countdown</h2>
+            <p>This is a simple exercise but good practice with loops which is afterall the main idea of this page.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_launch_countdown"><p>MDN Active Learning: Launch Countdown</p></a>
+            <div class="countdown-output"></div>
+            <p>I don't usually find myself decrementing in a loop block or using a <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">while</a></code> statement regularly. So, while (no pun intended) my preferred choice of looping is using the <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for</a></code> statement, this is a good time to practice using <code>while</code> and <code>do.. while</code> and discuss avoiding a few pitfalls.</p>
+            <p>First, my initial recommendation is to write the statement in a comment block to avoid endless looping and crashing the browser, which I <em>always</em> seem to do at least twice before getting it right.</p>
+            <p>Second, remember that the exercise requires <em>counting backwards</em> from 10 to 1, which requires initializing the counter at 10 instead of the usual 0 and is the reason for <em>decrementing</em> instead of <em>incrementing</em>. Read about <strong>prefix</strong> and <strong>postfix</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment">incrementing</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Decrement#description">decrementing </a> to familiarize yourself with a couple subtle (and tricky) ways these operators work.</p>
+            <p>Side note: using the <code>insertAdjacentElement('afterend', ...)</code> method will reverse the backwards count down when output to the browser. I created a <code>div</code> and used the <code>appendChild()</code> method instead.</p>
 
+
+            <!-- MDN Active Learning: Guest List -->
+            <h2 class="guest-list">Guest List Exercise</h2>
             <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_filling_in_a_guest_list"><p>MDN Active Learning: Guest List</p></a>
             <p>Write a loop that iterates over the guests array. Append two paragraphs to the <abbr title="Document Object Model">DOM</abbr>, one labeled <span class="guests"><abbr title="Very Important Persons">VIP</abbr></span> and the other labeled <span class="guests">Riffraff</span>.</p>
-
-            <p>This isn't the most challenging of exercises, but it's a good opportunity to practice the syntax for various looping statements and declarations. In fact, a loop isn't absolutely necessary for this one since there are built-in <abbr title="JavaScript">JS</abbr> methods, such as <a href="https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.splice"><code>splice()</code></a>, which do the looping internally for us.</p>
-
+            <p>This isn't the most challenging of exercises, but it's another good opportunity to practice the syntax for various looping statements and declarations. In fact, a loop isn't absolutely necessary for this one since there are built-in <abbr title="JavaScript">JS</abbr> methods, such as <a href="https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.splice"><code>splice()</code></a>, which do the looping internally for us.</p>
             <p class="vip"></p>
             <p class="riffraff"></p>
-
             <p>One thing to consider is whether <a href="https://en.wikipedia.org/wiki/Immutable_object">mutating</a> the array could potentially be a problem; therefore, in this case I used the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">spread syntax (...)</a> to first save the original array into a copy to ensure that the original isn't overwritten.</p>
-  
-            <h2 class="exit-loop">Preparing An Array for Looping and Exiting with <code>break</code> Statement</h2>
+            
+            <h2 class="exit-loop">Prep Array for Looping – Exiting with <code>break</code> Statement</h2>
             <p>Say I wanted to search through an array of contacts and their telephone numbers to return just the number I&apos;m looking for.</p> 
             <p data-active="1">First, I need to add some simple HTML to my document:</p>
             <ul>
@@ -148,11 +153,6 @@
             <p>As the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN web docs</a> state, the <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function.</p>
             <p>In this case, I'm filtering the array with the <code>startsWith()</code> method inside a callback function which gets passed to <code>filter()</code> in what's called an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow function expression</a>.<p>
             <p>You might have noticed that all the names begin with the letter &apos;L&apos; which is what is passed as the criteria to test for; therefore, these are all the elements in the array that begin with that letter.</p>
-
-            <!-- MDN Active Learning: Launch Countdown -->
-            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_launch_countdown"><p>MDN Active Learning: Launch Countdown</p>
-            </a>
-            <div class="countdown-output"></div>
 
           </div><!-- .article-body-wrap odin-strings -->
         </div><!-- .post-wrapper -->

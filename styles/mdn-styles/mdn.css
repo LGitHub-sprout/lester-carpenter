@@ -75,6 +75,7 @@ span.guests {
 	color: purple;
 	font-weight:600;
 	background-color:lightgrey;
+	max-width: 100%;
 }
 .capNameTitle + label,
 .capNameTitle + input {

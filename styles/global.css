@@ -60,6 +60,11 @@
 		text-decoration: underline dotted 15px;
 		text-underline-offset: .25em;
 	}
+	code {
+		background-color: linen;
+		padding: 2px;
+		border-radius: 2px;
+	}
 
 
 /* Fonts based on minor third, bumped up one level for desktop. */
@@ -220,7 +225,7 @@
 /* Desktop */
 	@media screen and (min-width: 600px) {
 		.article-body-wrap h2 {
-			text-align: left;
+			text-align: center;
 			margin: 1em 0 .75em 0;
 			color: inherit;
 		}
@@ -232,7 +237,7 @@
 			display: flex;
 			flex-direction: column;
 			/* this center is a bug */
-			align-items: center;
+			align-items: left;
 			padding: 0 2em 0;
 		}
 		.main-portrait img {
