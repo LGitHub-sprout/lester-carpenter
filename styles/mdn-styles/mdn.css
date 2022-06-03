@@ -85,11 +85,20 @@ span.guests {
 	color: purple;
 	font-weight:600;
 	background-color:lightgrey;
-	max-width: 100%;
+	width: 200px;
+	margin: 1em auto;
+}
+.cap-names-app {
+	max-width: 500px;
+	text-align: center;
+	margin: 0 auto;
 }
 .capNameTitle + label,
 .capNameTitle + input {
 	margin: .75em 0;
+}
+.capNameOutput {
+	text-align: center;
 }
 
 /* mdn-js-conditionals.html a.k.a. Weather App */
