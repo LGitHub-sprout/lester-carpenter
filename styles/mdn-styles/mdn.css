@@ -64,6 +64,21 @@ span.guests {
 }
 
 /* mdn-js-events.html */
+.wesBos {
+	border: solid black 1px;
+	padding: 10%;
+}
+.inner-most {
+	background-color: coral;
+}
+.outer-most {
+	background-color: thistle;
+	margin-bottom: 1.25em;
+}
+.middle {
+	background-color: mistyrose;
+}
+
 .orangeOn {
 	color: orange;
 	background-color: #222;

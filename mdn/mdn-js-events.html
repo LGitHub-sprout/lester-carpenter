@@ -87,7 +87,17 @@
         <div class="post-wrapper">
           <div class="article-body-wrap">
 
-            <input onclick="alert('This click event is brought to you courtesy of an HTML attribute. But it\'s not the ideal method.')" type="button" value="Click Me!">
+            <div class="outer-most wesBos">
+              <div class="middle wesBos">
+                <div class="inner-most wesBos"></div>
+              </div>
+            </div>
+
+            <!-- Attach event w attribute  -->
+            <!-- <input onclick="alert('This click event is brought to you courtesy of an HTML attribute. But it\'s not the ideal method.')" type="button" value="Click Me!"> -->
+
+            <!-- Call orangeBtn(event) function directly w attribute -->
+            <input onclick="orangeBtn(event)" type="button" value="Click Me!">
             <input type="button" value="Click Me Again!">
             <input class="lastBtn" type="button" value="And Click... Again!">
             <!-- onmouseover mouseenter toggleAttribute() -->
