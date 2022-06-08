@@ -39,7 +39,6 @@
     i--;
   } while (i > 0);
 
-
 /**************************** MDN Looping Through Guest List **************************
   https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#active_learning_filling_in_a_guest_list
 
@@ -60,6 +59,11 @@
     for .. of
     while
     maybe write a callback function for a forEach() loop
+
+    (fixes trailing comma problem)
+    if counter is at end of array,
+    then put a period at the end;
+    otherwise, use a comma btwn items.
 */
 const guests = [
   'Chris', 'Anne', 'Ross', 'Colin', 'Terri', 'Emily', 'Sam', 'Kay', 'Bruce'
@@ -90,29 +94,6 @@ for (let i = 0; i < guests.length; i++) {
 }
 vipPara.textContent = vipPara.textContent.slice(0, vipPara.textContent.length - 2) + '.';
 riffraffPara.textContent = riffraffPara.textContent.slice(0, riffraffPara.textContent.length - 2) + '.';
-
-
-
-
-
-
-
-/**************************** do.. while Loop through friends/clients array **************************
-  const clients = [
-    'Twyla',
-    'Toby',
-    'Sammie',
-    'Teddy',
-    'Fritz'
-  ];
-  */
-  const friends = [
-    'Olivia',
-    'Shivaun',
-    'Ed',
-    'Dana',
-    'MasaBoi'
-  ];
 
 /**************************** Exiting loops with break **************************
   https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#exiting_loops_with_break
@@ -160,6 +141,23 @@ function displayContact() {
 }
 searchBtn.addEventListener('click', displayContact);
 
+
+
+
+
+
+
+/**************************** do.. while Loop through friends/clients array **************************
+
+*/
+  const friends = [
+    'Olivia',
+    'Shivaun',
+    'Ed',
+    'Dana',
+    'MasaBoi'
+  ];
+  
 const names = [
   'Sexy Mike',
   'Li\'l Kang',
@@ -171,36 +169,16 @@ const names = [
   'Shivaun',
   'Lester'
 ];
-const arrayTitle = document.querySelector('.array-object-title');
-namesPara = document.createElement('p');
-namesPara.classList = 'namesPara';
-namesPara.style.cssText = 'color:#a41b5f;';
-arrayTitle.insertAdjacentElement('afterend', namesPara);
-
-// Don't need a loop to output array in all caps to browser
-// namesPara.textContent =`${names.join(' * ')}`;
-// namesPara.textContent = names.join(' * ').toUpperCase();
-
 
 /**************************** myMap() ************************** 
   from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#looping_through_a_collection
+  
   How to use map():
   Pass a function into ARRAY.map(funcName), and map() calls the funcName function once for each item in the array, passing in the ARRAY item.
   It then ADDS THE RETURN VALUE FROM EACH FUNCTION CALL (what map() does internally; hint: how it works if I need to build a myMap()) to a new array, and finally returns the new array.
-  In this case the function we provide converts the item to uppercase, so the resulting array contains all our ARRAY cats in uppercase.
+  In this case the function we provide converts the item to uppercase, so the resulting array contains all our ARRAY items in uppercase.
 
-  // from https://www.theodinproject.com/lessons/foundations-clean-code
-  // function expression
-  const sumArray = function(array) { 
-    let sum = 0;
-    array.forEach(function(number) {
-      sum += number;
-    });
-    return sum;
-  };
-  // console.log(sumArray([2, 2, 2]));
-  
-  // create myMap(arr, callbackFn) function and pass arr and callbackFn params
+  // create myMap(arr, callbackFn) and pass arr and callbackFn params
   function myMap(arr, callbackFn) {
     // RETURNS a new array w each element being the result of the callback function, so I need to init a newArr.
     const newArray = [];
@@ -227,7 +205,7 @@ arrayTitle.insertAdjacentElement('afterend', namesPara);
   });
 */
 
-/***************** Generic Function Loop w for.. of *****************
+/**************************** Generic Function Loop w for.. of **************************
   Create a 'generic' function that takes an array as a param and returns the array to the browser.
   function genericLoop(arr) {
     const h1 = document.querySelector('h1');
@@ -270,26 +248,25 @@ arrayTitle.insertAdjacentElement('afterend', namesPara);
   }
 genericLoop(friends);
 
-/************************* filter() **********************************************
+/**************************** filter() **************************
   Filter the names array content based on search criteria.
   Use filter() to filter an array by first letter "L".
 
   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter#searching_in_array
 
-  This is hard. Not sure I can do it without looking at code.
   // filter() only friends that start with letter 'e'
   friends.filter(function (element) {
     if (element.toLowerCase().startsWith('e')) console.log('Friends names starting w E ', element)
   });
 */
   
-  const lastNames = [
-    'Rosencrantz',
-    'O*Toole',
-    'Ornowski',
-    'Johnson',
-    'Ikeda'
-  ];
+const lastNames = [
+  'Rosencrantz',
+  'O*Toole',
+  'Ornowski',
+  'Johnson',
+  'Ikeda'
+];
 const designations = [
   'Mrs.',
   'Mrs.',
@@ -298,14 +275,9 @@ const designations = [
   'Mr.'
 ];
 
-/************************* Loop thru multiple arrays ***************************************
-// https://javascript.info/while-for#labels-for-break-continue
-function concatNames(arr3, arr1, arr2 ) {
-  for (let i = 0; i < arr1.length; i++) {
-    loopPara.textContent += `${arr3[i]} ${arr1[i]} ${arr2[i]}, `;
-  }
-  loopPara.textContent = loopPara.textContent.slice(0, loopPara.textContent.length - 2) + '.';
-}
-concatNames(designations, friends, lastNames);
+
+/**************************** Calculating Squares **************************
+  How to clear a screen w a button:
+  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#calculating_squares
 */
 
