@@ -1,12 +1,64 @@
 /* 
 * Odin Project Page Styles Index
 * 
+* dom-manipulation.html
 * drumkit.html
 * loops.html
 * array-functions.html
 * rps.html (Rock Paper Scissors)
 * Reset
 */
+
+/* dom-manipulation.html */
+#dom-item-lister,
+.dom-item-container {
+  max-width: 600px;
+  padding: 15px 20px;
+  border: solid 1px green;
+}
+#dom-item-lister {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: green;
+}
+.dom-item-container {
+  margin: 0 auto 2em;
+}
+#dom-item-lister > div h2 {
+  margin: 0 10px 0 0;
+  color: linen;
+}
+/* .dom-item-container {
+  margin: 2em 0;
+} */
+input[value="Submit"] {
+  margin-left: 10px;
+}
+.lister-app-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.lister-app-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid .25px #444;
+  padding: 10px;
+  margin: 0;
+  align-items: center;
+}
+li button {
+  background-color: red;
+  border-radius: 3px;
+  border: solid 1px #444;
+  color: linen;
+  cursor: pointer;
+}
+
 
 /* drumkit.html */
 #site-header {

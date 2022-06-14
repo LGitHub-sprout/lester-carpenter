@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="../styles/normalize.css">
   <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/mdn-styles/mdn.css">
+  <link rel="stylesheet" href="../styles/odin-project-styles/odin.css">
   <link rel="canonical" href="https://lester-carpenter.lsystemworks.com/">
 
   <link rel="manifest" href="../manifest.webmanifest">
@@ -89,6 +89,30 @@
         <div class="post-wrapper">
           <div class="article-body-wrap dom">
 
+            <div id="dom-item-lister">
+              <div>
+                <h2>Item Lister App</h2>
+              </div>
+              <div class="search">
+                <input type="text" placeholder="Search">
+              </div>
+            </div>
+            <div class="dom-item-container">
+              <h3>Add Items</h3>
+              <form>
+                <input class="new-item other-stuff lots-of-classes" type="text">
+                <input type="submit" value="Submit">
+              </form>
+              <h3>Items</h3>
+              <ul class="lister-app-list">
+                <li class="lister-app-list__list-item">Item 1 <button class="delete">x</button></li>
+                <li class="lister-app-list__list-item">Item 1 <button class="delete">x</button></li>
+                <li class="lister-app-list__list-item">Item 1 <button class="delete">x</button></li>
+                <li class="lister-app-list__list-item">Item 1 <button class="delete">x</button></li>
+              </ul>
+            </div>
+            <p>I'm feeling pretty good about creating the Item List App above, based on <a href="https://www.youtube.com/watch?v=i37KVt_IcXw">this Traversy Media video</a> (completely coded from scratch). However, I'll need to create a text node for the newly created list item that gets appended to unordered list,  using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"><code>Document.createTextNode()</code></a> method, which I've never done before. </p>
+
             <h2>HTMLCollections and Arrays</h2>
             
             <button class="btn one" type="button">Button One</button>
@@ -96,14 +120,45 @@
             <button class="btn three" type="button">Button Three</button>
             <button class="btn four" type="button">Button Four</button>
 
-            <p>I'm fairly comfortable and familiar with selecting elements with the variations of <code>querySelector</code> and <code>getElement*</code> selectors. </p>
+            <p>I'm fairly comfortable and familiar with selecting elements with the variations of <code>querySelector</code> and <code>getElement*</code> selectors among a few others. </p>
 
-            <p>I have much less practice traversing the <abbr title="Document Object Model">DOM</abbr>, although it doesn't confuse me too much so far. That said, I think it could get confusing quickly as <a href="https://developer.mozilla.org/en-US/docs/Web/API">JavaScript Web API</a>s both <em><strong>inherit</strong></em> as well as are based on other object classes which can, from what I understand, often be used interchangeably. No doubt practice will show which ones work best under certain circumstances.</p>
+            <p>I have much less practice traversing the <abbr title="Document Object Model">DOM</abbr>, although it doesn't confuse me too much so far (thankfully). That said, I think it could get confusing quickly as <a href="https://developer.mozilla.org/en-US/docs/Web/API">JavaScript Web API</a>s both <em><strong>inherit</strong></em> as well as are based on other object classes which can, from what I understand based on readings, often be used interchangeably. No doubt practice will show which ones work best under certain circumstances.</p>
 
             <p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style#getting_style_information"><code>Window.getComputerStyle()</code></a> to get the values of all <abbr title="Cascading Style Sheets">CSS</abbr> properties for an element.</p>
 
-
-
+            <h2 class="traversy-part-three another-class so-many-classes">Web API Notes</h2>
+            <p>Track the mouse position while hovering over the grey rectangle.</p>
+            <div class="output">
+              <p class="x">Offset X:</p>
+              <p class="y">Offset Y:</p>
+            </div>
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>
+                <ul>
+                  <li>MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event Reference</a> page. Access the <code>event</code> object by passing it as an argument </li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target">target</a> property</li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/type">type</a> property</li>
+                </ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+                <p>The Element API has a list of various events for binding.</p>
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/id"><code>id</code></a> property can be used to get <code>id</code> from an element when chained onto the event target property and anytime I have access to an element object.</li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList</a> returns a live <code>DOMTokenList</code>. 
+                    <ul>
+                      <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList">DOMTokenList</a></code> is an API that I haven't read much about yet. It can be accessed with bracket notation. There appear to be <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList#methods">many helpful methods</a> to use on it and can be looped over using <code>.foreach()</code>.</li>
+                      <li>Is this where <code>value</code> property comes from when accessing node values?</li>
+                      <li>Poking around the event, I found an API called, <a href="https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap"><strong>NamedNodeMap</strong></a>. </li>
+                      <li>There's <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX"><code>MouseEvent.clientX</a></code></a> of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a> interface. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX">offsetX</a> for coordinates on event target versus window. A good way to remember is that <em>client</em> is the browser and <em>offset</em> represents the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a> interface.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement">HTMLInputElement</a>
+                <p>Putting this here for a reference. Although this is specifically for the <code>input</code> element, there seems to be at least several like this where I can access properties through a more specific API.<p>
+              
+              </li>
+            </li>
+            </ul>
 
 
 

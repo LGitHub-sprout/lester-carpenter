@@ -1,6 +1,6 @@
 /**************************** Traversy Media: JS DOM Crash Course parts 1-4 ***
 
-  Examining the Document Object
+  Part 1: Examining the Document Object
   
  console.log('console.log... ', document.firstChild)
  console.dir('console.dir... document.lastChild', document.firstChild)
@@ -36,7 +36,7 @@ for (const link in allLinks) {
  */
 
  /**************************** SELECTORS and STYLING: .style ***
-   querySelector, querySelectorAll, getElementsByClassName, getElementById, getElementsByTagName
+  querySelector, querySelectorAll, getElementsByClassName, getElementById, getElementsByTagName
 
    console.log(document.querySelector('.main-title'));
    console.log(document.getElementById('loops'));
@@ -153,11 +153,15 @@ const articleElement = document.querySelector('#dom')
 // nextElementSibling Element interface
 // previousElementSibling
 const newDiv = document.createElement('div');
-newDiv.className = 'Hello';
-newDiv.id = 'Hello#1';
+newDiv.classList = 'Hello goodbye whatevs EarlMasaboi';
+newDiv.id = 'Hello-#1';
 newDiv.setAttribute('title', 'This is the Hello Div');
 newDiv.style.cssText = 'font-size:30px;text-align:center;margin:1em';
 // console.log(newDiv)
+// console.log(typeof newDiv.classList, 'DOMTokenList is an array?', Array.isArray(newDiv.classList));
+// console.log(newDiv.classList[3]) // not an array but can still use bracket notation to access items, I guess.
+// console.log(newDiv.id) 
+
 
 // create a text node  
 const newDivText = document.createTextNode('This Sentence Is Created In JS');
@@ -165,13 +169,86 @@ newDiv.appendChild(newDivText);
 // try using insertBefore method
 articleElement.insertAdjacentElement('beforebegin', newDiv);
 
+
 // console.log(articleElement.previousElementSibling)
 
+/**************************** Part 3 .innerHTLM ***
+ 
+  .innerHTML .classList 
+  Different events and event types, adding event listeners, adding properties.
+
+  Keyboard Events
+    keydown
+
+ */
+const part3Heading = document.querySelector('.traversy-part-three');
+part3Heading.id = 'pert-three';
+const newDiv3 = document.createElement('div');
+newDiv3.style.cssText = 'width:100%;height:200px;background-color:#737CA1;'; 
+const paraX = document.querySelector('.x');
+const paraY = document.querySelector('.y');
+const submitBtn = document.querySelector('input[type="submit"]');
+
+// Trying to get input element value on btn click but not working 
+submitBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  const newItemInput = document.querySelector('.new-item');
+  console.log(e.target) // return element? no
+  // console.log(e.target.value) // submit btn value
+  console.log(newItemInput.value);
+
+  // console.log('classList: ', newItemInput.classList)
+})
+
+// Don't use .innerHTML until I can be 100% sure to escape the HTML (plugins) 
+part3Heading.insertAdjacentElement('afterend', newDiv3);
+
+// call Element properties on any valid element object 
+// console.log(typeof part3Heading, part3Heading.className)
+// DOMTokenList is type of object but not an array: DOMTokenList
+// console.log(typeof part3Heading, Array.isArray(part3Heading)); 
+
+//   function buttonClicked(e) {
+  //   console.log(e.target, 'Button clicked');
+  // };
+// part3Heading.addEventListener('mouseenter', buttonClicked);
+// newDiv3.addEventListener('mouseenter', buttonClicked);
+// newDiv3.addEventListener('mouseover', buttonClicked);
+// newDiv3.addEventListener('mouseleave', buttonClicked);
+// newDiv3.addEventListener('mouseout', buttonClicked);
+// newDiv3.addEventListener('mousemove', bindEvent); // binds the offset coordinates for colored rectangle
+
+const newItem = document.querySelector('.new-item');
+newItem.addEventListener('input', bindEvent);
+
+function bindEvent(e) {
+  // console.log('e.target.value: ', e.target.value)
+  inputVal = e.target.value;
+  // console.log(inputVal)
+  // console.log('event type: ', e.type)
+  // console.log('e.target: ', e.target.classList)
+  // console.log('newItemInput: ', newItemInput)
+  // console.log(e.target.nodeValue)
 
 
+  // paraX.textContent = `Offset X: ${e.offsetX}`;
+  // paraY.textContent = `Offset Y: ${e.offsetY}`;
+  // newDiv3.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 10)`;
 
-
-
+  // part3Heading.textContent = 'You just changed the header content!';
+  // console.log(e);
+  // console.log('currentTarget: ', e.currentTarget)
+  // console.log('MouseEvent.clientx', e.clientX, 'and offsetY', e.offsetY);
+  // console.log(e.target)
+  // console.log(e.target.id)
+  // Single classList
+  // console.log(e.target.classList[2])
+  // All classList
+  // console.log(e.target.classList)
+  // console.log(e.target.className)
+  
+  // Event Types
+};
 
 
 
