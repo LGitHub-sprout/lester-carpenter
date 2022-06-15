@@ -152,11 +152,11 @@ const articleElement = document.querySelector('#dom')
 
 // nextElementSibling Element interface
 // previousElementSibling
-const newDiv = document.createElement('div');
-newDiv.classList = 'Hello goodbye whatevs EarlMasaboi';
-newDiv.id = 'Hello-#1';
-newDiv.setAttribute('title', 'This is the Hello Div');
-newDiv.style.cssText = 'font-size:30px;text-align:center;margin:1em';
+// const newDiv = document.createElement('div');
+// newDiv.classList = 'Hello goodbye whatevs EarlMasaboi';
+// newDiv.id = 'Hello-#1';
+// newDiv.setAttribute('title', 'This is the Hello Div');
+// newDiv.style.cssText = 'font-size:30px;text-align:center;margin:1em';
 // console.log(newDiv)
 // console.log(typeof newDiv.classList, 'DOMTokenList is an array?', Array.isArray(newDiv.classList));
 // console.log(newDiv.classList[3]) // not an array but can still use bracket notation to access items, I guess.
@@ -164,10 +164,10 @@ newDiv.style.cssText = 'font-size:30px;text-align:center;margin:1em';
 
 
 // create a text node  
-const newDivText = document.createTextNode('This Sentence Is Created In JS');
-newDiv.appendChild(newDivText);
-// try using insertBefore method
-articleElement.insertAdjacentElement('beforebegin', newDiv);
+// const newDivText = document.createTextNode('This Sentence Is Created In JS');
+// newDiv.appendChild(newDivText);
+// // try using insertBefore method
+// articleElement.insertAdjacentElement('beforebegin', newDiv);
 
 
 // console.log(articleElement.previousElementSibling)
@@ -187,15 +187,15 @@ const newDiv3 = document.createElement('div');
 newDiv3.style.cssText = 'width:100%;height:200px;background-color:#737CA1;'; 
 const paraX = document.querySelector('.x');
 const paraY = document.querySelector('.y');
-const submitBtn = document.querySelector('input[type="submit"]');
+const submitBtn1 = document.querySelector('input[type="submit"]');
 
 // Trying to get input element value on btn click but not working 
-submitBtn.addEventListener('click', function (e) {
+submitBtn1.addEventListener('click', function (e) {
   e.preventDefault();
   const newItemInput = document.querySelector('.new-item');
-  console.log(e.target) // return element? no
+  // console.log(e.target) // return element? no
   // console.log(e.target.value) // submit btn value
-  console.log(newItemInput.value);
+  // console.log(newItemInput.value);
 
   // console.log('classList: ', newItemInput.classList)
 })
@@ -218,8 +218,8 @@ part3Heading.insertAdjacentElement('afterend', newDiv3);
 // newDiv3.addEventListener('mouseout', buttonClicked);
 // newDiv3.addEventListener('mousemove', bindEvent); // binds the offset coordinates for colored rectangle
 
-const newItem = document.querySelector('.new-item');
-newItem.addEventListener('input', bindEvent);
+const newItem1 = document.querySelector('.new-item');
+newItem1.addEventListener('input', bindEvent);
 
 function bindEvent(e) {
   // console.log('e.target.value: ', e.target.value)
@@ -246,13 +246,7 @@ function bindEvent(e) {
   // All classList
   // console.log(e.target.classList)
   // console.log(e.target.className)
-  
-  // Event Types
 };
-
-
-
-
 
 /********* Test forEach() and loops on both NodeList and HTMLCollection *********
   const btnGroup = document.querySelectorAll('#btn2');
@@ -267,11 +261,11 @@ function bindEvent(e) {
   // for (i = 0; i < btnGroup2.length; i++) {
   //   console.log(btnGroup2[i])
   // }
-  // HTMLCollection method .namedItem() returns first elem matching ID, name attribute 
+  // HTMLCollection method .namedItem() returns first elem matching ID, name attribute
   // console.log(btnGroup2.namedItem('btn2'))
 
   // btnGroup2.forEach(btn => {
-    //   console.log(btn)  
+    //   console.log(btn)
     // })
     // btnGroup2Arr = Array.from(btnGroup2);
     // console.log(Array.isArray(btnGroup2Arr)) // HTMLCollection
@@ -279,14 +273,38 @@ function bindEvent(e) {
       //   console.log(btn);
       // })
 
-const multipleSelectors = document.querySelectorAll('li, p');
-const dataSrc = document.querySelector('p[data]')
-// console.log('This is dataSrc?', dataSrc);
-const dataActiveP = document.querySelector('p[data-active="1"]');
-// console.log(dataActiveP)
+/**************************** Item Lister App ****************************
 
-const outerDiv2 = document.querySelector('.outer');
-// By default, querySelectorAll only verifies that the LAST ELEMENT in the selector is within the search scope. 
-const innerDiv2 = document.querySelectorAll('.outer .inner');
-// console.log(innerDiv2.length); 
+  Objective
+  Type name of new item in input field and click the 'Submit' button to add it to the list of items below.
+  
+  @var    newItem       New Item Name (user input)
+  @var    appList       Unordered List 
+  @var    submitBtn     Submit button for event binding
+  
+  Pseudocode Part 1:
+  Add a user-generated item to the existing list of items, including formatting, content, and styling.  
+
+*/
+const newItem = document.querySelector('.new-item');
+const submitBtn = document.querySelector('input[type="submit"]');
+const appList = document.querySelector('.lister-app-list');
+const li = document.querySelector('.lister-app-list__list-item');
+
+submitBtn.addEventListener('click', addItem);
+
+function addItem(e) {
+  e.preventDefault();
+
+  const delBtn = document.createElement('button');
+  delBtn.classList = 'delete';
+  delBtn.textContent = 'x';
+  const addItem = document.createElement('li');
+  addItem.textContent = newItem.value;
+  addItem.classList = li.classList;
+  
+  appList.insertAdjacentElement('afterbegin', addItem);
+  addItem.appendChild(delBtn);
+
+}
 
