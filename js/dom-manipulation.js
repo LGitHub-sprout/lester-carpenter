@@ -287,22 +287,27 @@ function bindEvent(e) {
   Add a user-generated item to the existing list of items, including formatting, content (meaning the delete button), and styling. 
   
   Part 2:
-  Return cursor to input field and clear the box.
-    1.  adding items
-    2.  deleting items
-        Delete the app list items when user clicks red 'x' delete button.
+  1.  adding items
+  2.  deleting items
+      Confirm, delete the app list items when user clicks red 'x' delete button.
+      Use the event to target the delete box (why, I don't understand, but ok) instead of targeting the delete box directly.
+      Selects the ul in order to 'target' li and use removeChild() to remove it.
+  3.  filtering items
 
-    3.  filtering items
+  Return cursor to input field and clear the box.
 */
 const submitBtn = document.querySelector('input[type="submit"]');
 // unordered list
 const appList = document.querySelector('.lister-app-list');
 const li = document.querySelector('.lister-app-list__list-item');
+const input = document.querySelector('.new-item');
 
 submitBtn.addEventListener('click', addItem);
+appList.addEventListener('click', deleteItem);
+
+
 
 function addItem(e) {
-
   const newItemVal = document.querySelector('.new-item').value;
 
   const newItem = document.createElement('li');
@@ -314,4 +319,13 @@ function addItem(e) {
   delBtn.className = 'delete';
   delBtn.appendChild(document.createTextNode('x'));
   newItem.appendChild(delBtn);
+}
+
+function deleteItem(e) {
+  // use conditional to test for whether the delete box has been clicked.
+  if (e.target.classList.contains('delete')) {
+    if (confirm('Are you sure you want to delete this list item?')) {
+      appList.removeChild(e.target.parentElement);
+    }
+  } 
 }
