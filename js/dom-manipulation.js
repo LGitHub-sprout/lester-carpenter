@@ -277,34 +277,47 @@ function bindEvent(e) {
 
   Objective
   Type name of new item in input field and click the 'Submit' button to add it to the list of items below.
+  Once added, program functionality to delete items using red 'x' button located at right of each item.
   
   @var    newItem       New Item Name (user input)
   @var    appList       Unordered List 
   @var    submitBtn     Submit button for event binding
   
   Pseudocode Part 1:
-  Add a user-generated item to the existing list of items, including formatting, content, and styling.  
+  Add a user-generated item to the existing list of items, including formatting, content (meaning the delete button), and styling. 
+  
+  Part 2:
+  Return cursor to input field and clear the box.
+    1.  adding items
+    2.  deleting items
+        Delete the app list items when user clicks red 'x' delete button.
 
+    3.  filtering items
 */
-const newItem = document.querySelector('.new-item');
 const submitBtn = document.querySelector('input[type="submit"]');
+// unordered list
 const appList = document.querySelector('.lister-app-list');
 const li = document.querySelector('.lister-app-list__list-item');
 
 submitBtn.addEventListener('click', addItem);
 
 function addItem(e) {
-  e.preventDefault();
 
-  const delBtn = document.createElement('button');
-  delBtn.classList = 'delete';
-  delBtn.textContent = 'x';
-  const addItem = document.createElement('li');
-  addItem.textContent = newItem.value;
-  addItem.classList = li.classList;
+  const newItemVal = document.querySelector('.new-item').value;
+
+  const newItem = document.createElement('li');
+  newItemClassName = li.className;
+  newItem.appendChild(document.createTextNode(newItemVal));
+
+  appList.appendChild(newItem);
+
+
+
+
+
+
+
   
-  appList.insertAdjacentElement('afterbegin', addItem);
-  addItem.appendChild(delBtn);
+
 
 }
-
