@@ -310,14 +310,8 @@ function addItem(e) {
   newItem.appendChild(document.createTextNode(newItemVal));
   appList.appendChild(newItem);
 
-  
-
-
-
-
-
-
-  
-
-
+  const delBtn = document.createElement('button');
+  delBtn.className = 'delete';
+  delBtn.appendChild(document.createTextNode('x'));
+  newItem.appendChild(delBtn);
 }
