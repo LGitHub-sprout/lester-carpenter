@@ -306,11 +306,11 @@ function addItem(e) {
   const newItemVal = document.querySelector('.new-item').value;
 
   const newItem = document.createElement('li');
-  newItemClassName = li.className;
+  newItem.className = li.className;
   newItem.appendChild(document.createTextNode(newItemVal));
-
   appList.appendChild(newItem);
 
+  
 
 
 
