@@ -111,23 +111,18 @@
                 <li class="lister-app-list__list-item">Item 4 <button class="delete">x</button></li>
               </ul>
             </div>
-            <h3>Filter Items Function</h3>
-            <p><span class="filter">Objective</span>: loop through all the Item List App items, including the newly added ones, and compare them to the text that the user inputs in the search field so I can either display exact matches (case insensitive) or hide (using CSS) items that don&apos;t match.</p>
-            <p>First, save a reference of the search field in a variable and bind <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">an event listener</a> to run a <code>filterItem</code> function on <code>keyup</code>.</p>
-            <p>Since I already have a variable for the unordered list, I decided to use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/children">children</a> property of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a> Web API to target its list items. I&apos;ll need to run a loop over those in order to match them to the user input search field.</p>
-            <p>My problem is that I&apos;m not able to hide the entire <code>&lt;li&gt;</code> element, just the content.</p>
-            <ul>
-              <li><code>firstElementChild</code> works to delete the entire element; however, <em>only</em> the first element, and I need all elements.</li>
-            </ul>
-
-
-
+            <p>I'm was feeling pretty good about creating the <span class="bold">Item List App</span> above completely from scratch, based on <a href="https://www.youtube.com/watch?v=i37KVt_IcXw">this Traversy Media video</a>. However, once I got working on it I realized as is so often the case, that there are situations that arise that really make me <em>think</em> about what methods and properties are the best tools for the current job, but also just what exactly the objective is in the first place.</p> 
+              
+            <p>For example, the video uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"><code>Document.createTextNode()</code></a> method, which I've never used before. But more importantly, I didn't sort of hone in on that as I watched and have an &quot;Ah-ha!&quot; moment and realize why it&apos;s being used. I don&apos;t think it caused a problem necessarily, I just think it would better serve me to be more aware when these situations arise, hopefully to avoid problems down the line.</p>
+            <p>A quick search finds that there appears to be two basic ways to create nodes in JS, so I assume there's a way to create the same text nodes using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"><code>textContent</code></a>. </p>
+            <p>Another example is when I was working on the filter function below. At a certain point I think I just lost sight of the basic idea of what I was doing: comparing the text input of the search field with the text content of the list items themselves.</p>
             
-
-            <p>I'm feeling pretty good about creating the Item List App above, based on <a href="https://www.youtube.com/watch?v=i37KVt_IcXw">this Traversy Media video</a> (completely coded from scratch). However, I'll need to create a text node for the newly created list item that gets appended to unordered list,  using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"><code>Document.createTextNode()</code></a> method, which I've never done before. </p>
+            <h3>Filter Items Function</h3>
+            <p><span class="bold">Objective</span>: loop through all the items, including the newly added ones, and compare them to the text that the user inputs in the search field so I can either display exact matches (case insensitive) or hide (using CSS) items that don&apos;t match.</p>
+            <p>First, save a reference of the search field in a variable and bind <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">an event listener</a> to run a <code>filterItem</code> function on <code>keyup</code>.</p>
+            <p>Since I already have a variable for the unordered list, I decided to use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/children">children</a> property of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a> Web API to target its list items and then run a loop over those in order to match them to the user input search field. I do try to vary things a bit when I see an opportunity to use an alternative method of solving the problem. And hopefully that helps solidify some additional concepts moving forward.</p>
 
             <h2>HTMLCollections and Arrays</h2>
-            
             <button class="btn one" type="button">Button One</button>
             <button class="btn two" type="button">Button Two</button>
             <button class="btn three" type="button">Button Three</button>

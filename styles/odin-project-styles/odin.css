@@ -31,6 +31,9 @@
   margin: 0 10px 0 0;
   color: linen;
 }
+span.bold {
+  font-weight: bold;
+}
 /* .dom-item-container {
   margin: 2em 0;
 } */

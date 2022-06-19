@@ -216,7 +216,7 @@ part3Heading.insertAdjacentElement('afterend', newDiv3);
 // newDiv3.addEventListener('mouseover', buttonClicked);
 // newDiv3.addEventListener('mouseleave', buttonClicked);
 // newDiv3.addEventListener('mouseout', buttonClicked);
-// newDiv3.addEventListener('mousemove', bindEvent); // binds the offset coordinates for colored rectangle
+newDiv3.addEventListener('mousemove', bindEvent); // binds the offset coordinates for colored rectangle
 
 const newItem1 = document.querySelector('.new-item');
 newItem1.addEventListener('input', bindEvent);
@@ -231,8 +231,8 @@ function bindEvent(e) {
   // console.log(e.target.nodeValue)
 
 
-  // paraX.textContent = `Offset X: ${e.offsetX}`;
-  // paraY.textContent = `Offset Y: ${e.offsetY}`;
+  paraX.textContent = `Offset X: ${e.offsetX}`;
+  paraY.textContent = `Offset Y: ${e.offsetY}`;
   // newDiv3.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 10)`;
 
   // part3Heading.textContent = 'You just changed the header content!';
@@ -294,6 +294,7 @@ const submitBtn = document.querySelector('input[type="submit"]');
 // unordered list
 const appList = document.querySelector('.lister-app-list');
 const search = document.querySelector('[placeholder="Search items..."]');
+const li = document.querySelector('.lister-app-list__list-item');
 
 submitBtn.addEventListener('click', addItem);
 appList.addEventListener('click', deleteItem);
@@ -304,7 +305,6 @@ function addItem(e) {
   input.focus();
   const inputVal = document.querySelector('.new-item').value;
   
-  const li = document.querySelector('.lister-app-list__list-item');
   const newItem = document.createElement('li');
   newItem.className = li.className;
   newItem.appendChild(document.createTextNode(inputVal));
@@ -330,11 +330,10 @@ function filterItem() {
   searchText = search.value.toLowerCase();
   
   Array.from(appList.children).forEach((item) => {
-    const itemText = item.firstChild.textContent;
+    // const itemText = item.firstChild.textContent;
     
     if (item.firstChild.textContent.toLowerCase().indexOf(searchText) != -1) {
       item.style.cssText = 'display: flex;';
-      console.log(item)
     } else {
       item.style.cssText = 'display: none;';
     }
