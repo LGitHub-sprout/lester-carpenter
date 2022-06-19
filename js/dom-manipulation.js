@@ -278,54 +278,65 @@ function bindEvent(e) {
   Objective
   Type name of new item in input field and click the 'Submit' button to add it to the list of items below.
   Once added, program functionality to delete items using red 'x' button located at right of each item.
-  
-  @var    newItem       New Item Name (user input)
-  @var    appList       Unordered List 
-  @var    submitBtn     Submit button for event binding
+  Search items cause matched items to remain visible whereas unmatched items disappear.
   
   Pseudocode Part 1:
-  Add a user-generated item to the existing list of items, including formatting, content (meaning the delete button), and styling. 
-  
-  Part 2:
-  1.  adding items
-  2.  deleting items
-      Confirm, delete the app list items when user clicks red 'x' delete button.
-      Use the event to target the delete box (why, I don't understand, but ok) instead of targeting the delete box directly.
-      Selects the ul in order to 'target' li and use removeChild() to remove it.
-  3.  filtering items
-
+  Add a user-generated item to the existing list of items, including formatting, content (meaning the delete button), and styling when a user fills in the Add Items field and clicks the 'Submit' button. 
   Return cursor to input field and clear the box.
+
+  Part 2:
+  Confirm and then delete an App List Item when a user clicks the red 'delete' button. Ensure that if the user cancels the confirmation that the item is not deleted.
+
+  Part 3:
+  Code a filter function for the 'Search items...' input field so that, regardless of whether typed upper- or lowercase, the function compares the search text to the list items text thereby hiding non-matches and displaying matches.
 */
 const submitBtn = document.querySelector('input[type="submit"]');
 // unordered list
 const appList = document.querySelector('.lister-app-list');
-const li = document.querySelector('.lister-app-list__list-item');
-const input = document.querySelector('.new-item');
+const search = document.querySelector('[placeholder="Search items..."]');
 
 submitBtn.addEventListener('click', addItem);
 appList.addEventListener('click', deleteItem);
-
-
+search.addEventListener('keyup', filterItem);
 
 function addItem(e) {
-  const newItemVal = document.querySelector('.new-item').value;
-
+  const input = document.querySelector('.new-item');
+  input.focus();
+  const inputVal = document.querySelector('.new-item').value;
+  
+  const li = document.querySelector('.lister-app-list__list-item');
   const newItem = document.createElement('li');
   newItem.className = li.className;
-  newItem.appendChild(document.createTextNode(newItemVal));
+  newItem.appendChild(document.createTextNode(inputVal));
   appList.appendChild(newItem);
-
+  
   const delBtn = document.createElement('button');
   delBtn.className = 'delete';
   delBtn.appendChild(document.createTextNode('x'));
   newItem.appendChild(delBtn);
+  input.value = '';
 }
 
 function deleteItem(e) {
   // use conditional to test for whether the delete box has been clicked.
   if (e.target.classList.contains('delete')) {
-    if (confirm('Are you sure you want to delete this list item?')) {
+    if (confirm('Are you sure you want to delete this item?')) {
       appList.removeChild(e.target.parentElement);
     }
   } 
+}
+
+function filterItem() {
+  searchText = search.value.toLowerCase();
+  
+  Array.from(appList.children).forEach((item) => {
+    const itemText = item.firstChild.textContent;
+    
+    if (item.firstChild.textContent.toLowerCase().indexOf(searchText) != -1) {
+      item.style.cssText = 'display: flex;';
+      console.log(item)
+    } else {
+      item.style.cssText = 'display: none;';
+    }
+  });
 }

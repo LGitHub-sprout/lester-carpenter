@@ -94,7 +94,7 @@
                 <h2>Item Lister App</h2>
               </div>
               <div class="search">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search items...">
               </div>
             </div>
             <div class="dom-item-container">
@@ -111,6 +111,18 @@
                 <li class="lister-app-list__list-item">Item 4 <button class="delete">x</button></li>
               </ul>
             </div>
+            <h3>Filter Items Function</h3>
+            <p><span class="filter">Objective</span>: loop through all the Item List App items, including the newly added ones, and compare them to the text that the user inputs in the search field so I can either display exact matches (case insensitive) or hide (using CSS) items that don&apos;t match.</p>
+            <p>First, save a reference of the search field in a variable and bind <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">an event listener</a> to run a <code>filterItem</code> function on <code>keyup</code>.</p>
+            <p>Since I already have a variable for the unordered list, I decided to use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/children">children</a> property of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a> Web API to target its list items. I&apos;ll need to run a loop over those in order to match them to the user input search field.</p>
+            <p>My problem is that I&apos;m not able to hide the entire <code>&lt;li&gt;</code> element, just the content.</p>
+            <ul>
+              <li><code>firstElementChild</code> works to delete the entire element; however, <em>only</em> the first element, and I need all elements.</li>
+            </ul>
+
+
+
+            
 
             <p>I'm feeling pretty good about creating the Item List App above, based on <a href="https://www.youtube.com/watch?v=i37KVt_IcXw">this Traversy Media video</a> (completely coded from scratch). However, I'll need to create a text node for the newly created list item that gets appended to unordered list,  using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"><code>Document.createTextNode()</code></a> method, which I've never done before. </p>
 
