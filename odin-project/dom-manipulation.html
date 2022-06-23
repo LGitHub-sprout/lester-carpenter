@@ -85,11 +85,10 @@
       <article id="dom" class="odin-js-dom">
 
         <h1 class="main-title">DOM Manipulation</h1>
-        
         <div class="post-wrapper">
           <div class="article-body-wrap dom">
 
-            <div id="dom-item-lister">
+            <div id="dom-item-lister" style="border: solid 2px magenta;">
               <div>
                 <h2>Item Lister App</h2>
               </div>
@@ -140,7 +139,7 @@
               <p class="x">Offset X:</p>
               <p class="y">Offset Y:</p>
             </div>
-            <ul>
+            <ul class="web-dev-simplified">
               <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Event</a>
                 <ul>
                   <li>MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/Events">Event Reference</a> page. Access the <code>event</code> object by passing it as an argument </li>
@@ -156,26 +155,61 @@
                       <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList">DOMTokenList</a></code> is an API that I haven't read much about yet. It can be accessed with bracket notation. There appear to be <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList#methods">many helpful methods</a> to use on it and can be looped over using <code>.foreach()</code>.</li>
                       <li>Is this where <code>value</code> property comes from when accessing node values?</li>
                       <li>Poking around the event, I found an API called, <a href="https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap"><strong>NamedNodeMap</strong></a>. </li>
-                      <li>There's <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX"><code>MouseEvent.clientX</a></code></a> of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a> interface. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX">offsetX</a> for coordinates on event target versus window. A good way to remember is that <em>client</em> is the browser and <em>offset</em> represents the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a> interface.</li>
+                      <li>There's <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX"><code>MouseEvent.clientX</code></a> of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a> interface. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX">offsetX</a> for coordinates on event target versus window. A good way to remember is that <em>client</em> is the browser and <em>offset</em> represents the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">Window</a> interface.</li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement">HTMLInputElement</a>
                 <p>Putting this here for a reference. Although this is specifically for the <code>input</code> element, there seems to be at least several like this where I can access properties through a more specific API.<p>
-              
               </li>
-            </li>
             </ul>
+            <h2>The 14 Must Know DOM Manipulation Techniques</h2>
+            <p>That is, according to <a href="https://www.youtube.com/watch?v=y17RuWkWdn8">Web Dev Simplified</a>.</p>
 
+            <h3>Adding Elements to Page</h3>
+            <p>Appending elements</p>
+            <ul class="web-dev-simplified">
+              <li><code>append</code>: multiple strings and nodes (elements)</li>
+              <li><code>appendChild</code>: only single node (elements)</li>
+            </ul>
+            <p>Adding Text</p>
+            <ul class="web-dev-simplified">
+              <li><code>innerText</code>: returns what is displayed inside HTML (follows CSS styles).</li>
+              <li><code>textContent</code>: copies directly from HTML.</li>
+              <li><code>innerHTML</code>: huge security problem. Only way to add HTML from a string.</li>
+            </ul>
+            <h3>Deleting Elements from DOM</h3>
+            <ul class="web-dev-simplified">
+              <li>Element API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove"><code>remove()</code></a></li>
+              <li>Node API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild"><code>removeChild()</code></a></li>
+            </ul>
+            <h3>Properties, Classes, Data Attributes</h3>
+            <ul class="web-dev-simplified">
+              <li><code>getAttribute(attributeName)</code> string</li>
+              <li>Can also use properties of Element API such as <code>.id</code>, <code>.title</code>, <code>.className</code>, etc.</li>
+              <li><code>span.id = 'idName'</code></li>
+              <li><code>setAttribute()</code></li> 
+              <li><code>removeAttribute()</code></li>
+            </ul>
+            <p>Web Dev Simplified Blog: <a href="https://blog.webdevsimplified.com/2020-10/javascript-data-attributes/">Data Attributes</a></p>
+            <ul class="web-dev-simplified">
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset/"><code>HTMLElement.dataset</code></a> provides access to custom data attributes (data-*) on elements.
+                <ul class="web-dev-simplified">
+                  <li>Value is a <code>DOMStringMap</code> (a map of strings)</li>
+                  <li id="old-ID" data-id="123456789" data-user="dana:johnson" data-date-of-birth="july:3:1999">Inspect this list item for an example of a data-set attribute.</li>
+                  <li>See the end of dom-manipulation.js for examples of how to access individual dataset properties as well as looping with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>.</li>
+                  <li><code>dataAttr.dataset.newName = 'new-name';</code></li>
+                </ul>
+             </li> 
+            </ul>
+            <p>Working with classes: <code>classList</code> add, remove, toggle, replace</p>
+            <p>Working w <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style"><code>HTMLElement.style</code></a> property.</p>
 
-
-          </div><!-- .article-body-wrap odin-strings -->
+          </div><!-- .article-body-wrap dom -->
         </div><!-- .post-wrapper -->
       </article>
-      <span class="next-sibling">This is the next sibling!<span>
     </main>
-
     <footer id="site-footer" class="colophon content-info">
       <div class="inside-footer container">
         <!-- <div class="contact-wrap"> -->

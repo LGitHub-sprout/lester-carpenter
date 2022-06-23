@@ -34,6 +34,11 @@
 span.bold {
   font-weight: bold;
 }
+.web-dev-simplified li {
+  list-style-type: circle;
+  line-height: 1.75em;
+}
+
 /* .dom-item-container {
   margin: 2em 0;
 } */

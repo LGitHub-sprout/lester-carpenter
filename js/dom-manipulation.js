@@ -339,3 +339,41 @@ function filterItem() {
     }
   });
 }
+
+/**************************** Web Dev Simplified: dataset Attribute ***
+  
+  
+*/
+const dataAttr = document.querySelector('[data-id="123456789"]');
+// console.log(dataAttr)
+console.log(dataAttr.dataset.id)
+console.log(dataAttr.dataset.user)
+console.log(dataAttr.dataset.dateOfBirth)
+// Adds 'data-' to newName attribute, changes camel-case to kabob 
+dataAttr.dataset.newName = 'new-name-set-in-JS';
+// console.log(dataAttr)
+// console.log(dataAttr.dataset)
+const dataSet = dataAttr.dataset;
+console.log('dataSet is the DOMStringMap', dataSet);
+
+// console.log(typeof dataSet, Array.isArray(dataSet));
+for (const property in dataSet) {
+  console.log(`${property}: ${dataSet[property]}`);
+}
+/**************************** classList ****/
+const ulClassList = document.querySelector('.web-dev-simplified')
+// console.log('Does ulClassList contain "foo" class?', ulClassList.classList.contains('foo'))
+// console.log(ulClassList.classList.add('Poop', 'Pees'));
+// console.log(ulClassList.classList)
+
+/**************************** HTMLElement.style ***
+  https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style#setting_styles
+  const itemListerColor = document.querySelector('#dom-item-lister')
+  // Overwrites INLINE styles
+  // itemListerColor.style.cssText = 'border: solid 2px magenta;'; 
+// itemListerColor.style.border = 'solid 2px red';
+
+// Won't overwrite INLINE styles.
+itemListerColor.style.backgroundColor = 'yellow';
+*/
+
