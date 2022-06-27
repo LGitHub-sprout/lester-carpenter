@@ -171,6 +171,12 @@ dt + span {
   .button-wrap button {
     padding: 10px;
     margin: 10px;
+    cursor: pointer;
+  }
+  .playRoundResult {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em;
   }
 
 
