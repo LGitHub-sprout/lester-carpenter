@@ -4,20 +4,37 @@
   https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors#assignment 
   2a.
   2b.
-    Create three buttons, one for each selection. 
-    Add an event listener to the buttons that call(s) your playRound function (and returns) the correct playerSelection every time a button is clicked. (you can keep the console.logs for this step)
-    
-  Errors/Notes:
-})
+  2c. Display the running score, and announce a winner of the game once one player reaches 5 points.
+      This seems to be the trickiest bit of this challenge.
+      What's happening currently:
+        Scoring isn't updated properly: I get an initial point on the first round but subsequent rounds write over previous scores.
+          Using playGame2 callback function w a loop: seems like I'd be better off just rewriting the entire app.
+          Everything breaks.
+      Pseudocode:
+        User clicks one of three choices: rock paper scissors
+        Compare user choice of rock paper scissors to computer's random choice.
+        Depending which choice wins:
+          Optional: display results of each round to the browser.
+          Output the running score to the browser and
+          announce a winner of the game when one player reaches 5 points.
+
+      Tues 9:30am
+        going back to EOD Monday. it's basically working except score-keeping.
+        I can't pull answer from thin air; I have no experience, so I googled this:
+        https://dev.to/davidchedrick/creating-a-simple-timer-and-score-keeper-in-javascript-394g
+        a.  Moving score initializations to global scope since maybe being overwritten is caused by local scope?
+        b.  This seems to have solved the problem... I'm hoping ??
+
 */
 const rpsBtns = document.querySelectorAll('.button-wrap button');
 rpsBtns.forEach((button) => {
   button.addEventListener('click', playRound);
 });
-function playRound(e) {
 
-  let computerScore = 0;
-  let humanScore = 0;
+let computerScore = 0;
+let humanScore = 0;
+
+function playRound(e) {
 
   const computerSelection = computerPlay();
   humanSelection = e.target.textContent.toLowerCase();
@@ -68,17 +85,17 @@ function playRound(e) {
       break;
   }
 
-//   if (humanScore === 5) {
-//     console.log('HUMANITY WINS!');
-//   } else if (computerScore === 5) {
-//     console.log('Submit to the superior A.I. Race')
-//   }
+  if (humanScore === 5) {
+    console.log('HUMANITY WINS!');
+  } else if (computerScore === 5) {
+    console.log('Submit to the superior A.I. Race')
+  }
 
-//   console.log(`humanScore: ${humanScore}`);
-//   console.log(`computerScore: ${computerScore}`);
+  console.log(`humanScore: ${humanScore}`);
+  console.log(`computerScore: ${computerScore}`);
 
 // return `${humanSelection} and ${computerSelection}`;
-  return humanSelection;
+  // return humanSelection;
 } // playRound
 
 function computerPlay(randoNum) {
