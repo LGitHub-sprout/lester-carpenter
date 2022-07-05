@@ -52,7 +52,8 @@
   btn2.onclick = yellowBtn;
   function yellowBtn(event) {
     event.target.style.color = 'yellow';
-    console.log(event)
+    event.target.style.backgroundColor = 'brown'; 
+    // console.log(event)
 } 
 
 // Web API Element Interface property selector .nextElementSibling
@@ -78,7 +79,7 @@ btn2.nextElementSibling.addEventListener('mouseover', (event) => event.target.st
 // onmouseover mouseenter 
 function orangeBtn(event) {
   event.target.style.color = 'orange';
-  console.log(event)
+  // console.log(event)
 } 
 
 const orangeButton = document.querySelector('.orangeBtn');

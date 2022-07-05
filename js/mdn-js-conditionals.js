@@ -101,8 +101,8 @@ function resetOption(selectWeather, optionToUse) {
   // access to object's properties with [] using 'j' as counter awa a key to the value? 
   for (let opt, j = 0; opt = selectOptions[j]; j++) {
     if (opt.value === optionToUse) {
-  if above condition is true
-  then assign the option value from 'j' to whatever the first parameter is.
+  // if above condition is true
+  // then assign the option value from 'j' to whatever the first parameter is.
       selectElement.selectedIndex = j;
       break;
     }
@@ -260,7 +260,7 @@ section.appendChild(para2);
   https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Test_your_skills:_Conditionals#conditionals_4
 */
 // T or F depending whether login machine is on or off. 
-const machineActive = false;
+const machineActive = true; // false
 // User's login pw.
 const pwd = 'cheese';
 // Prints to output panel indicating whether machine is on/off.
@@ -280,8 +280,8 @@ const para4 = document.createElement('p');
 const para5 = document.createElement('p');
 para4.textContent = `${machineResult}`;
 para5.textContent = `You ${pwdResult} logged in.`;
-sectionConditionals4.appendChild(para4);
-sectionConditionals4.appendChild(para5);
+// sectionConditionals4.appendChild(para4);
+// sectionConditionals4.appendChild(para5);
 
 
 
