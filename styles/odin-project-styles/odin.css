@@ -9,6 +9,40 @@
 * Reset
 */
 
+/* dom.html delete */
+body {
+  background-color:rgba(0, 0, 0, .3)
+}
+article {
+  padding: 50px;
+  margin: 0 auto;
+  width: 600px;
+  max-height: 600px;
+  display: block;
+}
+.sketch-container {
+  /* content-box | border-box */ 
+  box-sizing: content-box;
+  /* box-sizing: border-box; */
+  width: 400.5px; /* 340px/20px  */
+  height: 400.5px;
+  margin: 60px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  border-top: solid .25px black;
+  border-left: solid .25px black;
+}
+.grid-square {
+  border-right: solid .25px black;
+  border-bottom: solid .25px black;
+  /* border: solid .25px black; */
+  width: 7.15px;
+  height: 7.15px;
+  flex-shrink: 0;
+  background-color: white;
+}
+
 /* dom-manipulation.html */
 .article-body-wrap.dom {
   display: block;
@@ -70,7 +104,6 @@ li button {
   cursor: pointer;
 }
 
-
 /* drumkit.html */
 #site-header {
   flex: 0;
@@ -85,11 +118,22 @@ header.odin-drumkit + #main-content {
   display: flex;
   flex-direction: column;
   justify-content:center;
-  align-items:center; 
+}
+#drumkit {
+  width: 100%;
 }
 #drumkit small {
-  color: yellow;
-  /* text-align: center; */
+  color: rgb(96, 96, 6);
+  display: block;
+  text-align: center;
+}
+#drumkit small a {
+  color: inherit;
+  text-decoration: underline;
+}
+#drumkit small + p {
+  text-align: center;
+  margin-bottom: 5em;
 }
 .keys {
   display: flex;

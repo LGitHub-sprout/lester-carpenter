@@ -65,7 +65,9 @@
 		padding: 2px;
 		border-radius: 2px;
 	}
-
+q {
+	font-style: italic;
+}
 
 /* Fonts based on minor third, bumped up one level for desktop. */
 	h1 {
