@@ -104,7 +104,15 @@ li button {
   cursor: pointer;
 }
 
-/* drumkit.html */
+/* 
+  Dropdown menu bug:
+  global.css line 142
+  .nav-list__item--nested-list li:last-child
+  All list-items after first need padding-top:0; 
+*/
+#site-header.odin-drumkit .main-nav .nav-list-toggle li.nav-list__item > a {
+  color: inherit;
+}
 #site-header {
   flex: 0;
 }
