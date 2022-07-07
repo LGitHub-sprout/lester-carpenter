@@ -1,6 +1,7 @@
 /* 
 * Odin Project Page Styles Index
 * 
+* etch-a-sketch.html
 * dom-manipulation.html
 * drumkit.html
 * loops.html
@@ -9,39 +10,7 @@
 * Reset
 */
 
-/* dom.html delete */
-body {
-  background-color:rgba(0, 0, 0, .3)
-}
-article {
-  padding: 50px;
-  margin: 0 auto;
-  width: 600px;
-  max-height: 600px;
-  display: block;
-}
-.sketch-container {
-  /* content-box | border-box */ 
-  box-sizing: content-box;
-  /* box-sizing: border-box; */
-  width: 400.5px; /* 340px/20px  */
-  height: 400.5px;
-  margin: 60px auto 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  border-top: solid .25px black;
-  border-left: solid .25px black;
-}
-.grid-square {
-  border-right: solid .25px black;
-  border-bottom: solid .25px black;
-  /* border: solid .25px black; */
-  width: 7.15px;
-  height: 7.15px;
-  flex-shrink: 0;
-  background-color: white;
-}
+/* etch-a-sketch.html */
 
 /* dom-manipulation.html */
 .article-body-wrap.dom {
@@ -75,10 +44,6 @@ span.bold {
   list-style-type: circle;
   line-height: 1.75em;
 }
-
-/* .dom-item-container {
-  margin: 2em 0;
-} */
 input[value="Submit"] {
   margin-left: 10px;
 }
@@ -109,16 +74,28 @@ li button {
   global.css line 142
   .nav-list__item--nested-list li:last-child
   All list-items after first need padding-top:0; 
+  Or some other global solution.
+  Something like :nth-child :not(:first-child)
+
+      background-color: rgba(128, 128, 128, .75);
+			padding: 5px;
+			border-radius: 3px;
 */
-#site-header.odin-drumkit .main-nav .nav-list-toggle li.nav-list__item > a {
+/* Drumkit */
+.odin-drumkit .main-nav label span.menu-toggle {
+  background-color: rgba(128, 128, 128, .75);
+  padding: 5px;
+  border-radius: 3px;
+}
+.odin-drumkit .main-nav .nav-list-toggle li.nav-list__item > a {
   color: inherit;
 }
 #site-header {
   flex: 0;
 }
-.home.drumkit {
+html.drumkit {
   background-image: url('../../images/odin-project-images/pexels-mantas-hesthaven-354304.jpg');
-  /* cover */
+  /* cover | fill */
   background-size: cover;
   background-position: center;
 }

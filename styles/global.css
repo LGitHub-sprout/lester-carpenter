@@ -186,14 +186,11 @@ q {
 			padding-left: .75em;
 		}
 		span.menu-toggle {
-			/* width: 33%; */
 			text-align: center;
 			display: block;
 			font-size: 1em;
 			text-transform: uppercase;
 			cursor: pointer;
-			/* position: absolute;
-			right: 0; */
 		}
 		#menu-toggle {
 			position: absolute;
