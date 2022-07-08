@@ -20,8 +20,8 @@ article {
   /* content-box | border-box */ 
   box-sizing: content-box;
   /* box-sizing: border-box; */
-  width: 400.5px; /* 340px/20px  */
-  height: 400.5px;
+  width: 400px; /* 340px/20px  */
+  height: 400px;
   margin: 60px auto 0;
   display: flex;
   flex-wrap: wrap;
@@ -33,10 +33,14 @@ article {
   border-right: solid .25px black;
   border-bottom: solid .25px black;
   /* border: solid .25px black; */
-  width: 33.33px;
-  height: 33.33px;
+  /* width: 14.8px; */
+  /* height: 14.8px; */
   flex-shrink: 0;
   background-color: white;
+}
+.article-body-wrap.etch-a-sketch h2 + p {
+  text-align: center;
+  margin-top: 0;
 }
 
 /* dom-manipulation.html */

@@ -41,6 +41,9 @@
 	body {
 		height: 100%;
 	}
+	dl {
+		margin: 0;
+	}
 	figure {
 		margin: 0;
 	}

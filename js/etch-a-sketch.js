@@ -73,6 +73,32 @@ const divContainer = document.querySelector('.sketch-container');
 // 400 / 13 = 30.77px wide
 // 13 * 13 = 169 items
 
+let squaresPerSide = prompt('How many squares down should the grid be?', 60);
+
+function calcGrid(squaresPerSide) {
+
+  const gridArea = Math.pow(squaresPerSide, 2);
+  const gridHeight = Math.floor(400 / squaresPerSide);
+  const gridWidth = Math.floor(400 / squaresPerSide);
+
+  for (let i = 0; i < gridArea; i++) {
+    const gridItem = document.createElement('div');
+    gridItem.classList = 'grid-square';
+    gridItem.style.cssText = `height:${gridHeight}px; width:${gridWidth}px`;
+    // gridItem.style.cssText = 'width: 20px;height: 20px;border-right: solid .25px black;border-bottom: solid .25px black;';
+    divContainer.appendChild(gridItem);
+  }
+  console.log(gridArea)
+  console.log(typeof gridHeight, gridWidth)
+}
+calcGrid(squaresPerSide)
+// area of a square is: square = 20(side 1) * 20(side 2)
+// So I'd use division to calc the size of each square?
+// Number of grid-items / square area?
+// If the side is always 20 (20 * 20 = 400)  
+// const randNum = Math.floor(Math.random() * 60);
+// console.log(randNum)
+
 // user input = 33
 // 400 / 33 = 12px wide
 // 33 * 33 = 1089 grid-items at 12.12px square
@@ -90,20 +116,9 @@ const divContainer = document.querySelector('.sketch-container');
 // 56 * 56 = 3136
 
 // user input = 12
-// 400 / 12 = 33.33
-// 12 * 12 = 
+// 600 / 12 = 50
+// 12 * 12 = 144
 
-
-// grid-item's width is dynamic/based on container width and number of rows or columns (either works bc the area of a square is the lenth of each side times itself).
-for (let i = 0; i < 144; i++) {
-  const gridItem = document.createElement('div');
-  gridItem.classList = 'grid-square';
-  // gridItem.style.cssText = 'width: 20px;height: 20px;border-right: solid .25px black;border-bottom: solid .25px black;';
-  divContainer.appendChild(gridItem);
-}
-// The area of a square is: square = 20(side) * 20(side)
-// So I'd use division to calc the size of each square?
-// Number of grid-items / square area?
-// If the side is always 20 (20 * 20 = 400)  
-const randNum = Math.floor(Math.random() * 60);
-console.log(randNum)
+// user input = 17
+// 400 / 17 = 23.53
+// 17 * 17 = 289
