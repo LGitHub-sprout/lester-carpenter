@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html class="etch-a-sketch" lang="en" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,12 +102,32 @@
               <dd><strong>Hint</strong>: Look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">mouseover</a> link for info on the event that occurs when a mouse enters (the boundaries of) an element for more info about hover events as well as others.</dd>
               <dd>Changing the color of the divs can be done by adding classes or using <abbr title="JavaScript">JS</abbr> to change the background.</dd>
             </dl>
+            <h2>Problems So Far</h2>
+            <p>Having trouble with what I'm guessing is a rounding error. My loop is working and the height/width is calculated correctly; however, there are barely perceptible gaps in the grid with a certain number of grid cells and columns. I've tried <em>as many</em> easy/common solutions as I can think of to no avail. I was thinking that perhaps a percentage width and/or height might fix the problem and found <a href="https://luc1100.github.io/odin-etch-a-sketch/">this</a> solution that uses <code>flex: 0 0 %</code> in what appears to be a single loop, so I'll try doing that before turning to the nested loop route.</p>
+            <p>The Odin server folks suggested this is probably as <abbr title="Cascading Style Sheets">CSS</abbr> problem, and I was able to get rid of the gaps inside the grid but there's still a couple nearly imperceptible gaps at the edges now. I'll circle back and address those. For now I have to move on after spending a lot of time nitpicking that detail.</p>
+
+            <h2>Planning the Control Area</h2>
+            <p>Per the specification:</p>
+            <ul>
+              <li>Button to prompt changing grid dimensions.</li>
+              <li>Color Buttons (spec):
+                <ul>
+                  <li>Black/White (toggle)</li>
+                  <li>Random RGB value (toggle)</li>
+                  <li>"Darken" button that adds 10% of black, until completely black.</li>
+                </ul>
+              </li>
+            </ul>
+            <p></p>
+
             <ul>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://tylphe.github.io/etchASketch/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://rlmoser99.github.io/etch-a-sketch/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://michalosman.github.io/etch-a-sketch/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://bscottnz.github.io/esketch/">Example Etch-a-Sketches</a></li>
+              <li><a target="_blank" href="https://angieaugy.github.io/etch-a-sketch/">Example Etch-a-Sketches</a></li>
+              <li>Interesting <code>canvas</code> element solution <a href="https://stackoverflow.com/questions/32676627/javascript-loop-to-create-grid-on-canvas#32676689">stackoverflow solution</a>.</li>
             </ul>
 
 

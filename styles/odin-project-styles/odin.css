@@ -7,38 +7,50 @@
 * loops.html
 * array-functions.html
 * rps.html, rps-ui.html
-* Reset
 */
 
 /* etch-a-sketch.html */
+html.etch-a-sketch {
+  /* line-height: 1.15; */
+  line-height: normal;
+}
 article {
   margin: 0 auto;
   max-height: 600px;
   display: block;
 }
 .sketch-container {
+  line-height: normal;
   /* content-box | border-box */ 
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   /* box-sizing: border-box; */
-  width: 400px; /* 340px/20px  */
-  height: 400px;
+  width: 500px;
+  height: 500px;
   margin: 60px auto 0;
   display: flex;
+  justify-content: center;
+  /* justify-content: flex-end; */
   flex-wrap: wrap;
-  flex-shrink: 0;
-  border-top: solid .25px black;
-  border-left: solid .25px black;
+  /* align-content: flex-start; */
+  /* align-content: flex-end; */
+  /* align-content: center; */
+  border-bottom: .5px solid black;
+  border-right: .5px solid black;
 }
 .grid-square {
-  border-right: solid .25px black;
-  border-bottom: solid .25px black;
+  border-top: .5px solid black;
+  border-left: .5px solid black;
+  margin: 0;
+  padding: 0;
   /* border: solid .25px black; */
   /* width: 14.8px; */
   /* height: 14.8px; */
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
+  /* flex: 0 0 1.6666666666666667%; */
+  /* height: 1.6666666666666667%; */
   background-color: white;
 }
-.article-body-wrap.etch-a-sketch h2 + p {
+.post-wrapper > .article-body-wrap.etch-a-sketch h2:first-child + p {
   text-align: center;
   margin-top: 0;
 }
