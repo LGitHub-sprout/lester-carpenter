@@ -1,5 +1,7 @@
 
 const divContainer = document.querySelector('.sketch-container');
+const setGridSize = document.querySelector('.set-grid-size');
+
 // Create the number of grid-items based on user input
 // user input = 13
 // grid-container = 400px
@@ -7,15 +9,21 @@ const divContainer = document.querySelector('.sketch-container');
 // 13 * 13 = 169 items
 
 // let squaresPerSide = prompt('How many squares down should the grid be?', 60);
-function calcGrid(squaresPerSide) {
+// squaresPerSide = Math.floor(Math.random() * 100);
+// squaresPerSide = 16;
+function calcGrid(squaresPerSide = 16) {
+
+  // If there's a userChoice of grid size, use that. Otherwise, use the default.
+  // defaultGridSize 
+  // userGridSize
+  // squaresPerSide = userChoice ? userChoice : squaresPerSide;
 
   // const gridHeight = Math.floor(400 / squaresPerSide);
   // const gridWidth = Math.floor(400 / squaresPerSide);
   
-  // Set a default
   const gridArea = Math.pow(squaresPerSide, 2);
-  // const gridHeight = Number(400 / squaresPerSide).toFixed(15);
-  // const gridWidth = Number(400 / squaresPerSide).toFixed(15);
+  // const gridHeight = Number(500 / squaresPerSide).toFixed(15);
+  // const gridWidth = Number(500 / squaresPerSide).toFixed(15);
   const gridHeight = Number(100 / squaresPerSide).toFixed(15);
   const gridWidth = Number(100 / squaresPerSide).toFixed(15);
 
@@ -30,14 +38,14 @@ function calcGrid(squaresPerSide) {
     // console.log('Width: ', gridWidth)
   }
   console.log('gridArea: ', gridArea)
+  console.log('squaresPerSide', squaresPerSide)
 }
-calcGrid(100)
+calcGrid()
 // area of a square is: square = 20(side 1) * 20(side 2)
-// So I'd use division to calc the size of each square?
-// Number of grid-items / square area?
+// Number of grid-items / square area
 // If the side is always 20 (20 * 20 = 400)  
-const randNum = Math.floor(Math.random() * 60);
-console.log('randNum: ', randNum)
+// const randNum = Math.floor(Math.random() * 60);
+// console.log('randNum: ', randNum)
 
 // user input = 33
 // 400 / 33 = 12px wide

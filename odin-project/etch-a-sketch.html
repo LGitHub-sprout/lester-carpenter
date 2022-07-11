@@ -83,6 +83,7 @@
       <article id="drumkit">
 
         <h1 class="main-title">Etch-a-Sketch</h1>
+        <button class="set-grid-size" type="button">Set Grid Size</button>
         <div class="sketch-container">
         </div><!-- .sketch-container -->
         <div class="post-wrapper">
@@ -118,7 +119,19 @@
                 </ul>
               </li>
             </ul>
-            <p></p>
+            <p>Button prompt: </p>
+            <ul>
+              <li>Create <abbr title="Hypertext Markup Language">HTML</abbr> button.</li>
+              <li>Select prompt button and add an event listener that prompts user for grid size preference.</li>
+              <li>Might be fun to set the initial grid size to a rando number for Vuh-rhy-uh-tay, lol.</li>
+            </ul>
+            <dl>
+              <dt>Set Grid Size button</dt>
+              <dd>The <code>calcGrid()</code> function sets the initial grid size on page load.</dd>
+              <dd>Now I need to add functionality that sets the grid size with the Set Grid Size button <em>if</em> that's been set.</dd>
+              <dd>Seems like <code>calcGrid()</code> needs a default squaresPerSize value with conditionals to override it if desired.</dd>
+              <dd>Try using ternary logic. I think I need to rename my variables and add one for user choice of grid size.</dd>
+            </dl>
 
             <ul>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
