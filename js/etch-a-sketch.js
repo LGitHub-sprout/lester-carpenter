@@ -1,6 +1,14 @@
 
 const divContainer = document.querySelector('.sketch-container');
 const setGridSize = document.querySelector('.set-grid-size');
+let userChoice;
+let squaresPerSide;
+
+setGridSize.addEventListener('click', function () {
+  userChoice = prompt('How many squares across should the grid be?');
+  calcGrid();
+});
+// setGridSize.addEventListener('click', calcGrid);
 
 // Create the number of grid-items based on user input
 // user input = 13
@@ -11,12 +19,13 @@ const setGridSize = document.querySelector('.set-grid-size');
 // let squaresPerSide = prompt('How many squares down should the grid be?', 60);
 // squaresPerSide = Math.floor(Math.random() * 100);
 // squaresPerSide = 16;
-function calcGrid(squaresPerSide = 16) {
+function calcGrid(squaresPerSide) {
 
-  // If there's a userChoice of grid size, use that. Otherwise, use the default.
-  // defaultGridSize 
-  // userGridSize
-  // squaresPerSide = userChoice ? userChoice : squaresPerSide;
+  // userChoice = prompt('How many squares down should the grid be?');
+  if (userChoice) {
+    squaresPerSide = userChoice;
+    console.log('userChoice', userChoice)
+  } else squaresPerSide = 16;
 
   // const gridHeight = Math.floor(400 / squaresPerSide);
   // const gridWidth = Math.floor(400 / squaresPerSide);
@@ -30,7 +39,7 @@ function calcGrid(squaresPerSide = 16) {
   for (let i = 0; i < gridArea; i++) {
     const gridItem = document.createElement('div');
     gridItem.classList = 'grid-square';
-    gridItem.style.cssText = `height:${gridHeight}%;flex: 0 0 ${gridWidth}%`;
+    gridItem.style.cssText = `height:${gridHeight}%; flex: 0 0 ${gridWidth}%`;
     // gridItem.style.cssText = `height:${gridHeight}px; width:${gridWidth}px`;
     // gridItem.style.cssText = 'width: 20px;height: 20px;border-right: solid .25px black;border-bottom: solid .25px black;';
     divContainer.appendChild(gridItem);

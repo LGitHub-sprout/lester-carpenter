@@ -131,6 +131,15 @@
               <dd>Now I need to add functionality that sets the grid size with the Set Grid Size button <em>if</em> that's been set.</dd>
               <dd>Seems like <code>calcGrid()</code> needs a default squaresPerSize value with conditionals to override it if desired.</dd>
               <dd>Try using ternary logic. I think I need to rename my variables and add one for user choice of grid size.</dd>
+              <dd>Do I attach the button event listener to <code>calcGrid()</code> function or do I set the listener as a function?</dd>
+              <dd>Not sure how I connect the user choice with the <code>calcGrid()</code> function—I just added it to the function and will add conditionals.</dd>
+              <dd>If there's a <code>userChoice</code> then set <code>squaresPerSide</code> to that, otherwise use default.</dd>
+              <dd>I don't want the prompt in the <code>calcGrid()</code> function because it will always call the prompt on page load. I want the grid to be set on page load and for the prompt to be called when the button is clicked. Then I want the <code>userChoice</code> to be saved into the squaresPerSide variable. </dd>
+              <dd>I put the conditional resetting <code>squaresPerSide</code> to <code>userChoice</code> in the <code>calcGrid()</code>.</dd>
+              <dd><code>calcGrid()</code> is being run on page load and setting <code>squaresPerSide</code>. <code>userChoice</code> is <code>undefined</code>; so what is that telling me and how can I fix it?</dd>
+              <dd>Adding an <code>if</code> statement set the default grid size to 16 by 16 if there's no user choice.</dd>
+              <dd>I called <code>calcGrid()</code> inside the event listener which correctly changes the grid dimensions (confirmed by logging to console) but doesn't update the <abbr title="Document Object Model">DOM</abbr>.</dd>
+              <dd>Time to google DOM stuff, I guess.</dd>
             </dl>
 
             <ul>
