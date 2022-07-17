@@ -14,9 +14,8 @@ html.etch-a-sketch {
   /* line-height: 1.15; */
   line-height: normal;
 }
-article {
+article.etch-a-sketch {
   margin: 0 auto;
-  max-height: 600px;
   display: block;
 }
 .sketch-container {
@@ -26,7 +25,7 @@ article {
   /* box-sizing: border-box; */
   width: 500px;
   height: 500px;
-  margin: 60px auto 0;
+  margin: 20px auto 0;
   display: flex;
   justify-content: center;
   /* justify-content: flex-end; */
@@ -53,6 +52,12 @@ article {
 .post-wrapper > .article-body-wrap.etch-a-sketch h2:first-child + p {
   text-align: center;
   margin-top: 0;
+}
+.blackBg {
+  background-color: black;
+}
+.red {
+  background-color: red;
 }
 
 /* dom-manipulation.html */

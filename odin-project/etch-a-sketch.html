@@ -51,9 +51,9 @@
   <script src="../js/etch-a-sketch.js" defer></script>
 </head>
 
-<body class="home drumkit">
+<body class="home etch-a-sketch">
   <div class="page-wrap">
-    <header id="site-header" class="odin-drumkit container">
+    <header id="site-header" class="etch-a-sketch container">
       <a id="skip-nav" class="skip-to-content screen-reader-text" href="#main-content">Skip to main content</a>
       <nav class="main-nav">
         <label for="menu-toggle"><span class="menu-toggle">menu</span></label>
@@ -80,12 +80,15 @@
     </header>
 
     <main id="main-content" class="container">
-      <article id="drumkit">
+      <article id="etch-a-sketch">
 
         <h1 class="main-title">Etch-a-Sketch</h1>
-        <button class="set-grid-size" type="button">Set Grid Size</button>
-        <div class="sketch-container">
-        </div><!-- .sketch-container -->
+        <button class="set-grid-size" type="button" name="test">Set Grid Size</button>
+        <!-- <button class="bg-rainbow" type="button" name="test">Rainbow</button> -->
+
+        <div class="sketch-container-wrapper">
+        </div> <!-- .sketch-container -->
+
         <div class="post-wrapper">
           <div class="article-body-wrap etch-a-sketch">
             <h2>Pre-planning the Etch-a-Sketch Controls</h2>
@@ -141,6 +144,46 @@
               <dd>I called <code>calcGrid()</code> inside the event listener which correctly changes the grid dimensions (confirmed by logging to console) but doesn't update the <abbr title="Document Object Model">DOM</abbr>.</dd>
               <dd>Time to google DOM stuff, I guess.</dd>
             </dl>
+            <p>The set grid size button is working; however, it's creating a new grid directly beneath the first one instead of replacing the original like the spec says to do.</p>
+            <dl>
+              <dt>Possible Fixes</dt>
+              <dd>Get a reference to the original grid selector, <code>.sketch-container</code> and somehow append or replace it with the new grid params?</dd>
+              <dd>Is there any way to separate the <code>calcGrid</code> function into reusable parts, like one part to create and one part to append? I don't think so? Everything seems either necessary to building the grid or wouldn't help by moving to either global scope or to other function. I wouldn't make the <code>.sketchContainer</code> dynamic because I'm trying to <em>replace</em> it, so IDT having access to a new one makes sense.</dd>
+              <dd>I don't see how to rework the <code>calcGrid()</code> function and think I need to write something that deals with removing or adding or whatevers like this <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild">Node.replaceChild</a>. </dd>
+              <dd>I could try to put the <code>for</code> loop in a separate function and reuse that for the <code>userChoice</code> button but wonder if I'd then have to use more node stuff. I will look at that next.</dd>
+              <dd>It was confirmed yesterday on the <abbr title="The Odin Project">TOP</abbr> <a href="https://discord.com/">Discord</a> server that I indeed need to look into using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> Web API interface in order to get a new grid to overwrite or replace the currently existing one.</dd>
+            </dl>
+
+            <h2>Pseudocode For Replacing Default Grid</h2>
+            <ul>
+              <li>I already have a conditional, inside the <code>calcGrid</code> function, for the userChoice variable which creates the requested grid but adds it to the end of the existing one instead of replacing it.</li>
+              <li>I need to call <code>replaceChild()</code> or similar to put new grid in existing grid's position and assume this is the last step and therefore goes at the end of the <code>for</code>loop.</li>
+              <li>I will still need to append each gridSquare to the sketchContainer, as that functionality currently works well, so that will stay.</li>
+              <li>So <em>after</em> I append all the gridSquares I will run the replaceChild; however, I'll need a new sketchContainer to replace the old one with.
+                <ul>
+                  <li>I think I should initialize the new sketchContainer in the global scope.</li>
+                </ul>
+              </li>
+              <li>I believe it will also need global scope, and I can always change that later if necessary.</li>
+              <li>I <em>think</em> I can find a way to access parent and child nodes in order to replace the default grid with the new user one:
+                <ul>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> Web API</li>
+                  <li><code>firstChild</code></li>
+                  <li><code>lastChild</code></li>
+                  <li><code>parentElement</code></li>
+                  <li><code>parentNode</code></li>
+                </ul>
+              </li>
+              <li>I have to figure out how I'm going to select the <span class="variable">sketchContainer</span> since it's the third child of it's parent. Once selected, I don't want to delete the container since the loop creates and appends the <span class="variable">gridSquares</span> to it.</li>
+              <li><strong>Problem</strong>: I can't seem to select the container's <span class="variable">gridSquares</span> in order to delete them since (I believe) there are more than one, meaning it'll be some kind of list or collection which would require a loop. I can certainly loop but am wondering if just creating the container in the loop and then deleting it when there's a new <span class="variable">userChoid</span> grid size would be not only easier but more performant. Still a newbie but to me that kinda makes sense.</li>
+              <li><strong>Solution:</strong> I ended up removing the previous <span class="variable">sketchContainer</span> first, after confirming that the user had made a valid submitted a valid input. I used the  Element Web API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove()</a> method after wrapping the container in a wrapper div element.</li>
+            </ul>
+
+            <h2>Pseudocode For Handling Hover Effects</h2>
+            <ul>
+              <li>I'm wondering if it's good practice to have most functionality wrapped in the <code>for</code> loop, but I don't know where else I'd do it since that's where the grid is created, and where I have access to the <span class="variable">gridSquare</span>s.</li>
+              <li>It appears that the hover effects stays with the <span class="variable">userChoice</span> grid, so that's good.</li>
+            </ul>
 
             <ul>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
@@ -150,6 +193,10 @@
               <li><a target="_blank" href="https://bscottnz.github.io/esketch/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://angieaugy.github.io/etch-a-sketch/">Example Etch-a-Sketches</a></li>
               <li>Interesting <code>canvas</code> element solution <a href="https://stackoverflow.com/questions/32676627/javascript-loop-to-create-grid-on-canvas#32676689">stackoverflow solution</a>.</li>
+              <li><a href="https://www.tabnine.com/academy/javascript/how-to-change-css-javascript/">Changing CSS Properties</a></li>
+              <li><a href="https://css-tricks.com/updating-a-css-variable-with-javascript/">Updating CSS w JS</a></li>
+              <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information#using_the_setattribute_method">dynamic Styling</a></li>
+              <li><a href="https://stackoverflow.com/questions/28627606/does-adding-too-many-event-listeners-affect-performance#28627965">S.O. events handlers performance thread</a></li>
             </ul>
 
 
