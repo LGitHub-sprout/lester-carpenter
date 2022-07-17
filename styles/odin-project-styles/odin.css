@@ -53,12 +53,12 @@ article.etch-a-sketch {
   text-align: center;
   margin-top: 0;
 }
-.blackBg {
+/* .blackBg {
   background-color: black;
 }
 .red {
   background-color: red;
-}
+} */
 
 /* dom-manipulation.html */
 .article-body-wrap.dom {

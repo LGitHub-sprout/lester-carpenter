@@ -36,7 +36,7 @@ setGridSizeBtn.addEventListener('click', function (e) {
   }
   if (userChoice === null) return;
   if (Math.sign(userChoice) === 0) {
-    alert('Zero, really? SMH');
+    alert('Zero, really? S M H');
     return;
   }
   calcGrid();
@@ -56,40 +56,29 @@ function calcGrid(squaresPerSide) {
   sketchContainer.classList = 'sketch-container';
   sketchContainerWrap.appendChild(sketchContainer);
 
+
   
   for (let i = 0; i < gridArea; i++) {
     gridSquare = document.createElement('div');
     gridSquare.classList = 'grid-square';
-
-    /*
-      I only have access to all the gridSquares inside the for loop.
-      Therefore, in the loop, set all the different classes needed to change 
-      the grid colors on mouseover event. 
-      Then somehow toggle, add, or remove them when buttons are clicked?
-      Is it a simple matter of using conditionals?
-
-      Does it go inside the 
-      
-      I also think I have a scoping problem bc I can't access ALL gridSquares 
-      anywhere other than inside the LOOP.
-
-      What matters is that I have access to ALL the gridSquares 
-      which means working inside the for loop.
-      
-      If gridSquare doesn't have 'rainbow' class attribute, 
-      add it (and possibly remove or otherwise toggle OFF all other classes);
-    */
-    // gridSquare.setAttribute('name', 'red');
-
+    
     gridSquare.style.cssText = `height:${gridHeight}%; flex: 0 0 ${gridWidth}%`;
 
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    const color = 'yellow';
+    
     sketchContainer.appendChild(gridSquare);
     // console.log('Height: ', gridHeight)
     // console.log('Width: ', gridWidth)
 
     gridSquare.addEventListener('mouseover', function (e) {
-      e.target.classList.add('blackBg');
-      e.target.classList.toggle('red');
+      // Each pass changes to a random RGB color. 
+      // The each pass after that adds 10% black. 
+      e.target.style.background = `rgb(${red}, ${green}, ${blue})`;
+      console.log(red, green, blue)
     }); 
 
     // rainbowBtn.addEventListener('click', function (e) {

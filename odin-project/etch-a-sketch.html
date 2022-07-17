@@ -184,6 +184,10 @@
               <li>I'm wondering if it's good practice to have most functionality wrapped in the <code>for</code> loop, but I don't know where else I'd do it since that's where the grid is created, and where I have access to the <span class="variable">gridSquare</span>s.</li>
               <li>It appears that the hover effects stays with the <span class="variable">userChoice</span> grid, so that's good.</li>
             </ul>
+            <p>I only have access to all the gridSquares inside the for loop. Therefore, in the loop, set all the different classes needed to change the grid colors on mouseover event. Then somehow toggle, add, or remove them when buttons are clicked? Is it a simple of using conditionals? I also think I have a scoping problem bc I can't access ALL gridSquares anywhere other than inside the LOOP. What matters is that I have access to ALL the gridSquares which means working inside the for loop. If gridSquare doesn't have rainbow' class attribute, add it (and possibly remove or otherwise toggle OFF all other classes).</p>
+            <p>Change the hover color to a random <abbr title="Red Green Blue... not Ruth Ginsburg Bader">RGB</abbr> value. This means I'll bve setting the value in JS instead of toggling the class that controls the background color. So for this I need to use the template string (backticks) and interpolate the values into the style property (I think).</p>
+
+
 
             <ul>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
