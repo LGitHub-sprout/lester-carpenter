@@ -18,6 +18,9 @@ article.etch-a-sketch {
   margin: 0 auto;
   display: block;
 }
+.set-grid-size {
+  background-color: #FDAD49;
+}
 .sketch-container {
   line-height: normal;
   /* content-box | border-box */ 

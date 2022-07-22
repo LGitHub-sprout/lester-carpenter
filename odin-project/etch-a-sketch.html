@@ -49,6 +49,7 @@
 			}
   </script>
   <script src="../js/etch-a-sketch.js" defer></script>
+  <script src="../js/coderman.js" defer></script>
 </head>
 
 <body class="home etch-a-sketch">
@@ -84,7 +85,7 @@
 
         <h1 class="main-title">Etch-a-Sketch</h1>
         <button class="set-grid-size" type="button" name="test">Set Grid Size</button>
-        <!-- <button class="bg-rainbow" type="button" name="test">Rainbow</button> -->
+        <button class="bg-rainbow" type="button" name="test">Rainbow</button>
 
         <div class="sketch-container-wrapper">
         </div> <!-- .sketch-container -->
@@ -94,7 +95,7 @@
             <h2>Pre-planning the Etch-a-Sketch Controls</h2>
             <p>Based on <a href="https://dev.to/parenttobias/pre-planning-your-project-4fd5">Toby Parent's</a> article (specification located <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch#assignment">here</a>).</p>
             
-            <h3>The Interface</h3>
+            <h3>The Interface Specification</h3>
             <dl>
               <dt>Button</dt>
               <dd>A button that sends the user a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">prompt</a> asking for the number of squares per side for the new grid.</dd>
@@ -106,23 +107,31 @@
               <dd><strong>Hint</strong>: Look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">mouseover</a> link for info on the event that occurs when a mouse enters (the boundaries of) an element for more info about hover events as well as others.</dd>
               <dd>Changing the color of the divs can be done by adding classes or using <abbr title="JavaScript">JS</abbr> to change the background.</dd>
             </dl>
-            <h2>Problems So Far</h2>
-            <p>Having trouble with what I'm guessing is a rounding error. My loop is working and the height/width is calculated correctly; however, there are barely perceptible gaps in the grid with a certain number of grid cells and columns. I've tried <em>as many</em> easy/common solutions as I can think of to no avail. I was thinking that perhaps a percentage width and/or height might fix the problem and found <a href="https://luc1100.github.io/odin-etch-a-sketch/">this</a> solution that uses <code>flex: 0 0 %</code> in what appears to be a single loop, so I'll try doing that before turning to the nested loop route.</p>
-            <p>The Odin server folks suggested this is probably as <abbr title="Cascading Style Sheets">CSS</abbr> problem, and I was able to get rid of the gaps inside the grid but there's still a couple nearly imperceptible gaps at the edges now. I'll circle back and address those. For now I have to move on after spending a lot of time nitpicking that detail.</p>
+            
+            <h2>Thinking About Hover Effects</h2>
+            <p>I only have access to all the gridSquares inside the <code>for</code> loop. Therefore, in the loop, set all the different classes needed to change the grid colors on mouseover event. Then somehow toggle, add, or remove them when buttons are clicked? Is it as simple as using conditionals?</p>
+            <p>I also think I have a scoping problem because I can't access ALL gridSquares anywhere other than inside the LOOP. What matters is that I have access to ALL the gridSquares which means working inside the <code>for</code> loop. If <span class="variable">gridSquare</span> doesn't have a 'rainbow' class attribute, add it (and possibly remove or otherwise toggle OFF all other classes)?</p>
+            <p>Change the hover color to a random <abbr title="Red Green Blue... not Ruth Ginsburg Bader">RGB</abbr> value. So for this I need to use the template string (backticks) and interpolate the values into the style property (I think).</p>
 
-            <h2>Planning the Control Area</h2>
-            <p>Per the specification:</p>
-            <ul>
-              <li>Button to prompt changing grid dimensions.</li>
-              <li>Color Buttons (spec):
-                <ul>
-                  <li>Black/White (toggle)</li>
-                  <li>Random RGB value (toggle)</li>
-                  <li>"Darken" button that adds 10% of black, until completely black.</li>
-                </ul>
-              </li>
-            </ul>
-            <p>Button prompt: </p>
+            <h3>A New Random Color For Each Pass Over The gridSquare</h3>
+            <p>I have random background colors for 'mouseover' working on the gridSquares; however, it's not changing successively meaning the color is set once and never changes again after successive mouseovers.</p>
+            <p>Just off the top of my head, the first couple solutions that come to mind are </p>
+            <ol>
+              <li>using the<code>setProperty()</code> method of the </li>
+              <li><code>setAttribute()</code> method</li>
+              <li>using the <code>mouseleave</code> property.</li>
+              <li>using toggle.</li>
+            </ol>
+            <p>This is the closest I've gotten to <a href="https://stackoverflow.com/questions/58148188/random-color-on-mouse-hover">a solution</a> that seems to fit my scenario.</li>
+            <p>None of which I intuitively feel are correct, for some odd reason, but won't let that keep me from investigating further. So I'm feeling a bit defeated tbo. The other idea I'm having is to see if <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">addEventListener</a> options might help, although I don't recall it being so. </p>
+            <p>I wonder if I use a function to set the red green blue values and as a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">callback function</a> on the mouse event it would calculate new values each time the event is fired and change the background color on successive passes.</p>
+
+            <p>Would using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a>, since it updates values that already exist, in a function that calculates and returns the RGB values work?</p>
+            <p>A test function that calculates the red, green, blue values for the background color and used as an element's callback function on 'mouseenter' does return different values for each pass over the element; therefore, I'm <em>hopeful</em> this is the solution to my problem of getting new background colors on the <span class="variable">gridSquares</span> for each pass over them. </p>
+            <p>And yes, indeed, it was the solution.</p>
+            <p>See below links on document fragments to learn how to refactor the code. Wondering if I could add all the classes for the control buttons and then use conditionals to implement their use.</p>
+            
+            <h2>Button Prompt</h2>
             <ul>
               <li>Create <abbr title="Hypertext Markup Language">HTML</abbr> button.</li>
               <li>Select prompt button and add an event listener that prompts user for grid size preference.</li>
@@ -154,6 +163,7 @@
               <dd>It was confirmed yesterday on the <abbr title="The Odin Project">TOP</abbr> <a href="https://discord.com/">Discord</a> server that I indeed need to look into using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a> Web API interface in order to get a new grid to overwrite or replace the currently existing one.</dd>
             </dl>
 
+
             <h2>Pseudocode For Replacing Default Grid</h2>
             <ul>
               <li>I already have a conditional, inside the <code>calcGrid</code> function, for the userChoice variable which creates the requested grid but adds it to the end of the existing one instead of replacing it.</li>
@@ -175,19 +185,13 @@
                 </ul>
               </li>
               <li>I have to figure out how I'm going to select the <span class="variable">sketchContainer</span> since it's the third child of it's parent. Once selected, I don't want to delete the container since the loop creates and appends the <span class="variable">gridSquares</span> to it.</li>
-              <li><strong>Problem</strong>: I can't seem to select the container's <span class="variable">gridSquares</span> in order to delete them since (I believe) there are more than one, meaning it'll be some kind of list or collection which would require a loop. I can certainly loop but am wondering if just creating the container in the loop and then deleting it when there's a new <span class="variable">userChoid</span> grid size would be not only easier but more performant. Still a newbie but to me that kinda makes sense.</li>
-              <li><strong>Solution:</strong> I ended up removing the previous <span class="variable">sketchContainer</span> first, after confirming that the user had made a valid submitted a valid input. I used the  Element Web API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove()</a> method after wrapping the container in a wrapper div element.</li>
+              <li><strong>Problem</strong>: I can't seem to select the container's <span class="variable">gridSquares</span> in order to delete them since (I believe) there are more than one, meaning it'll be some kind of list or collection which would require a loop. I can certainly loop but am wondering if just creating the container in the loop and then deleting it when there's a new <span class="variable">userChoice</span> grid size would be not only easier but more performant. Still a newbie but to me that kinda makes sense.</li>
+              <li><strong>Solution:</strong> I ended up removing the previous <span class="variable">sketchContainer</span> first, after confirming that the user had submitted a valid input. I used the  Element Web API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove()</a> method after wrapping the container in a wrapper div element.</li>
             </ul>
 
-            <h2>Pseudocode For Handling Hover Effects</h2>
-            <ul>
-              <li>I'm wondering if it's good practice to have most functionality wrapped in the <code>for</code> loop, but I don't know where else I'd do it since that's where the grid is created, and where I have access to the <span class="variable">gridSquare</span>s.</li>
-              <li>It appears that the hover effects stays with the <span class="variable">userChoice</span> grid, so that's good.</li>
-            </ul>
-            <p>I only have access to all the gridSquares inside the for loop. Therefore, in the loop, set all the different classes needed to change the grid colors on mouseover event. Then somehow toggle, add, or remove them when buttons are clicked? Is it a simple of using conditionals? I also think I have a scoping problem bc I can't access ALL gridSquares anywhere other than inside the LOOP. What matters is that I have access to ALL the gridSquares which means working inside the for loop. If gridSquare doesn't have rainbow' class attribute, add it (and possibly remove or otherwise toggle OFF all other classes).</p>
-            <p>Change the hover color to a random <abbr title="Red Green Blue... not Ruth Ginsburg Bader">RGB</abbr> value. This means I'll bve setting the value in JS instead of toggling the class that controls the background color. So for this I need to use the template string (backticks) and interpolate the values into the style property (I think).</p>
-
-
+            <h2>Problems So Far</h2>
+            <p>Having trouble with what I'm guessing is a rounding error. My loop is working and the height/width is calculated correctly; however, there are barely perceptible gaps in the grid with a certain number of grid cells and columns. I've tried <em>as many</em> easy/common solutions as I can think of to no avail. I was thinking that perhaps a percentage width and/or height might fix the problem and found <a href="https://luc1100.github.io/odin-etch-a-sketch/">this</a> solution that uses <code>flex: 0 0 %</code> in what appears to be a single loop, so I'll try doing that before turning to the nested loop route.</p>
+            <p>The Odin server folks suggested this is probably as <abbr title="Cascading Style Sheets">CSS</abbr> problem, and I was able to get rid of the gaps inside the grid but there's still a couple nearly imperceptible gaps at the edges now. I'll circle back and address those. For now I have to move on after spending a lot of time nitpicking that detail.</p>
 
             <ul>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
@@ -201,17 +205,13 @@
               <li><a href="https://css-tricks.com/updating-a-css-variable-with-javascript/">Updating CSS w JS</a></li>
               <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information#using_the_setattribute_method">dynamic Styling</a></li>
               <li><a href="https://stackoverflow.com/questions/28627606/does-adding-too-many-event-listeners-affect-performance#28627965">S.O. events handlers performance thread</a></li>
+              <li><a href="https://www.javascripttutorial.net/javascript-dom/javascript-mouse-events/">Detecting mouse buttons</a></li>
+              <li><a href="https://somethinghitme.com/">interesting site</a></li>
+              <li>MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment">createDocumentFragment()</a> method</li>
+              <li><a href="https://stackoverflow.com/questions/17264182/javascript-efficiently-insert-multiple-html-elements">S.O.</a>  on creating elements in a loop</li>
             </ul>
-
-
-
-
           </div><!-- .article-body-wrap .etch-a-sketch -->
         </div><!-- .post-wrapper -->
-
-
-
-
       </article>
     </main>
 
