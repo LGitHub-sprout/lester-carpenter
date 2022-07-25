@@ -49,7 +49,6 @@
 			}
   </script>
   <script src="../js/etch-a-sketch.js" defer></script>
-  <script src="../js/coderman.js" defer></script>
 </head>
 
 <body class="home etch-a-sketch">
@@ -107,6 +106,22 @@
               <dd><strong>Hint</strong>: Look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">mouseover</a> link for info on the event that occurs when a mouse enters (the boundaries of) an element for more info about hover events as well as others.</dd>
               <dd>Changing the color of the divs can be done by adding classes or using <abbr title="JavaScript">JS</abbr> to change the background.</dd>
             </dl>
+
+            <h2>Adding 10 Percent Black Until Completely Black</h2>
+
+            <p>I'm at the final specification and thinking to init a variable for the <a href="https://en.wikipedia.org/wiki/RGBA_color_model"><abbr title="Red Green Blue Alpha Channel">RGBa</abbr></a> alpha channel which I can then (hopefully) easily increment in my function.</p>
+            <p>Before I start searching for how to do this, I want to try to conceive of how it will work.</p>
+            <ul>
+              <li>I need a variable that incrementally adds 10% black to the rgba() property that sets the grid background color.</li>
+              <li>The first pass should be 0% black and successive passes should add 10%, so I should initialize <span class="variable">alpha</span> as 0 (zero).</li>
+            </ul>
+            <h3>Problems So Far&hellip;</h3>
+            <ul>
+              <li>It isn't as straightforward as adding an alpha channel to random numbers as this only lightens or darkens the color insteading of adding black.</li>
+              <li>Wondering if adding black with an alpha channel of .10 is what would work.</li>
+              <li>I think I need an alpha channel to increment the black properly.</li>
+              <li>Here's a potentially helpful <a href="https://stackoverflow.com/questions/29232073/less-css-adding-a-percentage-to-a-hex-color-how-does-this-work#29233126">Stack Overflow</a> post on converting RGB to hexcode color. Not exactly sure how to implement it though.</li>
+            </ul>
             
             <h2>Thinking About Hover Effects</h2>
             <p>I only have access to all the gridSquares inside the <code>for</code> loop. Therefore, in the loop, set all the different classes needed to change the grid colors on mouseover event. Then somehow toggle, add, or remove them when buttons are clicked? Is it as simple as using conditionals?</p>
@@ -209,6 +224,7 @@
               <li><a href="https://somethinghitme.com/">interesting site</a></li>
               <li>MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment">createDocumentFragment()</a> method</li>
               <li><a href="https://stackoverflow.com/questions/17264182/javascript-efficiently-insert-multiple-html-elements">S.O.</a>  on creating elements in a loop</li>
+              <li><a href="https://stackoverflow.com/questions/3117756/javascript-create-element-and-set-attributes">S.O.</a> create element and set attributes. Only worked with ID for me.</li>
             </ul>
           </div><!-- .article-body-wrap .etch-a-sketch -->
         </div><!-- .post-wrapper -->

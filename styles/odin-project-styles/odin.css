@@ -44,13 +44,13 @@ article.etch-a-sketch {
   border-left: .5px solid black;
   margin: 0;
   padding: 0;
-  /* border: solid .25px black; */
-  /* width: 14.8px; */
-  /* height: 14.8px; */
-  /* flex-shrink: 0; */
-  /* flex: 0 0 1.6666666666666667%; */
-  /* height: 1.6666666666666667%; */
-  background-color: white;
+  /* background-color: rgba(10, 10, 10, .5);
+  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(10, 10, 10);
+  background-color: rgb(0, 102, 174);
+  background-color: rgb(0, 112, 184);
+  background-color: rgb(10, 122, 194); */
+  /* background-color: white; */
 }
 .post-wrapper > .article-body-wrap.etch-a-sketch h2:first-child + p {
   text-align: center;

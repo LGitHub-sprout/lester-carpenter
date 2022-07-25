@@ -32,7 +32,7 @@ function calcGrid(squaresPerSide) {
   sketchContainer.classList = 'sketch-container';
   sketchContainerWrap.appendChild(sketchContainer);
 
-  const rainbowBtn = document.querySelector('.bg-rainbow')
+  // const rainbowBtn = document.querySelector('.bg-rainbow')
 
   for (let i = 0; i < gridArea; i++) {
     gridSquare = document.createElement('div');
@@ -43,34 +43,13 @@ function calcGrid(squaresPerSide) {
     
     sketchContainer.appendChild(gridSquare);
 
-    // gridSquare.addEventListener('mouseenter', function (e) { // mouseenter, mouseover
-    //   e.target.style.background = `rgb(${red}, ${green}, ${blue})`;
-    //   // console.log(this)
-    //   // Each pass changes to a random RGB color.
-    //   // The each pass after that adds 10% black. 
-    //   // console.log(red, green, blue)
-    //   // console.log('mouseenter')
-    //   // console.log(typeof e.target, 'array?', Array.isArray(e.target), e.target) // it's an object but not array
-    // }); 
-    
-    gridSquare.addEventListener('mouseover', calcBgColor); // mousedown
+    // Each pass changes to a random RGB color.
+    // The each pass after that adds 10% black. 
+    gridSquare.addEventListener('mouseover', calcBgColor);
     function calcBgColor(e) {
-      e.target.style.background = 'rgb(' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ')';
-      // e.target.style.background = `rgb(randoNum(0, 256), randoNum(0, 256), randoNum(0, 256));`;
-      
-      // e.target.style.background = `rgb(${red}, ${green}, ${blue})`;
+      e.target.style.backgroundColor = 'rgba(' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ')';
     }
-    // gridSquare.addEventListener('mouseleave', function (e) { // mouseleave, mouseout
-    //   e.target.style.background = `rgb(${red}, ${green}, ${blue})`;
-    //   console.log('mouseleave')
-    //   console.log(red, green, blue)
-    // })
-    // gridSquare.addEventListener('mouseenter', gridBgChange);
   }
-  // gridSquare.removeEventListener('mouseover', handleBgChange);
-
-  // console.log('squaresPerSide', squaresPerSide)
-  // console.log('gridArea: ', gridArea)
 }
 calcGrid();
 
@@ -79,53 +58,7 @@ function calcRandNum(min, max) {
   return num;
 };
 
-/*
-  https://stackoverflow.com/questions/3117756/javascript-create-element-and-set-attributes
-  const attrs = {
-    'id':     'idName',
-    'class':  'className'
-  }
-  function createElement(el, attrs) {
-    const element = document.createElement(el);
-    for (const val in attrs) {
-      //for support in the setAttrubute() method:
-      if (element.setAttribute) {
-        if (element[val] in element) {
-          element.setAttribute(val, attrs[val]);
-        } else {
-          element[val] = attrs[val];
-          // console.log(attrs[val], element[val])
-          }
-      } else {
-          element[val] = attrs[val];
-      }
-    }
-    return element;
-  }
-  console.log(createElement('span'))
-  const cSpan = createElement('p', {'id':'poop'});
-  cSpan.textContent = 'Hello, World!';
-  h1MainTitle.insertAdjacentElement('afterend', cSpan)
-*/
-
-// https://stackoverflow.com/questions/17264182/javascript-efficiently-insert-multiple-html-elements
-var msgContainer = document.createDocumentFragment();
-for (var i = 0; i < 3; i++) {
-    var option = msgContainer.appendChild(document.createElement("option"));
-    option.text = 'whatevs' //response.data[i].name;
-    option.value = 'whatevs' // response.data[i].id;
-}
-document.getElementById("etch-a-sketch").appendChild(msgContainer);
-// create is custom function
-// const msgContainer = document.createDocumentFragment();
-// for (var i = 0; i < 3; i++) {
-//     msgContainer.appendChild(create("option", {
-//         text:  'whatevs', // response.data[i].name,
-//         value:  'whatevs' // response.data[i].id
-//     }));
-// }
-// document.getElementById("friends").appendChild(msgContainer);
-
+// Return random hex color
 function getColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -135,3 +68,11 @@ function getColor() {
   return color;
 }
 console.log(getColor())
+
+// const multi = function(array);
+function multi(array) {
+  console.log(array)
+}
+const someArray = [1, 3, 5];
+
+console.log(multi(someArray));
