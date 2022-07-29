@@ -14,12 +14,17 @@ html.etch-a-sketch {
   /* line-height: 1.15; */
   line-height: normal;
 }
+/* #etch-a-sketch h1 {
+  background-color: rgb(0, 112, 184);
+} */
 article.etch-a-sketch {
   margin: 0 auto;
   display: block;
 }
 .set-grid-size {
-  background-color: #FDAD49;
+  /* background-color: rgb(173, 31, 104); rgb(173, 31, 104) hsl(155, 30%, 80%) */
+  /* color: hsl(155, 30%, 50%); */
+  /* color: white; */
 }
 .sketch-container {
   line-height: normal;

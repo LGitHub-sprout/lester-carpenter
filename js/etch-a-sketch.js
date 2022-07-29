@@ -10,11 +10,13 @@ setGridSizeBtn.addEventListener('click', function (e) {
     alert('The maximum number of allowed squares is 100 and the minimum is 1.');
     return;
   }
-  if (userChoice === null) return;
   if (Math.sign(userChoice) === 0) {
-    alert('Zero, really? S M H');
+    alert('Zero, really? S. M. H.');
     return;
   }
+  //  || userChoice !== Number
+  if (userChoice === null) return;
+
   calcGrid();
 });
 
@@ -32,7 +34,9 @@ function calcGrid(squaresPerSide) {
   sketchContainer.classList = 'sketch-container';
   sketchContainerWrap.appendChild(sketchContainer);
 
-  // const rainbowBtn = document.querySelector('.bg-rainbow')
+  const rainbowBtn = document.querySelector('.bg-rainbow')
+
+  // let gridSquare;
 
   for (let i = 0; i < gridArea; i++) {
     gridSquare = document.createElement('div');
@@ -45,14 +49,35 @@ function calcGrid(squaresPerSide) {
 
     // Each pass changes to a random RGB color.
     // The each pass after that adds 10% black. 
-    gridSquare.addEventListener('mouseover', calcBgColor);
-    function calcBgColor(e) {
-      e.target.style.backgroundColor = 'rgba(' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ', ' + calcRandNum(0, 256) + ')';
+    // CSS variables would make changing the CSS properties easier @JensenIsHere TOP
+    function whatevs(e) {
+      gridSquare.addEventListener('mouseover', calcBgColor);
+      function calcBgColor(e) {
+        // e.target.style.backgroundColor = 'green';
+        e.target.style.backgroundColor = 'rgba(' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ')';
+      }
     }
+    whatevs();
+    rainbowBtn.addEventListener('click', whatevs);
   }
+
+  // 
+  // rainbowBtn.addEventListener('click', function (e) {
+  //   rainbow.forEach(div => {
+  //     div.style.backgroundColor = 'rgba(' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ')';
+  //   })
+  // });
+  // const rainbow = sketchContainer.querySelector('.grid-square');
+  const rainbow = sketchContainer.querySelectorAll('.grid-square');
+  console.log(rainbow)
+  rainbow.forEach(div => {
+    // div.style.backgroundColor = 'pink';
+  })
+
 }
 calcGrid();
 
+// Forgot to credit the source of calcRandNum()  
 function calcRandNum(min, max) {
   const num = Math.floor(Math.random() * (max - min)) + min;
   return num;
@@ -69,10 +94,24 @@ function getColor() {
 }
 console.log(getColor())
 
-// const multi = function(array);
-function multi(array) {
-  console.log(array)
-}
-const someArray = [1, 3, 5];
+// const createDomElement = (element, className, idName, appendTo) => {
+//   el = document.createElement(element);
+//   el.classList.add(className);
+//   el.id = idName;
+//   el.textContent = 'Hello, World!';
+//   appendTo.insertAdjacentElement('afterend', el);
 
-console.log(multi(someArray));
+//   return el
+// }
+// for (let i = 0; i < 5; i++) {
+//   createDomElement('p', 'poopClass', 'poopID', h1MainTitle)
+// }
+
+// rgb(0, 112, 184)
+// write a function that calcs the new RGB values
+// const red = 0 - (0 / 10);
+// const green = 112 - (112 / 10); 
+// const blue = 184 - (184 / 10);
+// console.log(red, green, blue)
+// h1MainTitle.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
