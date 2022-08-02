@@ -50,18 +50,45 @@ function calcGrid(squaresPerSide) {
     // Each pass changes to a random RGB color.
     // The each pass after that adds 10% black. 
     // CSS variables would make changing the CSS properties easier @JensenIsHere TOP
-    function whatevs(e) {
-      gridSquare.addEventListener('mouseover', calcBgColor);
-      function calcBgColor(e) {
-        // e.target.style.backgroundColor = 'green';
-        e.target.style.backgroundColor = 'rgba(' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ')';
-      }
-    }
-    whatevs();
-    rainbowBtn.addEventListener('click', whatevs);
-  }
 
-  // 
+    let red   = Math.floor(Math.random() * 255);
+    let green = Math.floor(Math.random() * 255);
+    let blue  = Math.floor(Math.random() * 255);
+
+    function changeBg() {
+
+      gridSquare.addEventListener('mouseover', calcBgColor, {
+        once: true
+      });
+      function calcBgColor(e) {
+        // e.target.style.backgroundColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+        // e.target.style.backgroundColor = 'green';
+        // e.target.style.backgroundColor = 'rgba(' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ')';
+        e.target.classList.add('black'); 
+        // Can I prevent continued events on first one AND add more to the same elements?
+        // e.target.style.backgroundColor = 'purple';
+        
+        calcRandNum2(0, 255);
+        e.target.style.backgroundColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')'; 
+      }
+      // gridSquare.addEventListener('mouseover', whatever);
+      // console.log(red, green, blue)
+    }
+    const tenPercentRed = red / 10;
+    const tenPercentGreen = green / 10;
+    const tenPercentBlue = blue / 10;
+    gridSquare.addEventListener('mouseover', function (e) {
+      e.target.style.backgroundColor = `rgb(${red -= tenPercentRed}, ${green -= tenPercentGreen}, ${blue -= tenPercentBlue})`;
+    })
+    changeBg();
+    
+    // Overrides previous event.
+    // gridSquare.addEventListener('mouseover', function (e) {
+    //   e.target.style.backgroundColor = 'purple';
+    // })
+  }
+  /*
+    Needs to change div style on MouseOver, not click.
   // rainbowBtn.addEventListener('click', function (e) {
   //   rainbow.forEach(div => {
   //     div.style.backgroundColor = 'rgba(' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ', ' + calcRandNum(0, 255) + ')';
@@ -69,19 +96,61 @@ function calcGrid(squaresPerSide) {
   // });
   // const rainbow = sketchContainer.querySelector('.grid-square');
   const rainbow = sketchContainer.querySelectorAll('.grid-square');
-  console.log(rainbow)
-  rainbow.forEach(div => {
+  // console.log(rainbow)
+  // rainbow.forEach(div => {
     // div.style.backgroundColor = 'pink';
-  })
-
+  // })
+  */
 }
 calcGrid();
+
+let red = Math.floor(Math.random() * 255);
+let green = Math.floor(Math.random() * 255);
+let blue  = Math.floor(Math.random() * 255);
+
+console.log('red', red);
+console.log('green', green);
+console.log('blue', blue)
+const tenPercentRed = red / 10;
+const tenPercentGreen = green / 10;
+const tenPercentBlue = blue / 10;
+console.log('10% red', tenPercentRed)
+console.log('10% green', tenPercentGreen)
+console.log('10% blue', tenPercentBlue)
+// red = red - tenPercentRed;
+// red -= tenPercentRed;
+const rainbowBtn2 = document.querySelector('.bg-rainbow');
+rainbowBtn2.addEventListener('click', (e) => {
+  // e.target.style.backgroundColor = `${red} -= ${tenPercentRed}`;
+  e.target.style.backgroundColor = `rgb(${red -= tenPercentRed}, ${green -= tenPercentGreen}, ${blue -= tenPercentBlue})`;
+  // console.log('new red', red)
+  // console.log('new green', green);
+  // console.log('new blue', blue)
+  console.log('10% red', tenPercentRed)
+  console.log('10% green', tenPercentGreen)
+  console.log('10% blue', tenPercentBlue)
+})
 
 // Forgot to credit the source of calcRandNum()  
 function calcRandNum(min, max) {
   const num = Math.floor(Math.random() * (max - min)) + min;
   return num;
 };
+// const colors = ['red', 'green', 'blue'];
+function calcRandNum2(min, max) {
+  colorVals = [];
+  const colors = ['red', 'green', 'blue'];
+  colors.forEach((color) => {
+    color = Math.floor(Math.random() * (max - min)) + min;
+    colorVals.push(color);
+  })
+}
+
+for (let i = 0; i < 3; i++) {
+  let color = Math.floor(Math.random() * 255);
+  // console.log('color', color)
+  // console.log(i);
+}
 
 // Return random hex color
 function getColor() {
@@ -92,7 +161,7 @@ function getColor() {
   }
   return color;
 }
-console.log(getColor())
+// console.log(getColor())
 
 // const createDomElement = (element, className, idName, appendTo) => {
 //   el = document.createElement(element);
