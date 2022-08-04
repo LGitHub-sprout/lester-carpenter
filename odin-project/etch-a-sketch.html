@@ -106,30 +106,38 @@
               <dd><strong>Hint</strong>: Look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event">mouseover</a> link for info on the event that occurs when a mouse enters (the boundaries of) an element for more info about hover events as well as others.</dd>
               <dd>Changing the color of the divs can be done by adding classes or using <abbr title="JavaScript">JS</abbr> to change the background.</dd>
             </dl>
-
+            
             <h2>Adding 10 Percent Black Until Completely Black</h2>
+            <p>It's all working now. Since I decided to use a function to calculate the random colors and save them to an array I needed to initialize new variables for the 10% black of each one. I realized that simply calling the array indices for each color wasn't working in the  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template string</a>.</p>
+            <p>Ok, I have the random RGB background color working. I also have a second event outside the loop but in the <code>calcGrid()</code> function which changes the background color but the calculate 10% darker is wrong. My idea is to get that expression correct and then implement it on the event handler.</p>
+            
+            <ul>
+              <li>I need a variable that incrementally adds 10% black to the <code>rgb()</code> property that sets the grid background color.</li>
+              <li>The first pass should be the initial color value and successive passes should add 10% black.</li>
+            </ul>
 
-            <p>I'm at the final specification and thinking to init a variable for the <a href="https://en.wikipedia.org/wiki/RGBA_color_model"><abbr title="Red Green Blue Alpha Channel">RGBa</abbr></a> alpha channel which I can then (hopefully) easily increment in my function.</p>
-            <p>Before I start searching for how to do this, I want to try to conceive of how it will work.</p>
-            <ul>
-              <li>I need a variable that incrementally adds 10% black to the rgba() property that sets the grid background color.</li>
-              <li>The first pass should be 0% black and successive passes should add 10%, so I should initialize <span class="variable">alpha</span> as 0 (zero).</li>
-            </ul>
             <h3>Just Try Something</h3>
-            <p>The only thing I know to do at this point is log the initial random numbers and see if they change on successive mouseovers over the grid.</p>
-            <p>I need three variables, each with a different random number. How would a function create this? It seems like a loop is the way to go. Create a loop that saves a random number to each of my three variables: red, green, and blue.</p>
-            <p>Could I add a class to the <span class="variable">gridSquare</span> that overrides the initial color and adds 10% black? Yes, that works, but I'm still stuck trying to figure out how to </p>
+
             <ul>
-              <li>Set the random color <em>once</em> then use a reference to those colors to add 10% black on each successive mouseover until it's 100% black.</li>
-              <li>Create Red Blue Green variables</li>
-              <li>Reuse the initial red green blue values and add 10% black to each in a new event listener after using the <code>once</code> option for the initial one.</li>
-            </ul>
-            <p>Ok, I have the random RGB background color working. I've used the <code>once</code> option so the event is limited to one time. I also have a second event outside the loop but in the <code>calcGrid()</code> function which changes the background color but the calculate 10% darker is wrong. My idea is to get that expression correct and then implement it on the event handler.</p>
-            <ul>
-              <li>I need to take the original values for red, green, and blue and multiply them times .10 to get 10% of each random color.</li>
               <li>Then I need to subtract another 10% until it's black &mdash; 10 times in other words.</li>
               <li>Not sure how I could do a calculation 'in place'; however, I could try dividing the initial value by 10 and then subtract that amount on each mouseover.</li>
+              <li>I need to take the original values for red, green, and blue and divide them by 10 to get 10% of each random color.</li>
             </ul>
+           
+            <p>The only thing I know to do at this point is log the initial random numbers and see if they change on successive mouseovers over the grid.</p>
+            <p>Setting each color to a simple expression that calculates a random value is easiest and shortest code. Since I don't need successive <em>color</em> changes a function appears to be a little overkill, if not (always) good practice.</p>
+            <p>I need three variables, each with a different random number. I don't necessarily need a function but I discovered that it helps to calculate new values for red green blue which may or may not be helpful since I only need one random number for each color and then 10% black until 100% black. </p>
+            <p>How would a function create this? It seems like a loop is the way to go. Create a loop that saves a random number to each of my three variables: red, green, and blue.</p>
+            <ul>
+              <li>Reuse the initial red green blue values and add 10% black to each in a new event listener after using the <code>once</code> option for the initial one.</li>
+              <li>Set the random color <em>once</em> then use a reference to those colors to add 10% black on each successive mouseover until it's 100% black.</li>
+              <li>Create Red Blue Green variables</li>
+            </ul>
+            <p>Could I add a class to the <span class="variable">gridSquare</span> that overrides the initial color and adds 10% black? Yes, that works, but I'm still stuck trying to figure out how to </p>
+            <p>Before I start searching for how to do this, I want to try to conceive of how it will work.</p>
+            <p>I'm at the final specification and thinking to init a variable for the <a href="https://en.wikipedia.org/wiki/RGBA_color_model"><abbr title="Red Green Blue Alpha Channel">RGBa</abbr></a> alpha channel which I can then (hopefully) easily increment in my function.</p>
+
+            <!-- left off here -->
 
             <h3>Problems So Far&hellip;</h3>
             <ul>
@@ -226,6 +234,7 @@
             <p>The Odin server folks suggested this is probably as <abbr title="Cascading Style Sheets">CSS</abbr> problem, and I was able to get rid of the gaps inside the grid but there's still a couple nearly imperceptible gaps at the edges now. I'll circle back and address those. For now I have to move on after spending a lot of time nitpicking that detail.</p>
 
             <ul>
+              <li><a href="https://andrewjh271.github.io/etch-a-sketch/">Example Etch-a-Sketch</a></li>
               <li><a target="_blank" href="https://mooniidev.github.io/etch-a-sketch-toy/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://tylphe.github.io/etchASketch/">Example Etch-a-Sketches</a></li>
               <li><a target="_blank" href="https://rlmoser99.github.io/etch-a-sketch/">Example Etch-a-Sketches</a></li>
