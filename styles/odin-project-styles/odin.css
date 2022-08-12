@@ -10,63 +10,50 @@
 */
 
 /* etch-a-sketch.html */
-html.etch-a-sketch {
-  /* line-height: 1.15; */
-  line-height: normal;
-}
 /* #etch-a-sketch h1 {
   background-color: rgb(0, 112, 184);
 } */
+* {
+  box-sizing: border-box;
+}
+
 article.etch-a-sketch {
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
 }
+
 .set-grid-size {
-  /* background-color: rgb(173, 31, 104); rgb(173, 31, 104) hsl(155, 30%, 80%) */
-  /* color: hsl(155, 30%, 50%); */
-  /* color: white; */
+  margin: 40px auto;
+  display: block;
+  text-align: center;
 }
-.sketch-container {
-  line-height: normal;
+
+.sketch-container-wrapper {
   /* content-box | border-box */ 
   /* box-sizing: content-box; */
   /* box-sizing: border-box; */
   width: 500px;
   height: 500px;
-  margin: 20px auto 0;
+  margin: 60px auto 0;
   display: flex;
   justify-content: center;
   /* justify-content: flex-end; */
   flex-wrap: wrap;
   /* align-content: flex-start; */
   /* align-content: flex-end; */
-  /* align-content: center; */
-  border-bottom: .5px solid black;
-  border-right: .5px solid black;
+  align-content: center;
 }
+
 .grid-square {
-  border-top: .5px solid black;
-  border-left: .5px solid black;
+  border: .25px solid black;
   margin: 0;
   padding: 0;
-  /* background-color: rgba(10, 10, 10, .5);
-  background-color: rgba(0, 0, 0, .5);
-  background-color: rgba(10, 10, 10);
-  background-color: rgb(0, 102, 174);
-  background-color: rgb(0, 112, 184);
-  background-color: rgb(10, 122, 194); */
+  flex: 0 1 auto;
+  /* background-color: red; */
   /* background-color: white; */
+  /* background-color: rgba(0, 0, 0); */
 }
-.post-wrapper > .article-body-wrap.etch-a-sketch h2:first-child + p {
-  text-align: center;
-  margin-top: 0;
-}
-/* .blackBg {
-  background-color: black;
-}
-.red {
-  background-color: red;
-} */
+
 
 /* dom-manipulation.html */
 .article-body-wrap.dom {
