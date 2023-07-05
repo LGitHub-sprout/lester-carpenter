@@ -1,4 +1,4 @@
-/* https://dev.to/parenttobias/pre-planning-your-project-4fd5
+/* Notes on https://dev.to/parenttobias/pre-planning-your-project-4fd5
 
   Three original tenents of Object Oriented programming:
     Encapsulation
@@ -45,7 +45,7 @@
       button-like keys labelled w corresponding number or operator.
   * Bind event listener for 'keydown' and 'click' (communication).
     Get which key is pressed and it's value (.key) - event delegation?
-    'clickable' to start, then add keyboard support.
+    'click' and 'keydown'.
       Two listeners? I've never done this before.
   * Receives a 'click' or 'keydown' notification and a value. 
   
@@ -63,73 +63,169 @@
   How does Container handle internal communications?
     By calling functions and/or setting vars (independently or by calling 
       functions that return them) inside the container's scope so other components
-      (keypad, display) have access to them.
+      (keypad, display) have access to them?
 */
 /* Execution Notes
+
+  Operations:
+    - Store product of operate() (basic math) functions (?).
+    - Format userInput for operate() use (separate fn?).
+    - Create/store current version of data for passing btwn Display and Keypad components.
+    - Bind listener events 'keydown', 'click' (very end of component).
+    - operate() details ... 
+
   Display:
-    - Concatenate string of user inputs, e.g.: '1' += '+' += '2', to render onscreen. 
-      split() string into array, check for/get index of operator & splice()
+  Contains function(s) that define calls in keypad().
+    - Receives updated string from keypad() (click/keydown) for ea single click/keydown.
+    - Prints event keypad() value to screen.
+        Might need to use append(), appendChild() (not text.Content) or both, 
+        potentially causing some refactoring.
+    - reset() empties values/vars AND clears screen. 
+    - clear() wipes the display clean but keeps var values (not sure I can do this).
+    - backspace() deletes the last typed/clicked char
 
-    - Communicates w Keypad: stores/displays event 'keydown' input values (a, b, operator)
-    - Returns product of operate functions while also saving (a, b, operate) vars
-
-  Keypad Component Execution:
-    Save/update concatenated string var(s) for calculator expression, e.g., '123 + 2'.
-      Use 'click/keydown' event
-      Pass final expression (2nums and an operator) to Operations Stack for processing.
-      Pass vars to the Display component.
-      Need to add a space before and after operator at 'click/keydown', e.g., ' + '.
-    Wondering if there's a way I could push to an array directly, bypassing all the string BS.
-      It seems I'd still need to get a char space before/after the operator.
-      Otherwise, multiple digits are broken up and/or only 1 large item is split to array, e.g., ['123+2']
-    Need to consider 'click' & 'keydown' conditions for keys. A bunch of if stmts or switchs? Use a loop?
+  Keypad Execution:
+  I still haven't tried pushing to an array to build userInput.
+    Update/pass concatenated string var(s) for Operations and Display components, e.g., '123 + 2'.
+      Might not be concatenated string... still haven't tried pushing to array.
+      * Call display() for screen update of variables (see clear() example below)
+      Spaces/no spaces btwn operands is an issue: add a space before and after operator.
       Or I could slice it like the JS.info calculator constructor did.
       I suppose I could hardcode a data- thing but that seems overkill and there's a simpler solution.
+    Conditionals for keys. A bunch of if stmts or switchs? Use a loop?
       How can I best solve for all the scenarios needed for e.code (keypad keys):
         Numpad0-9 Decimal get concatenated together to build the string operands
         NumpadAdd Subtract Multiply Divide get an extra space before/after, added to string (Display)
           Secondarily, these run expression/return result/product if... (add condition)
         NumpadEqual Enter runs expression/returns result/product
         NumpadLock Clear clears Display and empties userInput string
-          
-
 
     Event Delegation:
-    Get reference to the display wrapper <div> containing 1 <p> tag
-    Create string vars for 'num1' 'operator' and 'num2' (not sure exact scope atp)
-    Define a 'click', 'keydown' event on wrapper, pass callback function to access event.key value.
-    Concat ea event.key value and save to string vars.
-    
-
-    Communication W Display:
-    
-    Conditionals:
-    If equal or enter key is pressed, return product of num1 & num2
-      if only num1 is entered for any operator, return (num1 operator num1) (1 + 1).
-  6/19 
-  $ git push ... after 6 months ssh-keygen error
-  https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/#what-happened-and-what-actions-have-we-taken
-  https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
-  https://github.com/orgs/community/discussions/27405
-
-  Operations Stack:
-
-*/
-// const string = '123 + 123'; console.log(string)
-// console.log(string.split(' '));
-
-/* js.info calculator  
-  Section 1:
-  add, subtract methods at the top which takes a string
-
-  Section 2:
-  slice string into vars
-
-  Section 3: don't remember
-
-  Section 4: extend Section 1 methods.
+      Get reference to the display wrapper <div> containing 1 <p> tag
+      Create string vars for 'num1' 'operator' and 'num2' (not sure exact scope atp)
+      Define a 'click', 'keydown' event on wrapper, pass callback function to access event.key value.
+      Concat ea event.key value and save to string vars.
 */
 
+// Calculator
+function calculator() {
+  
+  let input = '';
+  let expression;
+  
+  function operate() {
+    // Arithmetic Operator Detection:
+    // destructure [num1, operator, num2].filter the operator and slice/splice to reduce
+    expression = input.split('-').reduce((num1, num2) => num1 -= num2);
+    console.log(expression);
+    // expression = input.split(' ').reduce((num1, num2) => num1 -= num2);
+  };
+  
+  // Display
+  function display() {
+    function clear() {
+      // clear() and reset() should prolly be diff fns.
+      // Might need to use append(), appendChild() causing some refactoring.
+      screen.textContent = '0';
+      input = '';
+    };
+    clear();
+  };
+
+  // Keypad
+  const screen = document.querySelector('.calc-screen-wrap'); // console.log(screen)
+  const para = document.createElement('p');
+  // screen.append(para); // .setAttribute('class', 'poop');
+  screen.setAttribute('style', 'border:solid 1px #7f7f7f; height:2em; text-align:center;');
+
+  // Destructuring - make array and also get access to ea indiv variable.
+  // https://stackoverflow.com/questions/45090565/javascript-include-a-check-to-see-if-multiple-elements-are-in-an-array
+
+  // const operatorIndex = userInput.indexOf('-'); // console.log(operatorIndex); // 6
+  // const operator = userInput.charAt(operatorIndex); // console.log(operator)
+  // const num1 = userInput.slice(0, operatorIndex); // console.log('num1:', num1, typeof num1); // 100023 string
+  // const b = userInput.slice()
+  // console.log(userInput.indexOf('+'), index, a);
+
+  function getUserInput(e) {
+    // https://stackoverflow.com/questions/96428/how-do-i-split-a-string-breaking-at-a-particular-character
+    // overflow: hidden; https://stackoverflow.com/questions/1165497/how-to-prevent-text-from-overflowing-in-css
+    // console.log(e.target.tagName, Array.from(e.target.classList).includes('screen'));
+    // console.log('e', e.key, typeof e.key, e.currentTarget, e.target.tagName); // .key is the value, target is element?
+    // question is how to target the child of screen-wrap
+    const str = e.key;
+    const code = +e.code.charAt(e.code.length - 1); // Numpad1 thru Numpad0
+    // console.log(typeof key, key, e.key, typeof str, e.type); // string, key value '1', '2', etc.
+    // console.log(e.code, str); // typeof object typeof e, e, 
+    if (e.key === 'Clear') {
+      display();
+    };
+    // console.log(str.split()); // string to array
+
+    // screen: prints number to the screen
+    // if (code === 'N' && e.key !== 'Clear') {
+    if (e.key !== 'Clear' && !isNaN(code)) {
+      console.log('code', code);
+      screen.textContent += str; // Pass var to screen Component?
+      input += str; // Adds operator to string twice
+    };
+    if (e.key === '+' || e.key === '-' || e.key === '/' || e.key === '*') {
+      input += ` ${e.key} `; // works
+    };
+    console.log(input);
+    if (e.key === 'Enter' || e.key === '=') {
+      operate();
+    }
+    // For Operations Component
+    // screen.textContent; // = calc.add(a, b); // works, but needs (a, b) vars
+  };
+  document.addEventListener('keydown', getUserInput); // document or window works
+};
+calculator();
+
+// Event Delegation
+  // https://blog.whatthecode.academy/event-delegation-capturing-and-bubbling#phases-of-an-event
+  const rootDiv = document.querySelector('#root');
+  // console.log('rootDiv', rootDiv)
+  // console.log(rootDiv.children); // HTMLCollection of elements and their classes
+  // console.log(rootDiv.id); // root
+  // console.log(rootDiv.classList); // also root
+  const rootChildNodes = rootDiv.children;
+  // console.log(rootChildNodes);
+  // console.log(rootChildNodes[0]);
+  // console.log('is rootDiv an array?', Array.isArray(rootDiv)); // false
+  function getName(event) {
+    // classList returns DOMTokenList which can be made into an array and looped over
+    // console.log('classList array', Array.from(event.target.classList), event.target.classList); // 
+    // https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
+    if(Array.from(event.target.classList).includes('avenger') && event.target.tagName === "P") {
+      console.log(event.target, event.target.textContent, event); // target is paragraph element
+    };
+  };
+rootDiv.addEventListener('click', getName);
+
+
+/********** Noodling **********/
+/* Analyzing how to split() userInput data
+  const userInput2 = '123-2';
+  const [num1, num2] = userInput2.split('-'); // ['123', '2']
+  // console.log(num1, num2); // '123' '2'
+  const result = [num1, num2].reduce((acc, currVal) => acc -= currVal); // 121 console.log(result)
+
+  const userInput = '123 - 2'; // use char space
+  // const [num1, op, num2] = userInput.split(' ') // ['123', '-', '2'] use char space 
+  // const newNum1 = +num1 + 1; // 124 console.log(op) '-'
+  // // console.log(num2); // 2
+  // const result = [num1, op, num2].reduce((acc, currVal, i, a) => {
+  //   console.log(a[1]);
+  //   a.slice(a[1])
+  //   return acc - currVal;
+  // });
+  // console.log('result', result)
+*/
+
+
+// Constructor version
 function Calculator(a, b) {
   // Ultimately operator, operand vars come from userInput.
   // this.userOperator = '/'; // keypad component
@@ -153,122 +249,13 @@ function Calculator(a, b) {
   };
 };
 // Will operands will need to be passed to new instance?
+// I'm thinking, no. The event listener takes care of that.
 const calc = new Calculator(8, 9);
 // calc.operate(2, 3);
 // console.log(calc.a, calc.b, calc.operate(), calc.operator);
   // I'm not sure if a single function for ea of the operands is what I want.
   // But it feels weird to have 4 different function for ea one.
 
-// Keypad
-const display = document.querySelector('.calc-display-wrap'); // console.log(display)
-const para = document.createElement('p');
-// display.append(para); // .setAttribute('class', 'poop');
-// const display = document.getElementsByClassName('display'); console.log(typeof Array.from(display));
-display.setAttribute('style', 'border:solid 1px #7f7f7f; height:2em; text-align:center;');
-// const key = document.querySelector('.key'); console.log(key); // works
-
-// const str1 = '5';
-// console.log(str1.padStart(2, '0'));
-// // Expected output: "05"
-// let poop = 'poop';
-// const newPoop = poop.padStart(5, ' ');
-// console.log(newPoop, newPoop.length);
-// console.log(str1.padStart(2, '0'));
-// // Expected output: "05")
-
-/* Calculator pattern
-  check which operator in string
-*/
-const userInput = '123 - 2'; 
-const [x, y, z] = userInput.split(' ');
-console.log([x, y, z]);
-
-// https://stackoverflow.com/questions/45090565/javascript-include-a-check-to-see-if-multiple-elements-are-in-an-array
-const getOperator = function (str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === '-') console.log('subtract');
-  };
-};
-getOperator(userInput);
-const operands = userInput.split('-'); console.log(operands)
-// Need to think about how stringing multiple expressions will affect this
-const operate = function (arr) {
-  return product = arr.reduce((acc, currVal) => {
-    // console.log(+currVal, currVal);
-    return acc -= currVal
-  }, 0);
-};
-console.log(operate(operands));
-console.log([...userInput].splice(3, 1), userInput); // , userInput.split('-'));
-
-const operatorIndex = userInput.indexOf('-'); // console.log(operatorIndex); // 6
-const operator = userInput.charAt(operatorIndex); // console.log(operator)
-const num1 = userInput.slice(0, operatorIndex); // console.log('num1:', num1, typeof num1); // 100023 string
-const b = userInput.slice()
-// console.log(userInput.indexOf('+'), index, a);
-
-// console.log(userInput.split('-')); // removes from array
-
-let input = '';
-let inputArr = [];
-function getUserInput(e) {
-  // https://stackoverflow.com/questions/96428/how-do-i-split-a-string-breaking-at-a-particular-character
-  // overflow: hidden; https://stackoverflow.com/questions/1165497/how-to-prevent-text-from-overflowing-in-css
-  // console.log(e.target.tagName, Array.from(e.target.classList).includes('display'));
-  // console.log('e', e.key, typeof e.key, e.currentTarget, e.target.tagName); // .key is the value, target is element?
-  // question is how to target the child of display-wrap
-  const str = e.key;
-  const code = +e.code.charAt(e.code.length - 1); // Numpad1 thru Numpad0
-  // console.log(typeof key, key, e.key, typeof str, e.type); // string, key value '1', '2', etc.
-  // console.log(e.code, str); // typeof object typeof e, e, 
-  if (e.key === 'Clear') {
-    display.textContent = '';
-    input = '';
-  };
-  // console.log(str.split()); // string to array
-
-  // Display: prints number to the display
-  // if (code === 'N' && e.key !== 'Clear') {
-  if (typeof code === 'number' && e.key !== 'Clear' && !isNaN(code)) {
-    console.log('code', code);
-    display.textContent += str; // Pass var to Display Component?
-    input += str; // Adds operator to string twice
-  };
-  if (e.key === '+' || e.key === '-' || e.key === '/' || e.key === '*') {
-    input += ` ${e.key} `; // works
-    // inputArr.push(input)
-  };
-  // console.log('inputArr', inputArr);
-  console.log(input);
-  if (e.key === 'Enter' || e.key === '=') {
-    const expression = input.split(' '); console.log(expression);
-  }
-  display.textContent; // = calc.add(a, b); // works, but needs (a, b) vars
-  // const key = document.querySelector(`div[data-key="${e.key}"]`);
-};
-// inputArr.push(input)
-document.addEventListener('keydown', getUserInput); // document or window works
-
-// Event Delegation
-  // https://blog.whatthecode.academy/event-delegation-capturing-and-bubbling#phases-of-an-event
-  const rootDiv = document.querySelector('#root');
-  // console.log('rootDiv', rootDiv)
-  // console.log(rootDiv.children); // HTMLCollection of elements and their classes
-  // console.log(rootDiv.id); // root
-  // console.log(rootDiv.classList); // also root
-  const rootChildNodes = rootDiv.children;
-  // console.log(rootChildNodes);
-  // console.log(rootChildNodes[0]);
-  // console.log('is rootDiv an array?', Array.isArray(rootDiv)); // false
-  function getName(event) {
-    // classList returns DOMTokenList which can be made into an array and looped over
-    // console.log('classList array', Array.from(event.target.classList), event.target.classList); // 
-    // https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
-    if(Array.from(event.target.classList).includes('avenger') && event.target.tagName === "P") {
-      console.log(event.target, event.target.textContent, event); // target is paragraph element
-    };
-  };
-  rootDiv.addEventListener('click', getName);
 
 // dataset selectors - I don't remember where I found this. 
 // But see my codepen on dataset selectors.
@@ -282,3 +269,4 @@ document.addEventListener('keydown', getUserInput); // document or window works
 // console.log(Array.isArray(refs)); // true
 // const whatevs2 = document.querySelectorAll('p')
 // console.log(whatevs2)
+
